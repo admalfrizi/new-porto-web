@@ -8,7 +8,7 @@ const NavItems = () => {
 }
 
 const Navbar = () => {
-     return (
+    return (
         <>
             <nav className={`navbar px-5 md:px-24 w-screen fixed transition-colors ease duration-500 inset-0 bg-transparent flex flex-row justify-between items-center h-16 z-50 `}>
                 <div>
