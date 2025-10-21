@@ -199,8 +199,9 @@ const mainPage = () => {
                     <div>
                         <Image
                             className="rounded-[20px] mb-5 xl:mb-0 w-75 lg:w-auto"
-                            src="/images/profile_1.jpg"
+                            src="/images/let's_connect.jpg"
                             alt={""}  
+                            objectFit="cover"
                             width={400}  
                             height={600}                
                         />
