@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outifit.variable} antialiased`}
+        className={`${outifit.variable} custom-scrollbar antialiased`}
       >
         <Navbar />
         {children}
