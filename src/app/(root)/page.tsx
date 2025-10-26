@@ -2,6 +2,7 @@
 import LinkIcon from "@/components/LinkIcon"
 import PortofolioCard from "@/components/PortofolioCard"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
+import { projects } from "@/data/list_data"
 import Image from "next/image"
 import React from "react"
 
@@ -13,7 +14,7 @@ const mainPage = () => {
 
     React.useEffect(() => {
         if (!api) {
-        return
+            return
         }
         setCount(api.scrollSnapList().length)
         setCurrent(api.selectedScrollSnap() + 1)
@@ -128,20 +129,20 @@ const mainPage = () => {
                 id="projects"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
-                <div className="px-5 mt-10 md:px-24 mx-auto flex flex-col w-full">
+                <div className="px-20 mt-10 md:px-24 mx-auto flex flex-col w-full">
                     <h1 className="text-3xl text-center text-white md:text-5xl font-semibold mb-10 font-main">
                         My Projects
                     </h1>
                     <Carousel>
                         <CarouselContent>
-                            <CarouselItem><PortofolioCard /></CarouselItem>
-                            <CarouselItem><PortofolioCard /></CarouselItem>
-                            <CarouselItem><PortofolioCard /></CarouselItem>
+                            { projects.map((data,idx) => (
+                                <CarouselItem key={idx}><PortofolioCard data={data} /></CarouselItem>
+                            )) }
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                    <div className=" absolute bottom-4 left-2/4 z-50 flex ">
+                    <div className="absolute bottom-4 left-2/4 z-50 flex ">
                         {
                             Array.from({length: count}).map((_,i) => (
                                 <span
@@ -196,7 +197,7 @@ const mainPage = () => {
                             <LinkIcon/>
                         </div>
                     </div> 
-                    <div>
+                    <div className="content-center">
                         <Image
                             className="rounded-[20px] mb-5 xl:mb-0 w-75 lg:w-auto"
                             src="/images/let's_connect.jpg"
