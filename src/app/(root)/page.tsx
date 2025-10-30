@@ -25,7 +25,7 @@ const mainPage = () => {
     }, [api])
     
     return (
-        <div className="snap-y snap-mandatory h-screen overflow-y-scroll">
+        <div className="snap-y snap-mandatory h-screen overflow-y-scroll scrollbar-hide">
             <section
                 id="main"
                 className="relative h-screen snap-start flex items-center justify-start bg-cover bg-home bg-center"
@@ -129,14 +129,18 @@ const mainPage = () => {
                 id="projects"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
-                <div className="px-20 mt-10 md:px-24 mx-auto flex flex-col w-full">
-                    <h1 className="text-3xl text-center text-white md:text-5xl font-semibold mb-10 font-main">
-                        My Projects
-                    </h1>
-                    <Carousel>
+                <div className="px-20 my-5 md:my-10 md:px-24 mx-auto flex flex-col w-full">
+                    <div className="content-center pb-8">
+                        <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
+                            My Projects
+                        </h1>
+                    </div>
+                    <Carousel className="w-full mx-auto">
                         <CarouselContent>
                             { projects.map((data,idx) => (
-                                <CarouselItem key={idx}><PortofolioCard data={data} /></CarouselItem>
+                                <CarouselItem key={idx} className="basis-full p-2 pl-4 py-2 pr-2">
+                                    <PortofolioCard data={data} />
+                                </CarouselItem>
                             )) }
                         </CarouselContent>
                         <CarouselPrevious />
@@ -172,41 +176,40 @@ const mainPage = () => {
                 id="letsConnect"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
-                <div className="flex flex-row justify-between z-10 text-start text-brand-900 w-full px-5 md:px-24">
-                    <div className="content-center mr-5 sm:mr-20 xl:mr-0">
-                        <h1 className="text-3xl md:text-6xl font-semibold mb-5 font-main text-brand-900 w-[500px]">
+                <div className="flex flex-col-reverse lg:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
+                    <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
+                        <h1 className="text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
                             Let’s connect with me.
                         </h1>
-                        <div className="max-w-xl mt-10">
-                            <p className="leading-relaxed font-main font-light text-xl">
+                        <div className="max-w-full lg:max-w-2xl mt-10">
+                            <p className="leading-relaxed font-main font-light text-md lg:text-xl">
                                 Let me know if you want to connect with me for business and network purposes, 
                                 or you want to contact to me for work purposes in my email down here :
                             </p>
                         </div>
-                        <div className="max-w-xl mt-4">
-                            <p className="leading-relaxed font-main font-semibold text-2xl">
+                        <div className="max-w-md xl:max-w-xl mt-4">
+                            <p className="leading-relaxed font-main font-semibold text-lg lg:text-lg">
                                 adam.alfarizi.2002@gmail.com
                             </p>
                         </div>
-                        <div className="max-w-xl my-4">
-                            <p className="leading-relaxed font-main font-light text-xl">
+                        <div className="max-w-md xl:max-w-xl my-4">
+                            <p className="leading-relaxed font-main font-light text-md lg:text-xl">
                                 Link For My Contacts :
                             </p>
                         </div>
                         <div className="flex flex-row">
                             <LinkIcon/>
                         </div>
+                        
                     </div> 
-                    <div className="content-center">
-                        <Image
-                            className="rounded-[20px] mb-5 xl:mb-0 w-75 lg:w-auto"
-                            src="/images/let's_connect.jpg"
-                            alt={""}  
-                            objectFit="cover"
-                            width={400}  
-                            height={600}                
-                        />
-                    </div>  
+                    <Image
+                        className="rounded-[20px] mb-5 xl:mb-0 w-96 lg:w-auto"
+                        src="/images/let's_connect.jpg"
+                        alt={""}  
+                        objectFit="contain"
+                        width={400}  
+                        height={600}                
+                    />
                 </div>
                  
             </section>

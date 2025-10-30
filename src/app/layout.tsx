@@ -18,10 +18,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
+
   return (
     <html lang="en">
       <body
-        className={`${outifit.variable} custom-scrollbar antialiased`}
+        className={`${outifit.variable} antialiased`}
       >
         <Navbar />
         {children}
