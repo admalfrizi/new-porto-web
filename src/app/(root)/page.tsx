@@ -127,9 +127,9 @@ const mainPage = () => {
             </section>
             <section
                 id="projects"
-                className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
+                className="relative h-screen pt-15 snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
-                <div className="px-20 my-5 md:my-10 md:px-24 mx-auto flex flex-col w-full">
+                <div className="px-20 md:my-10 md:px-24 mx-auto flex flex-col w-full">
                     <div className="content-center pb-8">
                         <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
                             My Projects
@@ -146,20 +146,6 @@ const mainPage = () => {
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                    <div className="absolute bottom-4 left-2/4 z-50 flex ">
-                        {
-                            Array.from({length: count}).map((_,i) => (
-                                <span
-                                    key={i}
-                                    className={`block h-1 cursor-pointer rounded-2xl transition-all content-[''] w-8 bg-white
-                                    }`}
-                                    //onClick={() => setActiveIndex(i)}
-                                />
-                            ))
-                        }
-                        
-                    </div>
-                    {/* <PortofolioCard /> */}
                 </div>    
             </section>
             <section
