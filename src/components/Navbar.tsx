@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 const Navbar = () => {
     return (
         <>
@@ -10,6 +12,14 @@ const Navbar = () => {
                         AAI
                     </h1>
                 </div>
+                <div className="relative w-10 h-10">
+                    <Image
+                        src={"/icons/menu_ic.svg"}
+                        alt=""
+                        fill
+                    />
+                </div>
+                
             </nav>
         </>
     )

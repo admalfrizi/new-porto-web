@@ -40,7 +40,7 @@ export default function PortofolioCard({data} : PortoCardParams)
                             <div className="mt-0 md:mt-4 mr-4 md: me-0">
                                 <h6 className="text-lg lg:text-xl font-medium text-brand-900 ">Tech Stack :</h6>
                             </div>
-                            <div className="flex space-x-4 pt-2 pb-3 overflow-x-scroll sm:overflow-x-clip ">
+                            <div className="flex space-x-4 pt-2 pb-3 overflow-x-scroll scrollbar-hide sm:overflow-x-clip ">
                                 {
                                     data.techStack.map((dta, idx) => (
                                         <div key={idx} className="flex flex-row space-x-4 content-center">

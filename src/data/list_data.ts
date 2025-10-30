@@ -27,6 +27,10 @@ export const projects : Project[] = [
             {
                 name: "Codeigniter 4",
                 icons: "/icons/ci_ic.svg"
+            },
+            {
+                name: "PHP",
+                icons: "/icons/php_ic.svg"
             }
         ],
         linkGithub: ""
