@@ -2,7 +2,7 @@
 import LinkIcon from "@/components/LinkIcon"
 import PortofolioCard from "@/components/PortofolioCard"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { projects } from "@/data/list_data"
+import { projects, techStack } from "@/data/list_data"
 import Image from "next/image"
 import React from "react"
 
@@ -152,10 +152,24 @@ const mainPage = () => {
                 id="techstack"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="px-5 md:px-24 mx-auto">
-                    <h1 className="text-3xl md:text-5xl text-white font-semibold mb-5 font-main">
-                        Tech Stack
-                    </h1>
+                <div className="px-5 md:px-24 w-full">
+                    <div className="content-center pb-10 lg:pb-30">
+                        <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
+                             Tech Stack
+                        </h1>
+                    </div>
+                    <div className="max-w-full mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6  gap-y-10 gap-x-6">
+                        {
+                            techStack.map((data, idx) => (
+                                <div key={idx} className="flex flex-col items-center justify-center gap-2">
+                                    <div className="relative w-14 h-14 md:w-20 md:h-20 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
+                                        <Image src={data.icons} alt="fwfqw" fill/>
+                                    </div>
+                                    <span className="text-sm text-center text-white md:text-base">{data.name}</span>
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>    
             </section>
             <section

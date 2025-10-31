@@ -40,6 +40,58 @@ export const projects : Project[] = [
 export const techStack: TechStacks[] = [
     {
         name: "Javascript",
-        icons: ""
+        icons: "/icons/javascript_ic.svg"
+    },
+    {
+        name: "PHP",
+        icons: "/icons/php_ic.svg"
+    },
+    {
+        name: "Kotlin",
+        icons: "/icons/kotlin_ic.svg"
+    },
+    {
+        name: "C#",
+        icons: "/icons/csharp_ic.svg"
+    },
+    {
+        name: "MySQL",
+        icons: "/icons/mysql.svg"
+    },
+    {
+        name: "PostgreSQL",
+        icons: "/icons/postgresql_ic.svg"
+    },
+    {
+        name: "ReactJS",
+        icons: "/icons/react_ic.svg"
+    },
+    {
+        name: "NextJS",
+        icons: "/icons/nextjs_ic.svg"
+    },
+    {
+        name: "VueJS",
+        icons: "/icons/vuejs_ic.svg"
+    },
+    {
+        name: ".NET",
+        icons: "/icons/net_ic.svg"
+    },
+    {
+        name: "Laravel",
+        icons: "/icons/laravel_ic.svg"
+    },
+    {
+        name: "Codeigniter4",
+        icons: "/icons/ci_ic.svg"
+    },
+    {
+        name: "Android Studio",
+        icons: "/icons/android_studio_ic.svg"
+    },
+    {
+        name: "Flutter",
+        icons: "/icons/flutter_ic.svg"
     },
 ]
