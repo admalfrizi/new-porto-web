@@ -4,6 +4,7 @@ import PortofolioCard from "@/components/PortofolioCard"
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { projects, techStack } from "@/data/list_data"
 import Image from "next/image"
+import Link from "next/link"
 import React from "react"
 
 const mainPage = () => {
@@ -88,14 +89,16 @@ const mainPage = () => {
                             Want to more about me ?
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
-                            <p className="leading-relaxed text-[16px] md:text-[20px] font-main">
+                            <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] font-main">
                             Interested in my background? You can find my full introduction, project portfolio, and more about me in here.
                             </p>
                         </div>
-                        <button
+                        <Link
+                            href="/about-me"
                             className="
                             flex
                             items-center
+                            w-40
                             px-8
                             py-3
                             border border-transparent
@@ -112,11 +115,11 @@ const mainPage = () => {
                             cursor-pointer
                             "
                         >
-                            <a> See More </a>
-                        </button>      
+                            See More
+                        </Link>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-75 lg:w-auto"
+                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-60 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
@@ -152,17 +155,17 @@ const mainPage = () => {
                 id="techstack"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="px-5 md:px-24 w-full">
+                <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
                     <div className="content-center pb-10 lg:pb-30">
                         <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
                              Tech Stack
                         </h1>
                     </div>
-                    <div className="max-w-full mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6  gap-y-10 gap-x-6">
+                    <div className="max-w-full mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-10 gap-x-6">
                         {
                             techStack.map((data, idx) => (
                                 <div key={idx} className="flex flex-col items-center justify-center gap-2">
-                                    <div className="relative w-14 h-14 md:w-20 md:h-20 bg-gray-700 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
+                                    <div className="relative w-12 h-12 max-[440px]:w-10 max-[440px]:h-10 md:w-16 md:h-16 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
                                         <Image src={data.icons} alt="fwfqw" fill/>
                                     </div>
                                     <span className="text-sm text-center text-white md:text-base">{data.name}</span>
