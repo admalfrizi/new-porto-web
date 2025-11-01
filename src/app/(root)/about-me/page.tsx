@@ -1,20 +1,26 @@
+"use client";
+
 import SkillsType from '@/components/SkillsType';
+import { skillsData } from '@/data/list_data';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const aboutmePage = () => {
+    const [selectedSkills, setSelectedSkills] = useState(0);
+
     return (
         <div className="h-screen overflow-y-scroll scrollbar-hide">
             <section
                 id="aboutme"
                 className="relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="flex flex-col-reverse md:flex-row max-[768px]:pt-20 justify-between w-full px-5 md:px-24 ">
-                    <div className="z-10 text-start text-brand-900 content-center mr-15 sm:mr-20 xl:mr-0">
-                        <h1 className="text-3xl md:text-6xl font-bold font-main">
+                <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between w-full px-5 md:px-24 ">
+                    <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
+                        <h1 className="text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] md:text-6xl font-bold font-main">
                             Want to more about me ?
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
-                            <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] font-main">
+                            <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] max-[360px]:text-[12px] max-[360px]:line-clamp-2 font-main">
                             Interested in my background? You can find my full introduction, project portfolio, and more about me in here.
                             </p>
                         </div>
@@ -42,7 +48,7 @@ const aboutmePage = () => {
                         </button>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-60 lg:w-auto"
+                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[768px]:w-65 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
@@ -57,7 +63,7 @@ const aboutmePage = () => {
                 </div>
                 <div className='flex flex-col lg:flex-row justify-between pb-9 w-full'>
                     <div className="relative w-full h-96 md:w-136 md:h-80 lg:w-136 lg:h-126 md:me-10">
-                        <div className="absolute top-0 left-0 w-3/4 h-3/5">
+                        <div className="absolute top-0 left-0 w-3/4 h-3/5 max-[375px]:w-4/5 max-[375px]:h-2/5">
                             <Image 
                                 src="/images/first.png" 
                                 alt="Adam Alfirizi Ismail 1"
@@ -66,7 +72,7 @@ const aboutmePage = () => {
                                 fill
                             />
                         </div>
-                        <div className="absolute top-4 md:top-8 right-12 w-2/5 h-3/5">
+                        <div className="absolute top-4 md:top-8 right-0 w-2/5 h-3/5 max-[375px]:h-2/4 max-[375px]:top-8">
                             <Image 
                                 src="/images/second.JPG"  
                                 alt="Adam Alfirizi Ismail 3"
@@ -75,7 +81,7 @@ const aboutmePage = () => {
                                 fill
                             />
                         </div>
-                        <div className="absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5">
+                        <div className="absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5 max-[375px]:h-2/4 max-[375px]:bottom-18">
                             <Image 
                                 src="/images/third.JPG"  
                                 alt="Adam Alfirizi Ismail 3"
@@ -86,7 +92,7 @@ const aboutmePage = () => {
                         </div>
                         
                     </div>
-                    <div className='max-w-2xl mt-20 lg:mt-0'>
+                    <div className='max-w-2xl mt-20 lg:mt-0  max-[375px]:mt-0'>
                         <div className='mb-8'>
                             <h4 className='font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
                         </div>
@@ -115,19 +121,59 @@ const aboutmePage = () => {
                     
                 </div>
             </div>
-            <div className='h-fit px-5 md:px-24 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+            <div className='h-fit px-5 md:px-24 py-5 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
                     <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Skills and Tech Stack</h1>
                     <div className="w-84 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
                 </div>
-                <div className='w-full mx-auto flex justify-center mt-15'>
-                    <div className='flex flex-row space-x-20'>
-                        <SkillsType icons={'/icons/mobile_ic.svg'} skillName={'Mobile Apps'} skillDesc={'Build an Multiplatform Mobile Apps'} />
-                        <SkillsType icons={'/icons/website_ic.svg'} skillName={'Web Dev'} skillDesc={'Build an Website with Modern UI Design'} />
+                <div className='w-full mx-auto flex justify-center mt-15 max-[447px]:mx-3'>
+                    <div className='flex flex-row space-x-20 max-[380px]:space-x-4 max-[473px]:space-x-10 max-[430px]:space-x-4'>
+                        {
+                            skillsData.map((data, index) => (
+                                <SkillsType 
+                                    key={index} 
+                                    icons={data.icons} 
+                                    skillName={data.type} 
+                                    skillDesc={data.description} 
+                                    isSelected={selectedSkills === index}
+                                    onClick={() => setSelectedSkills(index)}
+                                />
+                            ))
+                        }
                     </div>
                 </div>
-                <div className='w-full mx-auto flex justify-center pt-20'>
-                    <h6 className='mb-3 font-medium text-3xl max-[380px]:text-3xl text-brand-900'>Language and Frameworks</h6>
+                <div className='w-full mx-auto pt-20'>
+                    <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Language and Frameworks</h6>
+                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'>
+                        {
+                            skillsData[selectedSkills].langFramerwork.map((lang, idx) => (
+                                <span key={idx} className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
+                                    {lang}
+                                </span>
+                            ))
+                        }
+                    </div>
+                </div>
+                <div className='w-full mx-auto pt-10'>
+                    <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Tools Apps</h6>
+                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'>
+                        {
+                            skillsData[selectedSkills].tools.map((lang, idx) => (
+                                <span key={idx} className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
+                                    {lang}
+                                </span>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+            <div className='h-fit px-5 md:px-24 py-10 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+                <div className='flex flex-col w-full'>
+                    <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Work Experience</h1>
+                    <div className="w-69 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
+                </div>
+                <div>
+                    
                 </div>
             </div>
         </div>

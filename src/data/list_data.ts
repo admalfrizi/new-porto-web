@@ -95,3 +95,51 @@ export const techStack: TechStacks[] = [
         icons: "/icons/flutter_ic.svg"
     },
 ]
+
+export const skillsData: SkillsData[] = 
+[
+    {
+        type: "Mobile Apps", 
+        icons: "/icons/mobile_ic.svg",
+        description: "Build an Multiplatform Mobile Apps",
+        langFramerwork: [
+            "JavaScript",
+            "Dart",
+            "Kotlin", 
+            "Flutter",
+            "Android Native",
+            "React Native",
+            "Dagger2 Hilt",
+            "Koin DI",
+            "Ktor",
+            "Jetpack Compose",
+            "Kotlin Multiplatform"
+        ],
+        tools: ["VSCode","Android Studio","Git", "Gitlab"]
+    },
+    {    
+        type: "Web Dev",
+        icons: "/icons/website_ic.svg",
+        description: "Build an Website with Modern UI Design",
+        langFramerwork: [
+            "JavaScript",
+            "TypeScript",
+            "PHP", 
+            "C#", 
+            "NodeJS", 
+            "ReactJS", 
+            "NextJS", 
+            "Laravel", 
+            "Codeigniter 4",
+            "ASP.NET",
+            "PostgreSQL",
+            "MySQL",
+            "TailwindCSS",
+            "Bootstrap",
+            "MongoDB",
+            "HTML",
+            "CSS"
+        ],
+        tools: ["VSCode", "PgAdmin4", "Visual Studio 2022", "Git", "Docker", "Postman"]
+    }
+];

@@ -12,3 +12,11 @@ interface TechStacks {
     name: string;
     icons: string;
 }
+
+interface SkillsData {
+    type: string;
+    icons: string;
+    description: string;
+    langFramerwork: string[];
+    tools: string[];
+}
