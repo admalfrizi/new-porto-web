@@ -166,7 +166,7 @@ const mainPage = () => {
                             techStack.map((data, idx) => (
                                 <div key={idx} className="flex flex-col items-center justify-center gap-2">
                                     <div className="relative w-12 h-12 max-[440px]:w-10 max-[440px]:h-10 md:w-16 md:h-16 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
-                                        <Image src={data.icons} alt="fwfqw" fill/>
+                                        <Image src={data.icons} alt="fwfqw" fill objectFit="contain"/>
                                     </div>
                                     <span className="text-sm text-center text-white md:text-base">{data.name}</span>
                                 </div>
@@ -179,7 +179,7 @@ const mainPage = () => {
                 id="letsConnect"
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
-                <div className="flex flex-col-reverse lg:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
+                <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
                         <h1 className="text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
                             Let’s connect with me.
@@ -206,7 +206,7 @@ const mainPage = () => {
                         
                     </div> 
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-96 lg:w-auto"
+                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
                         src="/images/let's_connect.jpg"
                         alt={""}  
                         objectFit="contain"

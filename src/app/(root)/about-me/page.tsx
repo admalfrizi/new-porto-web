@@ -1,3 +1,4 @@
+import SkillsType from '@/components/SkillsType';
 import Image from 'next/image';
 
 const aboutmePage = () => {
@@ -114,10 +115,19 @@ const aboutmePage = () => {
                     
                 </div>
             </div>
-            <div className='h-fit py-10 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
-                <div className='flex flex-col w-full pb-10'>
-                    <h1 className='mb-3 font-semibold text-4xl text-brand-900'>Skills and Tech Stack</h1>
-                    <div className="w-84 h-1 bg-brand-900 rounded-full"></div>
+            <div className='h-fit px-5 md:px-24 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+                <div className='flex flex-col w-full'>
+                    <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Skills and Tech Stack</h1>
+                    <div className="w-84 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
+                </div>
+                <div className='w-full mx-auto flex justify-center mt-15'>
+                    <div className='flex flex-row space-x-20'>
+                        <SkillsType icons={'/icons/mobile_ic.svg'} skillName={'Mobile Apps'} skillDesc={'Build an Multiplatform Mobile Apps'} />
+                        <SkillsType icons={'/icons/website_ic.svg'} skillName={'Web Dev'} skillDesc={'Build an Website with Modern UI Design'} />
+                    </div>
+                </div>
+                <div className='w-full mx-auto flex justify-center pt-20'>
+                    <h6 className='mb-3 font-medium text-3xl max-[380px]:text-3xl text-brand-900'>Language and Frameworks</h6>
                 </div>
             </div>
         </div>
