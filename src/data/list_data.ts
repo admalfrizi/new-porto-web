@@ -143,3 +143,24 @@ export const skillsData: SkillsData[] =
         tools: ["VSCode", "PgAdmin4", "Visual Studio 2022", "Git", "Docker", "Postman"]
     }
 ];
+
+export const experiences: Experience[] = [
+    {
+        position: "Software Engineer Intern",
+        period: "Jun 2025 - Oct 2025",
+        location: "Salatiga, Indonesia",
+        company: "PT Formulatrix Indonesia",
+        title: "Internship Program",
+        description: "Contributed to the development of GoJek's mobile application, focusing on enhancing user experience and implementing new features using Kotlin and Jetpack Compose.",
+        technologies: ["Javascript", "C#", "ASP.NET", "Git"]
+    },
+    {
+        position: "Software Programmer - Intern",
+        period: "Nov 2023 - Oct 2024",
+        location: "Semarang, Jawa Tengah",
+        company: "UPT Data Informasi UDINUS",
+        title: "Internship Program",
+        description: "Internship focused on developing and maintaining university web applications.",
+        technologies: ["Wordpress", "Divi", "PHP", "Codeigniter4", "MySQL", "Git"]
+    }
+]

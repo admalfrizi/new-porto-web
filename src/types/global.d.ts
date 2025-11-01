@@ -20,3 +20,13 @@ interface SkillsData {
     langFramerwork: string[];
     tools: string[];
 }
+
+interface Experience {
+    position: string;
+    period: string;
+    location: string;
+    company: string;
+    title: string;
+    description: string;
+    technologies: string[];
+}

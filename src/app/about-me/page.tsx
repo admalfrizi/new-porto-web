@@ -1,7 +1,8 @@
 "use client";
 
+import HorizontalTimeline from '@/components/HorizontalTimeline';
 import SkillsType from '@/components/SkillsType';
-import { skillsData } from '@/data/list_data';
+import { experiences, skillsData } from '@/data/list_data';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -167,13 +168,47 @@ const aboutmePage = () => {
                     </div>
                 </div>
             </div>
-            <div className='h-fit px-5 md:px-24 py-10 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+            <div className='h-screen px-5 md:ps-24 py-10 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
                     <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Work Experience</h1>
                     <div className="w-69 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
                 </div>
-                <div>
-                    
+                <div className='w-full overflow-x-auto py-5 h-full'>
+                    <div className="relative min-w-[700px] h-32">
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-2 w-full bg-brand-900 dark:bg-blue-500 rounded-full z-0"></div>
+                        <div className="relative flex justify-between w-fit z-10">
+                            {
+                                experiences.map((exp, index) => (
+                                    <div key={index} className="relative top-13 w-120 flex flex-col items-left">
+                                        <div className="w-7 h-7 bg-inside-dot dark:bg-blue-500 rounded-full border-5 border-brand-900"></div>
+                                        <div className="absolute top-10 w-7/8 text-left text-brand-900 p-5 bg-card-experience dark:bg-gray-800 rounded-lg shadow-lg">
+                                            <div className='flex flex-row justify-between content-center'>
+                                                <span className="text-xl font-bold dark:text-white">{exp.company}</span>
+                                                <p className='text-[14px] content-center'>{exp.period}</p>
+                                            </div>
+                                            <div className='flex flex-row space-x-1.5 w-full text-left pt-2 pb-3'>
+                                                <p className='text-[14px]'><span className="font-semibold">{exp.position}</span></p>
+                                                <p className='text-[14px]'>|</p>
+                                                <p className='text-[14px]'>{exp.location}</p>
+                                            </div>
+                                            <div className='max-w-md text-md font-light'>
+                                                {exp.description}
+                                            </div>
+                                            <div className='flex flex-row space-x-3 overflow-x-scroll w-full pt-5'>
+                                                {
+                                                    exp.technologies.map((tech, techIndex) => (
+                                                        <span key={techIndex} className='bg-span-experience py-1.5 px-3 text-[12px] rounded-lg text-white'>
+                                                            {tech}
+                                                        </span>
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

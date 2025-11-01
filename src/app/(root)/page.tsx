@@ -34,14 +34,14 @@ const mainPage = () => {
                 <div className="absolute inset-0 bg-black opacity-30"></div>
                 <div className="flex flex-col justify-center z-10 text-start text-brand-900 w-full">
                     <div className="px-5 md:px-24">
-                        <h1 className="text-3xl sm:text-6xl font-bold mb-2 font-main">
+                        <h1 className="text-3xl max-[380px]:text-2xl sm:text-6xl font-bold mb-2 font-main">
                             Welcome To My Home
                         </h1>
                         <div className="max-w-xl mb-5">
-                            <p className="font-main text-lg sm:text-2xl my-6">
+                            <p className="font-main text-lg sm:text-2xl my-6 max-[380px]:mb-3">
                                 My Name is <span className="font-semibold">Adam Alfarizi Ismail</span>
                             </p>
-                            <p className="leading-relaxed font-main text-lg">
+                            <p className="leading-relaxed font-main max-[380px]:text-sm text-lg">
                                 Hey, thanks for reaching my website and let me introduce myself. <span className="font-main"> I’m a tech learner</span>, exploring many things
                                 in the tech industry, especially in 
                                 <span className="font-main font-semibold"> Software Development</span>. My skills

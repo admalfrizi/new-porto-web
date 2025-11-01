@@ -35,6 +35,9 @@
   --color-brand-500: #948979;
   --color-brand-900: #DFD0B8;
   --color-span: #A9A9A9;
+  --color-card-experience: #3A4555;
+  --color-span-experience: #65748C;
+  --color-inside-dot: #544E44;
 
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
