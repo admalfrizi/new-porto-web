@@ -1,6 +1,7 @@
 "use client";
 
 import SkillsType from '@/components/SkillsType';
+import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,7 +30,7 @@ const aboutmePage = () => {
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
                             <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] max-[360px]:text-[12px] max-[360px]:line-clamp-2 font-main">
-                            Interested in my background? You can find my full introduction, project portfolio, and more about me in here.
+                                Curious about my work and experience? My full introduction and project portfolio are just a scroll away
                             </p>
                         </div>
                         <button
@@ -40,7 +41,6 @@ const aboutmePage = () => {
                                 items-center
                                 px-8
                                 py-3
-                                w-50
                                 border border-transparent
                                 text-sm
                                 font-bold
@@ -107,7 +107,7 @@ const aboutmePage = () => {
                         <div className='mb-8'>
                             <h4 className='font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
                         </div>
-                        <p className="text-base font-light md:text-lg lg:max-w-3xl text-brand-900 leading-relaxed space-y-4">
+                        <p className="text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-relaxed space-y-4">
                             <span>
                             Hey, I'm Adam Alfarizi Ismail, an <span className="font-semibold">Software Developer</span> or <span className="font-semibold">Engineer</span> with
                             1.5 years experience built from internship work which provided a
@@ -181,7 +181,7 @@ const aboutmePage = () => {
             <div className='h-130 px-5 md:px-24 py-8 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
                     <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Work Experience</h1>
-                    <div className="w-69 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
+                    <div className="w-69 max-[380px]:w-58 h-1 bg-brand-900 rounded-full"/>
                 </div>
                 <div className='w-full overflow-x-auto scrollbar-hide py-5 h-full'>
                     <div className="relative inline-flex flex-nowrap min-w-full py-4">
@@ -224,7 +224,62 @@ const aboutmePage = () => {
             <div className='h-fit px-5 md:px-24 py-10 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
                     <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Education</h1>
-                    <div className="w-41 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
+                    <div className="w-41 max-[380px]:w-34 h-1 bg-brand-900 rounded-full"/>
+                </div>
+                <div className='flex justify-center w-full'>
+                    <Card className="mt-10 p-0 bg-brand-100 backdrop-blur-sm border-white/10 content-center">
+                        <CardContent className='px-0'>
+                            <div className="flex flex-col lg:flex-row w-full rounded-lg min-h-100 text-white overflow-hidden">
+                                <div className="flex flex-row rounded-lg w-full">
+                                    <div className="flex w-1/3 md:mb-0">
+                                        <Image
+                                            src="/images/first_image.jpg"
+                                            alt="Main image description"
+                                            width={350}
+                                            height={300}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex w-1/3">
+                                        <Image
+                                            src="/images/second_image.jpg"
+                                            alt="Secondary image description"
+                                            layout="responsive"
+                                            width={300}
+                                            height={300}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex w-1/3">
+                                        <Image
+                                            src="/images/third_image.jpg"
+                                            alt="Secondary image description"
+                                            layout="responsive"
+                                            width={300}
+                                            height={300}
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                </div>
+                                <div className="flex flex-col content-center w-full max-[360px]:p-3 max-[512px]:p-3 max-[512px]:ms-0 max-md:py-3 ms-6 md:pe-6 md:py-6">
+                                    <div className="font-light pb-3 text-brand-900">
+                                        <p className='text-lg max-[360px]:text-[13px]'>Aug 2020 - Apr 2025</p>
+                                    </div>
+                                    <div className="font-bold pb-3 text-brand-900">
+                                        <h1 className='text-2xl max-[360px]:text-lg lg:text-4xl'>
+                                            Universitas Dian Nuswantoro
+                                        </h1>
+                                    </div>
+                                    <div className='max-w-xl text-brand-900'>
+                                        <p className='text-lg max-[360px]:text-[13px]'>S1 Teknik Informatika - Computer Science</p>
+                                    </div>
+                                    <div className='flex flex-row space-x-4 py-3 w-full text-left text-brand-900'>
+                                        <p className='text-lg max-[360px]:text-[13px]'>Semarang, Jawa Tengah</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
         </div>

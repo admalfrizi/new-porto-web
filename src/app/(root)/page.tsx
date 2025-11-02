@@ -130,7 +130,7 @@ const mainPage = () => {
             </section>
             <section
                 id="projects"
-                className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
+                className="relative h-screen pt-15 snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
                 <div className="px-20 md:my-10 md:px-24 mx-auto flex flex-col w-full">
                     <div className="content-center pb-8">

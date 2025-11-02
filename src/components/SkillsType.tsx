@@ -13,7 +13,21 @@ interface SkillsTypeProps
 export default function SkillsType({icons, skillName, skillDesc, isSelected, onClick}: SkillsTypeProps) 
 {
     return (
-        <Card onClick={onClick} className={`cursor-pointer content-center relative bg-brand-100 overflow-hidden p-0 border-0 ${ isSelected ? 'shadow-xl/20' : 'shadow-none' }`}>
+        <Card 
+            onClick={onClick} 
+            className={
+                `cursor-pointer 
+                content-center 
+                relative 
+                bg-brand-100 
+                overflow-hidden 
+                p-0 border-0 
+                ${ isSelected ? 'shadow-xl/20' : 'shadow-none' }
+                hover:bg-gray-800
+                transition-colors 
+                duration-300 
+                ease-in-out
+            `}>
             <CardContent className="p-6 w-full">
                 <div className="flex flex-col">
                     <div className="relative w-32 h-32 max-[390px]:w-20 max-[390px]:h-20 mb-4">
