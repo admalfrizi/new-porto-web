@@ -151,16 +151,34 @@ export const experiences: Experience[] = [
         location: "Salatiga, Indonesia",
         company: "PT Formulatrix Indonesia",
         title: "Internship Program",
-        description: "Contributed to the development of GoJek's mobile application, focusing on enhancing user experience and implementing new features using Kotlin and Jetpack Compose.",
+        description: "Proactively resolved critical bugs in a core ERP system by applying rapidly acquired expertise in ASP.NET and SQL. Within an Agile/Scrum framework, I managed the full issue lifecycle using GitLab and OpenProject for end-to-end tracking. This technical role was enhanced by strong liaison capabilities, performing root cause analysis to align solutions with business requirements and collaborating with developers and BAs to validate production-ready releases.",
         technologies: ["Javascript", "C#", "ASP.NET", "Git"]
     },
     {
-        position: "Software Programmer - Intern",
+        position: "Software Programmer Intern",
         period: "Nov 2023 - Oct 2024",
         location: "Semarang, Jawa Tengah",
         company: "UPT Data Informasi UDINUS",
         title: "Internship Program",
-        description: "Internship focused on developing and maintaining university web applications.",
+        description: "Spearheaded development and maintenance for the university's HR (WordPress/Divi) and SIMPEG employee data websites, managing lecturer data for KEMENDIKBUD compliance. I successfully optimized complex MySQL queries, significantly improving retrieval performance for thousands of records. I also provided key administrative support for new student registration (PDMK).",
         technologies: ["Wordpress", "Divi", "PHP", "Codeigniter4", "MySQL", "Git"]
+    },
+    {
+        position: "Mobile Developer Intern",
+        period: "Feb 2023 - Jul 2023",
+        location: "Semarang, Jawa Tengah",
+        company: "Center of Excellence UDINUS",
+        title: "Internship Program",
+        description: "Developed and maintained a reliable Flutter mobile application by collaborating with UI/UX teams to translate business requirements into functional code. I successfully integrated complex AI features via API, implementing a time-series prediction model for waste collection and an intelligent chatbot to answer waste management inquiries.",
+        technologies: ["Flutter", "Firebase", "AI", "Chatbot", "Git"]
+    },
+     {
+        position: "IT Helpdesk Support",
+        period: "Jan 2019 - Mar 2019",
+        location: "Jakarta, Indonesia",
+        company: "PT. Hexaon Business Mitrasindo",
+        title: "Internship Program",
+        description: "Ensured the operational integrity of all computerized facilities by proactively monitoring IT infrastructure and performing rapid maintenance, especially during system outages. I also enhanced system security by identifying and cleansing the email server of suspicious data and potential malware threats to protect employee accounts.",
+        technologies: ["IT Engineering", "Computer Hardware"]
     }
 ]

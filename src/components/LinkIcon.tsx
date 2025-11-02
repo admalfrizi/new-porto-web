@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 export default function LinkIcon() {
     return (
         <>
-            <Button size="icon-lg" className="w-[71px] h-[71px]">
+            <Button size="icon-lg" className="w-[71px] h-[71px] max-[380px]:w-[51px] max-[380px]:h-[51px] max-[380px]:p-1">
                 <Image 
                     src="/icons/linkedin-ic.svg"
                     alt="Blurred background"
@@ -13,7 +13,7 @@ export default function LinkIcon() {
                     objectFit="cover"
                 />
             </Button>
-            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3">
+            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3 max-[380px]:w-[51px] max-[380px]:h-[51px] max-[380px]:p-2">
                 <Image 
                     src="/icons/github_ic.svg"
                     alt="Blurred background"
@@ -22,7 +22,7 @@ export default function LinkIcon() {
                     objectFit="cover"
                 />
             </Button>
-            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3">
+            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3 max-[380px]:w-[51px] max-[380px]:h-[51px] max-[380px]:p-2">
                 <Image 
                     src="/icons/ig_ic.svg"
                     alt="Blurred background"
@@ -31,7 +31,7 @@ export default function LinkIcon() {
                     objectFit="cover"
                 />
             </Button>
-            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3">
+            <Button size="icon-lg" className="w-[71px] h-[71px] p-3 ms-3 max-[380px]:w-[51px] max-[380px]:h-[51px] max-[380px]:p-2">
                 <Image 
                     src="/icons/yt_ic.svg"
                     alt="Blurred background"

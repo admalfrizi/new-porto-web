@@ -9,7 +9,7 @@ interface PortoCardParams {
 export default function PortofolioCard({data} : PortoCardParams)
 {
     return (
-        <Card className="content-center relative h-140 overflow-hidden p-0 rounded-3xl border-0">
+        <Card className="content-center relative h-fit overflow-hidden p-0 rounded-3xl border-0">
             <Image
                 src={data.imgBackground}
                 alt="Blurred background"
