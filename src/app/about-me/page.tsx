@@ -108,20 +108,17 @@ const aboutmePage = () => {
                             <h4 className='font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
                         </div>
                         <p className="text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-relaxed space-y-4">
-                            <span>
-                            Hey, I'm Adam Alfarizi Ismail, an <span className="font-semibold">Software Developer</span> or <span className="font-semibold">Engineer</span> with
+                            <span> Hey, I'm Adam Alfarizi Ismail, an <span className="font-semibold">Software Developer</span> or <span className="font-semibold">Engineer</span> with
                             1.5 years experience built from internship work which provided a
                             strong fundamentals and analytical thinking to practice a problem
-                            solving in a different scope area of industry.
-                            </span>
+                            solving in a different scope area of industry. </span>
                             <span>
                             My work is specialize in <span className="font-semibold">Mobile Apps</span> with
                             different tech stack such as <span className="font-semibold">native</span> and <span className="font-semibold">multiplatform</span>.
                             In every project, I am responsible for implementing robust and
                             scalable solutions, applying my knowledge of <span className="font-semibold">clean architecture</span> and <span className="font-semibold">SOLID principles</span>.
                             </span>
-                            <span>
-                            Beyond that, I also skilled in <span className="font-semibold">Web Development</span> for both <span className="font-semibold">Frontend</span> and <span className="font-semibold">Backend</span> in
+                            <span> Beyond that, I also skilled in <span className="font-semibold">Web Development</span> for both <span className="font-semibold">Frontend</span> and <span className="font-semibold">Backend</span> in
                             order to fulfill the basic strategy when doing work with API and
                             Website. Being a tech learner not just improve my skills to adapt
                             with industry standard, but also respect the value of the
@@ -155,7 +152,7 @@ const aboutmePage = () => {
                 </div>
                 <div className='w-full mx-auto pt-20'>
                     <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Language and Frameworks</h6>
-                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'>
+                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-x-3 gap-y-6 mt-8'>
                         {
                             skillsData[selectedSkills].langFramerwork.map((lang, idx) => (
                                 <span key={idx} className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
