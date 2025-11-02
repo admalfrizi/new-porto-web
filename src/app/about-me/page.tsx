@@ -3,16 +3,23 @@
 import SkillsType from '@/components/SkillsType';
 import { experiences, skillsData } from '@/data/list_data';
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
 
 const aboutmePage = () => {
     const [selectedSkills, setSelectedSkills] = useState(0);
     const lastIdx = experiences.length - 1;
+    const nextSection = useRef<HTMLDivElement>(null);
+
+    const handleScrollDown = () => {
+        nextSection.current?.scrollIntoView({
+            behavior: 'smooth' // This creates the animation
+        });
+    };
 
     return (
-        <div className="h-screen overflow-y-scroll scrollbar-hide">
+        <div className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
             <section
-                id="aboutme"
                 className="relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between w-full px-5 md:px-24 ">
@@ -26,26 +33,29 @@ const aboutmePage = () => {
                             </p>
                         </div>
                         <button
+                            type='button'
+                            onClick={() => handleScrollDown() }
                             className="
-                            flex
-                            items-center
-                            px-8
-                            py-3
-                            border border-transparent
-                            text-sm
-                            font-bold
-                            rounded-full
-                            text-white
-                            md:py-4 md:text-lg md:px-10
-                            bg-brand-50
-                            hover:bg-gray-800
-                            transition-colors 
-                            duration-300 
-                            ease-in-out
-                            cursor-pointer
+                                flex
+                                items-center
+                                px-8
+                                py-3
+                                w-50
+                                border border-transparent
+                                text-sm
+                                font-bold
+                                rounded-full
+                                text-white
+                                md:py-4 md:text-lg md:px-10
+                                bg-brand-50
+                                hover:bg-gray-800
+                                transition-colors 
+                                duration-300 
+                                ease-in-out
+                                cursor-pointer
                             "
                         >
-                            <a> Scroll Down </a>
+                            <p className='text-center'>Scroll Down</p>
                         </button>      
                     </div>
                     <Image
@@ -57,7 +67,7 @@ const aboutmePage = () => {
                     />
                 </div>
             </section>
-            <div className='h-fit py-10 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
+            <div ref={nextSection} className='h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full pb-10'>
                     <h1 className='mb-3 font-semibold text-4xl text-brand-900'>Who am I?</h1>
                     <div className="w-43 h-1 bg-brand-900 rounded-full"></div>
