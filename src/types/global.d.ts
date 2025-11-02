@@ -1,4 +1,4 @@
-interface Project {
+interface HighlightProject {
     name: string;
     desc: string;
     imgBackground: string;
@@ -29,4 +29,13 @@ interface Experience {
     title: string;
     description: string;
     technologies: string[];
+}
+
+interface MyProjects {
+    projectName: string;
+    imgLink: string;
+    years: string;
+    linkGithub?: string;
+    techStack: string[];
+    desc: string
 }

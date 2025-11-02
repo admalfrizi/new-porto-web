@@ -191,7 +191,7 @@ const aboutmePage = () => {
                                 experiences.map((exp, index) => (
                                     <div key={index} className="relative top-8.5 w-120 flex flex-col items-left">
                                         <div className="w-7 h-7 bg-inside-dot dark:bg-blue-500 rounded-full border-5 border-brand-900"></div>
-                                        <div className={`absolute top-10 ${lastIdx === index ? 'w-8/8' : 'w-7/8'}  text-left text-brand-900 p-5 bg-card-experience dark:bg-gray-800 rounded-lg shadow-lg`}>
+                                        <div className={`absolute top-10 ${lastIdx === index ? 'w-8/8' : 'w-7/8'} cursor-pointer text-left text-brand-900 p-5 bg-card-experience rounded-lg shadow-lg`}>
                                             <div className='flex flex-row justify-between content-center'>
                                                 <span className="text-lg font-bold ">{exp.company}</span>
                                                 <p className='text-[14px] content-center'>{exp.period}</p>

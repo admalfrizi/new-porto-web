@@ -1,4 +1,4 @@
-export const projects : Project[] = [
+export const projects : HighlightProject[] = [
     {
         name: 'Biro SDM Web Profile',
         desc: "This is the official portal for the Human Resources Bureau (BSDM) at Universitas Dian Nuswantoro (UDINUS), serving all lecturers and staff. It provides comprehensive information on recruitment, compensation, benefits, performance, and university policies. Access all administrative services and professional development resources in one central hub.",
