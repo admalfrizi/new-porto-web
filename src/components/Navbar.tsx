@@ -104,7 +104,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                     </button>
                 </div>
                 <div className="flex max-[1024px]:flex-col max-[1024px]:items-start items-center">
-                    <p className="font-light text-brand-900 max-[1024px]:mb-4 md:me-10">Share My Account in Here :</p>
+                    <p className="font-light text-brand-900 max-[1024px]:mb-4 md:me-10">Go to My Account in Here :</p>
                     <div className="flex flex-row">
                         <LinkIcon/>
                     </div>
