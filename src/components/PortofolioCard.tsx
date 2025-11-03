@@ -9,7 +9,7 @@ interface PortoCardParams {
 export default function PortofolioCard({data} : PortoCardParams)
 {
     return (
-        <Card className="content-center relative h-150 overflow-hidden p-0 rounded-3xl border-0">
+        <Card className="content-center relative h-full overflow-hidden p-0 rounded-3xl border-0">
             <Image
                 src={data.imgBackground}
                 alt="Blurred background"
@@ -17,7 +17,7 @@ export default function PortofolioCard({data} : PortoCardParams)
                 objectFit="cover"
                 className="filter scale-115 blur-sm opacity-75" // This blurs the image itself
             />
-            <CardContent className="p-8 bg-gray-900/40 backdrop-blur-sm border-white/10 h-full content-center">
+            <CardContent className="p-8 bg-gray-900/40 backdrop-blur-sm border-white/10 max-[400px]:h-100 h-full content-center">
                 <div
                     className={`
                         flex 
@@ -26,8 +26,8 @@ export default function PortofolioCard({data} : PortoCardParams)
                         lg:flex-row
                         lg:items-center
                         w-full   
-                        rounded-lg 
                         min-h-100
+                        rounded-lg
                         text-white
                         overflow-hidden
                     `}
@@ -35,36 +35,24 @@ export default function PortofolioCard({data} : PortoCardParams)
                     {/* Left Side: Text Content */}
                     <div className="max-w-full lg:w-1/2 pb-5 me-0 md:me-3 text-brand-900">
                         {/* Row 1 */}
-                        <h3 className="text-lg lg:text-2xl font-bold">{data.name}</h3>
-                        <div className="flex flex-col sm:flex-row sm:space-y-5 max-w-full md:justify-start py-3 sm:items-center">
-                            <div className="mt-0 md:mt-4 mr-4 md: me-0">
-                                <h6 className="text-lg lg:text-xl font-medium text-brand-900 ">Tech Stack :</h6>
-                            </div>
-                            <div className="flex space-x-4 pt-2 pb-3 overflow-x-scroll scrollbar-hide sm:overflow-x-clip ">
-                                {
-                                    data.techStack.map((dta, idx) => (
-                                        <div key={idx} className="flex flex-row space-x-4 content-center">
-                                            <div
-                                                className="relative w-8 h-8 md:w-10 md:h-10
-                                                "
-                                            >
-                                                <Image src={dta.icons} alt="" fill objectFit="contain"/>
-                                            </div>
-                                            <p className="content-center">{dta.name}</p>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-                        {/* Row 2 */}
+                        <h3 className="text-lg lg:text-2xl font-bold pb-8">{data.name}</h3>
                         <p className="flex text-base/6 max-lg:line-clamp-4 lg:max-w-full max-sm:text-[12px] max-md:text-[14px] md:text-md lg:text-lg xl:text-xl h-fit">{data.desc}</p>
+                        <div className="flex space-x-2 pt-8 overflow-x-scroll scrollbar-hide sm:overflow-x-clip ">
+                            {
+                                data.techStack.map((dta, idx) => (
+                                    <span key={idx} className='bg-brand-100 px-3 py-2 rounded-lg text-white'>
+                                        <p className="content-center max-[512px]:text-[12px] text-[14px]">{dta}</p>
+                                    </span>
+                                ))
+                            }
+                        </div>
                     </div>
 
                     {/* Right Side: Image */}
                     <div className="md:w-md lg:w-xl xl:w-1/2 ">
                         <img
-                        src={data.imgBackground}
-                        alt={data.name}
+                            src={data.imgBackground}
+                            alt={data.name}
                         />
                     </div>
                 </div>

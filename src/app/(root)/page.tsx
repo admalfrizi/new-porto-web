@@ -147,30 +147,29 @@ const mainPage = () => {
                                 </CarouselItem>
                             )) }
                             <CarouselItem className="basis-full p-2 pl-4 py-2 pr-2">
-                                <Card className="content-center relative h-150 overflow-hidden p-0 rounded-3xl border-0 bg-brand-100">
-                                    <CardContent className="p-8 bg-gray-900/40 backdrop-blur-sm border-white/10 h-full content-center">
+                                <Card className="content-center relative h-full overflow-hidden p-0 rounded-3xl border-0 bg-brand-100">
+                                    <CardContent className="p-8 bg-gray-900/40 backdrop-blur-sm border-white/10 max-[400px]:h-100 h-full content-center">
                                         <div
                                             className={`
-                                                items-center
+                                                content-center
                                                 w-full   
                                                 rounded-lg 
-                                                min-h-100
                                                 text-white
                                                 overflow-hidden
                                             `}
                                         >
-                                            <div className="flex flex-row items-center">
+                                            <div className="flex flex-col lg:flex-row items-center">
                                                 <Image
-                                                    className="rounded-[20px] w-120 md:w-150"
+                                                    className="rounded-[20px] w-100 lg:w-120"
                                                     src="/icons/my_project_ic.svg"
                                                     alt={""}  
                                                     objectFit='contain'
                                                     width={500}
                                                     height={900}                
                                                 />
-                                                <div className="flex flex-row lg:flex-col max-w-full ms-20">
-                                                    <h3 className="text-lg lg:text-4xl font-bold text-brand-900 ">Wan't See More About My Project ?</h3>
-                                                    <p className="text-lg lg:text-xl font-light text-brand-900 mt-4 mb-8 max-w-xl">
+                                                <div className="flex flex-col max-w-full ms-0 max-[380px]:mt-5 lg:ms-20 content-center">
+                                                    <h3 className="text-lg max-[380px]:text-sm lg:text-4xl font-bold text-brand-900 ">Wan't See More About My Project ?</h3>
+                                                    <p className="text-lg max-[512px]:text-sm lg:text-xl font-light text-brand-900 mt-4 mb-8 max-w-xl">
                                                         You can visit the projects page to see all of my projects there, including the details and technologies used.
                                                     </p>
                                                     <Link
@@ -178,10 +177,12 @@ const mainPage = () => {
                                                         className="
                                                         flex
                                                         items-center
+                                                        max-[380px]:w-full
                                                         w-40
                                                         px-8
                                                         py-3
                                                         border border-transparent
+                                                        max-[380px]:text-xs
                                                         text-sm
                                                         font-bold
                                                         rounded-full

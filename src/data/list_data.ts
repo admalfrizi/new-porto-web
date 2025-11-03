@@ -5,16 +5,7 @@ export const projects : HighlightProject[] = [
         imgBackground: "/images/porto/web_1.png",
         imgForeground: "",
         isMobile: false,
-        techStack: [
-            {
-                name: "Wordpress",
-                icons: "/icons/wordpress_ic.svg"
-            },
-            {
-                name: "PHP",
-                icons: "/icons/php_ic.svg"
-            }
-        ],
+        techStack: ["Wordpress", "Divi", "PHP"],
         linkGithub: ""
     },
     {
@@ -23,16 +14,7 @@ export const projects : HighlightProject[] = [
         imgBackground: "/images/porto/web_2.jpg",
         imgForeground: "",
         isMobile: false,
-        techStack: [
-            {
-                name: "Codeigniter 4",
-                icons: "/icons/ci_ic.svg"
-            },
-            {
-                name: "PHP",
-                icons: "/icons/php_ic.svg"
-            }
-        ],
+        techStack: ["Codeigniter4", "PHP", "MySQL"],
         linkGithub: ""
     }
 ]

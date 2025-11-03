@@ -4,7 +4,7 @@ interface HighlightProject {
     imgBackground: string;
     imgForeground: string;
     isMobile: boolean;
-    techStack: TechStacks[];
+    techStack: string[];
     linkGithub: string;
 }
 
