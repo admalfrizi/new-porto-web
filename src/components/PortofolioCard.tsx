@@ -3,13 +3,13 @@ import { Card, CardContent } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 interface PortoCardParams {
-    data: Project
+    data: HighlightProject
 }
 
 export default function PortofolioCard({data} : PortoCardParams)
 {
     return (
-        <Card className="content-center relative h-fit overflow-hidden p-0 rounded-3xl border-0">
+        <Card className="content-center relative h-150 overflow-hidden p-0 rounded-3xl border-0">
             <Image
                 src={data.imgBackground}
                 alt="Blurred background"
