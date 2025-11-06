@@ -1,7 +1,7 @@
 export const mobileApps : MyProjects[] = [
     {
         projectName: "Simpenpass Mobile Apps",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/mobile_apps/mobile_1.jpg",
         years: "2024 - 2025",
         techStack: ["Kotlin", "KMP", "Multiplatform", "Android", "MVVM", "Koin DI"],
         linkGithub: "",
@@ -9,9 +9,41 @@ export const mobileApps : MyProjects[] = [
     },
     {
         projectName: "Wastetrack+ Apps",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/mobile_apps/mobile_2.jpg",
         years: "2023",
         techStack: ["Flutter", "Firebase", "Django", "API"],
+        linkGithub: "",
+        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+    },
+    {
+        projectName: "Mock Gocar User Online Apps",
+        imgLink: "/images/porto/list_data/mobile_apps/porto_8.jpg",
+        years: "2023",
+        techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
+        linkGithub: "",
+        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+    },
+    {
+        projectName: "Mock Gocar Driver Online Apps",
+        imgLink: "/images/porto/list_data/mobile_apps/porto_7.jpg",
+        years: "2023",
+        techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
+        linkGithub: "",
+        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+    },
+    {
+        projectName: "Foody List Android Apps",
+        imgLink: "/images/porto/list_data/mobile_apps/porto_9.jpg",
+        years: "2023",
+        techStack: ["Kotlin", "MVVM", "XML", "Dependency Injection", "Clean Code Architecture"],
+        linkGithub: "",
+        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+    },
+    {
+        projectName: "Chat Apps Encryption",
+        imgLink: "/images/porto/list_data/mobile_apps/porto_6.jpg",
+        years: "2022",
+        techStack: ["Java", "Kotlin", "Firebase"],
         linkGithub: "",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     }
@@ -20,7 +52,7 @@ export const mobileApps : MyProjects[] = [
 export const webApps : MyProjects[] = [
     {
         projectName: "Biro SDM Profil Web",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/web_apps/biro_sdm_udinus.jpg",
         years: "2023",
         techStack: ["Wordpress", "Divi", "PHP"],
         linkGithub: "",
@@ -28,7 +60,7 @@ export const webApps : MyProjects[] = [
     },
     {
         projectName: "NeoSimpeg UDINUS",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/web_apps/simpeg_udinus.jpg",
         years: "2024",
         techStack: ["Codeigniter4", "PHP", "MySQL", "jQuery", "Bootstrap"],
         linkGithub: "",
@@ -36,7 +68,7 @@ export const webApps : MyProjects[] = [
     },
     {
         projectName: "SimpenPass Backend API",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/web_apps/simpenpass_backend.jpg",
         years: "2024 - 2025",
         techStack: ["Laravel", "PHP", "MySQL"],
         linkGithub: "",
@@ -44,7 +76,7 @@ export const webApps : MyProjects[] = [
     },
     {
         projectName: "Old Portofolio Website",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/web_apps/my_personal_web.jpg",
         years: "2022",
         techStack: ["VueJS", "CSS", "TailwindCSS"],
         linkGithub: "",
@@ -52,7 +84,7 @@ export const webApps : MyProjects[] = [
     },
     {
         projectName: "Dashboard CRUD Laravel",
-        imgLink: "",
+        imgLink: "/images/porto/list_data/web_apps/crud_api_laravel.jpg",
         years: "2023",
         techStack: ["Laravel", "Livewire", "PHP", "MySQL"],
         linkGithub: "",

@@ -40,7 +40,7 @@ export default function CardProjects({data} : CardProjectsProps)
                 <div className='flex flex-col lg:flex-row'>
                     <div className="relative w-3/6 max-[1024px]:w-full aspect-video"> 
                         <Image
-                            src="/images/first_image.jpg"
+                            src={data.imgLink}
                             alt="A descriptive alt text"
                             fill
                             className="object-cover max-lg:rounded-t-xl lg:rounded-l-lg" // Fills the container, cropping if needed

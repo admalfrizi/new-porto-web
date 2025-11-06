@@ -17,8 +17,6 @@ export default function ProjectsPage()
     const nextSection = useRef<HTMLDivElement>(null);
     const [activeCategory, setActiveCategory] = useState(0);
 
-
-    
     const handleScrollDown = () => {
         nextSection.current?.scrollIntoView({
             behavior: 'smooth'
