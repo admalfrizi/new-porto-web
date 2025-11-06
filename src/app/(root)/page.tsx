@@ -88,7 +88,7 @@ const mainPage = () => {
             >
                 <div className="flex flex-col-reverse md:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 sm:mr-20 xl:mr-0">
-                        <h1 className="text-3xl md:text-6xl font-bold font-main">
+                        <h1 className="max-lg:text-5xl max-lg:leading-16 lg:text-6xl font-bold font-main line-clamp-2">
                             Want to more about me ?
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
@@ -122,7 +122,7 @@ const mainPage = () => {
                         </Link>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-60 lg:w-auto"
+                        className="rounded-[20px] mb-5 xl:mb-0 max-[890px]:w-70 max-[1024px]:w-80 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
@@ -148,13 +148,37 @@ const mainPage = () => {
                                     <PortofolioCard data={data} />
                                 </CarouselItem>
                             )) }
-                            <CarouselItem className="p-2 pl-4 py-2 pr-2">
-                                <CardMoreInfo />
-                            </CarouselItem>
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
+                    <div className="w-full mt-5">
+                         <Link
+                            href="/projects"
+                            className="
+                            flex
+                            items-center
+                            w-fit
+                            px-8
+                            py-3
+                            border border-transparent
+                            max-[400px]:text-[12px]
+                            text-sm
+                            font-bold
+                            rounded-full
+                            text-white
+                            md:py-4 md:text-lg md:px-10
+                            bg-brand-100
+                            hover:bg-gray-800
+                            transition-colors 
+                            duration-300 
+                            ease-in-out
+                            cursor-pointer
+                            "
+                        >
+                            Find More My Projects...
+                        </Link>      
+                    </div>
                 </div>    
             </section>
             <section

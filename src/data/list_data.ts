@@ -16,6 +16,24 @@ export const projects : HighlightProject[] = [
         isMobile: false,
         techStack: ["Codeigniter4", "PHP", "MySQL"],
         linkGithub: ""
+    },
+    {
+        name: "SimpenPass Mobile Apps",
+        desc: "Simpenpass is a mobile multiplatform apps for password management system that i created for final project in college thesis and also to redefining my TDD (Test Driven Developement) scope when developing app",
+        imgBackground: "/images/porto/list_data/mobile_apps/mobile_1.jpg",
+        imgForeground: "/images/porto/list_data/mobile_apps/mobile_1.jpg",
+        isMobile: true,
+        techStack: ["Kotlin", "KMP", "Multiplatform", "Android", "MVVM", "Koin DI"],
+        linkGithub: ""
+    },
+    {
+        name: "Wastetrack+ Apps",
+        desc: "Simpenpass is a mobile multiplatform apps for password management system that i created for final project in college thesis and also to redefining my TDD (Test Driven Developement) scope when developing app",
+        imgBackground: "/images/porto/list_data/mobile_apps/mobile_2.jpg",
+        imgForeground: "/images/porto/list_data/mobile_apps/mobile_2.jpg",
+        isMobile: true,
+        techStack: ["Flutter", "Android", "Firebase", "API", "Django"],
+        linkGithub: ""
     }
 ]
 

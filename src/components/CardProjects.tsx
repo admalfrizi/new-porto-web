@@ -33,7 +33,6 @@ const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
 
 export default function CardProjects({data} : CardProjectsProps)
 {
-
     return (
         <Card className='bg-brand-100 rounded-xl border-0 p-0'>
             <CardContent className='px-0'>

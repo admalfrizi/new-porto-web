@@ -4,7 +4,7 @@ export const mobileApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/mobile_apps/mobile_1.jpg",
         years: "2024 - 2025",
         techStack: ["Kotlin", "KMP", "Multiplatform", "Android", "MVVM", "Koin DI"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/EnterprisePasswordManagerApps",
         desc: "Simpenpass is a mobile multiplatform apps for password management system that i created for final project in college thesis and also to redefining my TDD (Test Driven Developement) scope when developing app"
     },
     {
@@ -20,7 +20,7 @@ export const mobileApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/mobile_apps/porto_8.jpg",
         years: "2023",
         techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/gocar_apps_like_flutter",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     },
     {
@@ -28,7 +28,7 @@ export const mobileApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/mobile_apps/porto_7.jpg",
         years: "2023",
         techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/gocar_driver_apps_like_flutter",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     },
     {
@@ -36,7 +36,7 @@ export const mobileApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/mobile_apps/porto_9.jpg",
         years: "2023",
         techStack: ["Kotlin", "MVVM", "XML", "Dependency Injection", "Clean Code Architecture"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/FoodyApps",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     },
     {
@@ -44,7 +44,7 @@ export const mobileApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/mobile_apps/porto_6.jpg",
         years: "2022",
         techStack: ["Java", "Kotlin", "Firebase"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/ChatAppsEncryption",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     }
 ]
@@ -71,7 +71,7 @@ export const webApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/web_apps/simpenpass_backend.jpg",
         years: "2024 - 2025",
         techStack: ["Laravel", "PHP", "MySQL"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/simpenpass-api",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     },
     {
@@ -79,7 +79,7 @@ export const webApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/web_apps/my_personal_web.jpg",
         years: "2022",
         techStack: ["VueJS", "CSS", "TailwindCSS"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/my-portofolio-web",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     },
     {
@@ -87,7 +87,7 @@ export const webApps : MyProjects[] = [
         imgLink: "/images/porto/list_data/web_apps/crud_api_laravel.jpg",
         years: "2023",
         techStack: ["Laravel", "Livewire", "PHP", "MySQL"],
-        linkGithub: "",
+        linkGithub: "https://github.com/admalfrizi/DashboardAdminForAppkuApps",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     }
 ]
