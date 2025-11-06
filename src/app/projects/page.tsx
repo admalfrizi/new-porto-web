@@ -1,11 +1,23 @@
 "use client";
 
+import CardProjects from '@/components/CardProjects';
+import { Card, CardContent } from '@/components/ui/card';
+import { mobileApps, webApps } from '@/data/projects_data';
 import Image from 'next/image';
-import { useRef } from 'react';
+import Link from 'next/link';
+import { useRef, useState } from 'react';
+
+const projectCategory = [
+    "Mobile Apps",
+    "Website"
+]
 
 export default function ProjectsPage() 
 {
     const nextSection = useRef<HTMLDivElement>(null);
+    const [activeCategory, setActiveCategory] = useState(0);
+
+
     
     const handleScrollDown = () => {
         nextSection.current?.scrollIntoView({
@@ -80,12 +92,32 @@ export default function ProjectsPage()
                     <div className="w-47 h-1 bg-brand-900 rounded-full"></div>
                 </div>
                 <div className='max-w-full flex justify-start gap-3'>
-                    <span className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
-                        Mobile Apps
-                    </span>
-                    <span className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
-                        Website
-                    </span>
+                    {
+                        projectCategory.map((catData, idx) => (
+                            <span 
+                                onClick={() => setActiveCategory(idx)}
+                                key={idx} 
+                                className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
+                                px-3 py-3 rounded-lg border-1 
+                                border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
+                            >
+                                {catData}
+                            </span>
+                        ))
+                    }
+                </div>
+                <div className='flex flex-col space-y-8 w-full mt-10'>
+                    {
+                        activeCategory === 0 
+                            ?  
+                            mobileApps.map((data, index) => (
+                                <CardProjects key={index} data={data} />
+                            ))
+                            :
+                            webApps.map((data, index) => (
+                                <CardProjects key={index} data={data} />
+                            ))
+                    }
                 </div>
             </div>
         </div>

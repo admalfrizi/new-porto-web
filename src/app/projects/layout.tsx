@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export const metadata = {
-  title: "AAI Web |Projects",
+  title: "AAI Web | Projects",
 };
 
 const ProjectsLayout = ({children}: {children: ReactNode}) => {
