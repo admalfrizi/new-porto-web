@@ -3,6 +3,9 @@
 import SkillsType from '@/components/SkillsType';
 import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
@@ -11,6 +14,7 @@ const aboutmePage = () => {
     const [selectedSkills, setSelectedSkills] = useState(0);
     const lastIdx = experiences.length - 1;
     const nextSection = useRef<HTMLDivElement>(null);
+    const mainContainer = useRef(null);
 
     const handleScrollDown = () => {
         nextSection.current?.scrollIntoView({
@@ -18,18 +22,94 @@ const aboutmePage = () => {
         });
     };
 
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger, SplitText)
+        
+        const topSection = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".topSection", 
+                scroller: mainContainer.current,
+                start: "top 50%",
+                end: "bottom top",
+                toggleActions: "restart none restart none",
+                onEnter: () => {
+                    SplitText.create(".subtitle-am", { 
+                        type: "words,lines",
+                        linesClass: "line",
+                        autoSplit: true,
+                        mask: "lines",
+                        onSplit: (self) => {
+                            gsap.from(self.lines, {
+                                duration: 2,
+                                yPercent: -100,
+                                opacity: 0,
+                                stagger: 0.1,
+                                ease: "expo.out",
+                                onComplete: () => self.revert()
+                            });
+                        }
+                    });
+                },
+                onEnterBack: () => {
+                    SplitText.create(".subtitle-am", { 
+                        type: "words,lines",
+                        linesClass: "line",
+                        autoSplit: true,
+                        mask: "lines",
+                        onSplit: (self) => {
+                            gsap.from(self.lines, {
+                                duration: 2,
+                                yPercent: -100,
+                                opacity: 0,
+                                stagger: 0.1,
+                                ease: "expo.out",
+                                onComplete: () => self.revert()
+                            });
+                        }
+                    });
+                }
+            }
+        })
+
+        const mainSection = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".mainSection", 
+                scroller: mainContainer.current,
+                start: "top 50%",
+                end: "bottom top",
+                toggleActions: "restart none restart none",
+            }
+        })
+
+        topSection
+            .from(".title-am",{
+                opacity: 0,
+                y: -60,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            })
+            .from(".scrolldown-btn-am",{
+                opacity: 0,
+                x: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+    })
+
     return (
-        <div className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
+        <div ref={mainContainer} className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
             <section
-                className="relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
+                className="topSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
-                        <h1 className="text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] md:text-6xl font-bold font-main">
+                        <h1 className="title-am text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] md:text-6xl font-bold font-main">
                             Want to more about me ?
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
-                            <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] max-[360px]:text-[12px] max-[360px]:line-clamp-2 font-main">
+                            <p className="subtitle-am leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] max-[360px]:text-[12px] max-[360px]:line-clamp-2 font-main">
                                 Curious about my work and experience? My full introduction and project portfolio are just a scroll away
                             </p>
                         </div>
@@ -37,6 +117,7 @@ const aboutmePage = () => {
                             type='button'
                             onClick={() => handleScrollDown() }
                             className="
+                                scrolldown-btn-am
                                 flex
                                 items-center
                                 px-8
@@ -67,7 +148,7 @@ const aboutmePage = () => {
                     />
                 </div>
             </section>
-            <div ref={nextSection} className='h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
+            <div ref={nextSection} className='mainSection h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full pb-10'>
                     <h1 className='mb-3 font-semibold text-4xl text-brand-900'>Who am I?</h1>
                     <div className="w-43 h-1 bg-brand-900 rounded-full"></div>

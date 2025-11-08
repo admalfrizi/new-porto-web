@@ -51,8 +51,7 @@ export default function mainPage() {
                                 opacity: 0,
                                 stagger: 0.1,
                                 ease: "expo.out",
-                                // 3. THIS IS THE CRITICAL ADDITION
-                                onComplete: () => self.revert() // Clean up when done
+                                onComplete: () => self.revert()
                             });
                         }
                     });
@@ -70,8 +69,7 @@ export default function mainPage() {
                                 opacity: 0,
                                 stagger: 0.1,
                                 ease: "expo.out",
-                                // 3. THIS IS THE CRITICAL ADDITION
-                                onComplete: () => self.revert() // Clean up when done
+                                onComplete: () => self.revert()
                             });
                         }
                     });
