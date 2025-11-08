@@ -74,8 +74,8 @@ const aboutmePage = () => {
             scrollTrigger: {
                 trigger: ".mainSection", 
                 scroller: mainContainer.current,
-                start: "top 50%",
-                end: "bottom top",
+                start: 'top 80%', 
+                end: 'bottom 20%',
                 toggleActions: "restart none restart none",
             }
         })
@@ -96,6 +96,13 @@ const aboutmePage = () => {
             .from(".scrolldown-btn-am",{
                 opacity: 0,
                 x: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+            .from(".image-am",{
+                opacity: 0,
+                x: 100,
                 duration: 1,
                 ease: 'power3.inOut',
                 stagger: 0.2,
@@ -129,11 +136,31 @@ const aboutmePage = () => {
                 stagger: 0.2,
             },0)
             .from(descWhoami.lines, {
-                duration: 0.7,
+                duration: 0.4,
                 opacity: 0,
                 y: -50,
                 ease: 'power3.out',
                 stagger: 0.2
+            },0)
+            .from(".whoami-first-image", {
+                opacity: 0,
+                x: -60,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+            .from(".whoami-second-image", {
+                scale: 0,     // Returns to original size
+                duration: 1,
+                transformOrigin: "center center",
+                ease: "power2.inOut"
+            },0)
+            .from(".whoami-third-image", {
+                scale: 0,     // Returns to original size
+                duration: 1,
+                transformOrigin: "center center",
+                ease: "power4.inOut"
             },0)
     })
 
@@ -179,7 +206,7 @@ const aboutmePage = () => {
                         </button>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[768px]:w-65 lg:w-auto"
+                        className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[768px]:w-65 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
@@ -194,7 +221,7 @@ const aboutmePage = () => {
                 </div>
                 <div className='flex flex-col lg:flex-row justify-between pb-9 w-full'>
                     <div className="relative w-full h-96 md:w-136 md:h-80 lg:w-136 lg:h-126 md:me-10">
-                        <div className="absolute top-0 left-0 w-3/4 h-3/5 max-[375px]:w-4/5 max-[375px]:h-2/5">
+                        <div className="whoami-first-image absolute top-0 left-0 w-3/4 h-3/5 max-[375px]:w-4/5 max-[375px]:h-2/5">
                             <Image 
                                 src="/images/first.png" 
                                 alt="Adam Alfirizi Ismail 1"
@@ -202,15 +229,15 @@ const aboutmePage = () => {
                                 fill
                             />
                         </div>
-                        <div className="absolute top-4 md:top-8 right-0 w-2/5 h-3/5 max-[375px]:h-2/4 max-[375px]:top-8">
+                        <div className="whoami-second-image absolute top-4 md:top-8 right-0 w-2/5 h-3/5 max-[375px]:h-2/4 max-[375px]:top-8">
                             <Image 
                                 src="/images/second.JPG"  
-                                alt="Adam Alfirizi Ismail 3"
+                                alt="Adam Alfirizi Ismail 2"
                                 className="object-cover rounded-lg w-full h-full shadow-lg"
                                 fill
                             />
                         </div>
-                        <div className="absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5 max-[375px]:h-2/4 max-[375px]:bottom-18">
+                        <div className="whoami-third-image absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5 max-[375px]:h-2/4 max-[375px]:bottom-18">
                             <Image 
                                 src="/images/third.JPG"  
                                 alt="Adam Alfirizi Ismail 3"
