@@ -43,6 +43,26 @@ export default function RootSection()
             }
         });
 
+        const techStackTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#techstack", 
+                scroller: mainContainer.current,
+                start: "top 50%",
+                end: "bottom top",
+                toggleActions: "restart none restart none",
+            }
+        });
+
+        const letsConnectTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#letsConnect", 
+                scroller: mainContainer.current,
+                start: "top 50%",
+                end: "bottom top",
+                toggleActions: "restart none restart none",
+            }
+        });
+
         heroTimeline.from(".title-hero", { 
             opacity: 0,
             x: -100,
@@ -60,14 +80,14 @@ export default function RootSection()
         .from(".desc-hero", {
             opacity: 0,
             x: 100,
-            duration: 1,
+            duration: 2,
             ease: 'elastic',
             stagger: 0.2,
         }, 0)
         .from(".btn-hero", {
             opacity: 0,
             y: 60,
-            duration: 1,
+            duration: 1.5,
             ease: 'power2.out',
             stagger: 0.2,
         }, 0)
@@ -86,6 +106,47 @@ export default function RootSection()
                 toggleActions: "restart none restart none",
             }
         });
+
+        gsap.from(".project-animation", {
+            opacity: 0,
+            y: -100,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: "#projects",
+                scroller: mainContainer.current,
+                start: 'top 80%', 
+                end: 'bottom 20%',
+                toggleActions: "restart none restart none",
+            }
+        });
+
+        techStackTl
+            .from(".title-ts", {
+                opacity: 0,
+                y: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            })
+            .from(".icon-ts", {
+                opacity: 0,
+                y: -60,
+                duration: 1,
+                ease: 'back.inOut',
+                stagger: 0.2,
+            },0)
+        
+        letsConnectTl
+            .from(".title-ls",{
+                opacity: 0,
+                y: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            })
+
     }, { scope: mainContainer });
     
     return (
@@ -199,11 +260,11 @@ export default function RootSection()
             >
                 <div className="px-20 md:my-10 md:px-24 mx-auto flex flex-col w-full">
                     <div className="content-center pb-8">
-                        <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
+                        <h1 className="project-animation text-3xl text-center text-white md:text-5xl font-semibold font-main">
                             My Projects
                         </h1>
                     </div>
-                    <Carousel className="w-full mx-auto">
+                    <Carousel className="project-animation w-full mx-auto">
                         <CarouselContent className="h-full">
                             { projects.map((data,idx) => (
                                 <CarouselItem key={idx} className="basis-full p-2 pl-4 py-2 pr-2">
@@ -249,14 +310,14 @@ export default function RootSection()
             >
                 <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
                     <div className="content-center pb-10 lg:pb-30">
-                        <h1 className="text-3xl text-center text-white md:text-5xl font-semibold font-main">
+                        <h1 className="title-ts text-3xl text-center text-white md:text-5xl font-semibold font-main">
                              Tech Stack
                         </h1>
                     </div>
                     <div className="max-w-full mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-10 gap-x-6">
                         {
                             techStack.map((data, idx) => (
-                                <div key={idx} className="flex flex-col items-center justify-center gap-2">
+                                <div key={idx} className="icon-ts flex flex-col items-center justify-center gap-2">
                                     <div className="relative w-12 h-12 max-[440px]:w-10 max-[440px]:h-10 md:w-16 md:h-16 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
                                         <Image src={data.icons} alt="fwfqw" fill objectFit="contain"/>
                                     </div>
@@ -273,7 +334,7 @@ export default function RootSection()
             >
                 <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
-                        <h1 className="text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
+                        <h1 className="title-ls text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
                             Let’s connect with me.
                         </h1>
                         <div className="max-w-full lg:max-w-2xl mt-10">
