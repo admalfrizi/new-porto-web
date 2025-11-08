@@ -14,7 +14,7 @@ export default function LinkIcon() {
                         alt="Blurred background"
                         width={60}
                         height={60}
-                        objectFit="cover"
+                        className="object-cover"
                     />
                 </a>
             </Button>
@@ -25,7 +25,7 @@ export default function LinkIcon() {
                         alt="Blurred background"
                         width={60}
                         height={60}
-                        objectFit="cover"
+                        className="object-cover"
                     />
                 </a>
             </Button>
@@ -36,7 +36,7 @@ export default function LinkIcon() {
                         alt="Blurred background"
                         width={60}
                         height={60}
-                        objectFit="cover"
+                        className="object-cover"
                     />
                 </a>
                 
@@ -48,7 +48,7 @@ export default function LinkIcon() {
                         alt="Blurred background"
                         width={60}
                         height={60}
-                        objectFit="cover"
+                        className="object-cover"
                     />
                 </a>
                 

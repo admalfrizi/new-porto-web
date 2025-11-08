@@ -31,7 +31,7 @@ export default function SkillsType({icons, skillName, skillDesc, isSelected, onC
             <CardContent className="p-6 w-full">
                 <div className="flex flex-col">
                     <div className="relative w-32 h-32 max-[390px]:w-20 max-[390px]:h-20 mb-4">
-                        <Image src={icons} alt={""} fill objectFit="contain"/>
+                        <Image src={icons} alt={""} className="object-contain" fill/>
                     </div>
                     <div className="max-w-50">
                         <h3 className="text-3xl line-clamp-1 max-[555px]:text-sm font-bold mb-2 text-brand-900">{skillName}</h3>

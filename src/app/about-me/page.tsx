@@ -7,7 +7,6 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef, useState } from 'react';
 
 const aboutmePage = () => {
@@ -81,6 +80,11 @@ const aboutmePage = () => {
             }
         })
 
+        const descWhoami = new SplitText(".whoami-desc", { 
+            type: "words,lines",
+            linesClass: "line",
+        });
+
         topSection
             .from(".title-am",{
                 opacity: 0,
@@ -95,6 +99,41 @@ const aboutmePage = () => {
                 duration: 1,
                 ease: 'power3.inOut',
                 stagger: 0.2,
+            },0)
+        
+        mainSection
+            .from(".whoamiTitle", 
+                {
+                    opacity: 0,
+                    y: -60,
+                    duration: 1.4,
+                    delay: 0.2,
+                    ease: 'power3.out',
+                    stagger: 0.2,
+                },0
+            )
+            .from(".line-animated",
+                {
+                    scaleX: 0,
+                    duration: 1.5,
+                    ease: 'power3.out',
+                    transformOrigin: 'left center',
+                },0
+            )
+            .from(".whoami-about-me", {
+                opacity: 0,
+                x: 60,
+                duration: 1,
+                delay: 0.2,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+            .from(descWhoami.lines, {
+                duration: 0.7,
+                opacity: 0,
+                y: -50,
+                ease: 'power3.out',
+                stagger: 0.2
             },0)
     })
 
@@ -150,8 +189,8 @@ const aboutmePage = () => {
             </section>
             <div ref={nextSection} className='mainSection h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full pb-10'>
-                    <h1 className='mb-3 font-semibold text-4xl text-brand-900'>Who am I?</h1>
-                    <div className="w-43 h-1 bg-brand-900 rounded-full"></div>
+                    <h1 className='whoamiTitle mb-3 font-semibold text-4xl text-brand-900'>Who am I?</h1>
+                    <div className="line-animated w-43 h-1 bg-brand-900 rounded-full"></div>
                 </div>
                 <div className='flex flex-col lg:flex-row justify-between pb-9 w-full'>
                     <div className="relative w-full h-96 md:w-136 md:h-80 lg:w-136 lg:h-126 md:me-10">
@@ -159,8 +198,7 @@ const aboutmePage = () => {
                             <Image 
                                 src="/images/first.png" 
                                 alt="Adam Alfirizi Ismail 1"
-                                className="rounded-lg w-full h-full shadow-lg"
-                                objectFit='cover'
+                                className="object-cover rounded-lg w-full h-full shadow-lg"
                                 fill
                             />
                         </div>
@@ -168,8 +206,7 @@ const aboutmePage = () => {
                             <Image 
                                 src="/images/second.JPG"  
                                 alt="Adam Alfirizi Ismail 3"
-                                className="rounded-lg w-full h-full shadow-lg"
-                                objectFit='cover'
+                                className="object-cover rounded-lg w-full h-full shadow-lg"
                                 fill
                             />
                         </div>
@@ -177,8 +214,7 @@ const aboutmePage = () => {
                             <Image 
                                 src="/images/third.JPG"  
                                 alt="Adam Alfirizi Ismail 3"
-                                className="rounded-xl w-full h-full shadow-lg"
-                                objectFit='cover'
+                                className="object-cover rounded-xl w-full h-full shadow-lg"
                                 fill
                             />
                         </div>
@@ -186,9 +222,9 @@ const aboutmePage = () => {
                     </div>
                     <div className='max-w-2xl mt-20 lg:mt-0  max-[375px]:mt-0'>
                         <div className='mb-8'>
-                            <h4 className='font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
+                            <h4 className='whoami-about-me font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
                         </div>
-                        <p className="text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-relaxed space-y-4">
+                        <p className="whoami-desc text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-4 space-y-4">
                             <span> Hey, I'm Adam Alfarizi Ismail, an <span className="font-semibold">Software Developer</span> or <span className="font-semibold">Engineer</span> with
                             1.5 years experience built from internship work which provided a
                             strong fundamentals and analytical thinking to practice a problem
@@ -322,7 +358,6 @@ const aboutmePage = () => {
                                         <Image
                                             src="/images/second_image.jpg"
                                             alt="Secondary image description"
-                                            layout="responsive"
                                             width={300}
                                             height={300}
                                             className="object-cover"
@@ -332,7 +367,6 @@ const aboutmePage = () => {
                                         <Image
                                             src="/images/third_image.jpg"
                                             alt="Secondary image description"
-                                            layout="responsive"
                                             width={300}
                                             height={300}
                                             className="object-cover"
