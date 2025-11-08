@@ -16,7 +16,6 @@ export default function RootSection()
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
-    const boxRef = useRef(null);
     const mainContainer = useRef(null);
 
     React.useEffect(() => {
@@ -33,6 +32,45 @@ export default function RootSection()
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
+
+        const heroTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#main", 
+                scroller: mainContainer.current,
+                start: "top 50%",
+                end: "bottom top",
+                toggleActions: "restart none restart none",
+            }
+        });
+
+        heroTimeline.from(".title-hero", { 
+            opacity: 0,
+            x: -100,
+            duration: 1,
+            ease: 'power3.in',
+            stagger: 0.2,
+        }, 0)
+        .from(".subtitle-hero", {
+            opacity: 0,
+            y: 60, 
+            duration: 1,
+            ease: 'power3.inOut',
+            stagger: 0.2,
+        }, 0)
+        .from(".desc-hero", {
+            opacity: 0,
+            x: 100,
+            duration: 1,
+            ease: 'elastic',
+            stagger: 0.2,
+        }, 0)
+        .from(".btn-hero", {
+            opacity: 0,
+            y: 60,
+            duration: 1,
+            ease: 'power2.out',
+            stagger: 0.2,
+        }, 0)
 
         gsap.from(".about-animation", {
             opacity: 0,
@@ -59,14 +97,14 @@ export default function RootSection()
                 <div className="absolute inset-0 bg-black opacity-30"></div>
                 <div className="flex flex-col justify-center z-10 text-start text-brand-900 w-full">
                     <div className="px-5 md:px-24">
-                        <h1 ref={boxRef} className="text-3xl max-[380px]:text-2xl sm:text-6xl font-bold mb-2 font-main">
+                        <h1 className="title-hero text-3xl max-[380px]:text-2xl sm:text-6xl font-bold mb-2 font-main">
                             Welcome To My Home
                         </h1>
                         <div className="max-w-xl mb-5">
-                            <p className="font-main text-lg sm:text-2xl my-6 max-[380px]:mb-3">
+                            <p className="subtitle-hero font-main text-lg sm:text-2xl my-6 max-[380px]:mb-3">
                                 My Name is <span className="font-semibold">Adam Alfarizi Ismail</span>
                             </p>
-                            <p className="leading-relaxed font-main max-[380px]:text-sm text-lg">
+                            <p className="desc-hero leading-relaxed font-main max-[380px]:text-sm text-lg">
                                 Hey, thanks for reaching my website and let me introduce myself. <span className="font-main"> I’m a tech learner</span>, exploring many things
                                 in the tech industry, especially in 
                                 <span className="font-main font-semibold"> Software Development</span>. My skills
@@ -79,24 +117,25 @@ export default function RootSection()
                         </div>
                         <button
                             className="
-                            flex
-                            items-center
-                            px-8
-                            py-3
-                            border border-transparent
-                            text-sm
-                            font-bold
-                            rounded-full
-                            text-white
-                            md:py-4 md:text-lg md:px-10
-                            bg-brand-50
-                            hover:bg-gray-800
-                            transition-colors 
-                            duration-300 
-                            ease-in-out
-                            cursor-pointer
-                            w-[178px]
-                            md:w-[225px]
+                                btn-hero
+                                flex
+                                items-center
+                                px-8
+                                py-3
+                                border border-transparent
+                                text-sm
+                                font-bold
+                                rounded-full
+                                text-white
+                                md:py-4 md:text-lg md:px-10
+                                bg-brand-50
+                                hover:bg-gray-800
+                                transition-colors 
+                                duration-300 
+                                ease-in-out
+                                cursor-pointer
+                                w-[178px]
+                                md:w-[225px]
                             "
                         >
                             <a> Download my CV </a>
@@ -145,7 +184,7 @@ export default function RootSection()
                         </Link>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 max-[890px]:w-70 max-[1024px]:w-80 lg:w-auto"
+                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[890px]:w-70 max-[1024px]:w-80 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
