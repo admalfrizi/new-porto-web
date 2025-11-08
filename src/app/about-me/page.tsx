@@ -70,9 +70,19 @@ const aboutmePage = () => {
             }
         })
 
-        const mainSection = gsap.timeline({
+        const whoamiSection = gsap.timeline({
             scrollTrigger: {
-                trigger: ".mainSection", 
+                trigger: ".whoamiSection", 
+                scroller: mainContainer.current,
+                start: 'top 80%', 
+                end: 'bottom',
+                toggleActions: "restart none restart none",
+            }
+        })
+
+        const skillsTechSection = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".skillsTechSection", 
                 scroller: mainContainer.current,
                 start: 'top 80%', 
                 end: 'bottom 20%',
@@ -108,7 +118,7 @@ const aboutmePage = () => {
                 stagger: 0.2,
             },0)
         
-        mainSection
+        whoamiSection
             .from(".whoamiTitle", 
                 {
                     opacity: 0,
@@ -151,16 +161,32 @@ const aboutmePage = () => {
                 stagger: 0.2,
             },0)
             .from(".whoami-second-image", {
-                scale: 0,     // Returns to original size
+                scale: 0,
                 duration: 1,
                 transformOrigin: "center center",
                 ease: "power2.inOut"
-            },0)
+            },0.5)
             .from(".whoami-third-image", {
-                scale: 0,     // Returns to original size
+                scale: 0,
                 duration: 1,
                 transformOrigin: "center center",
                 ease: "power4.inOut"
+            },0.5)
+    
+        skillsTechSection
+            .from(".title-st", {
+                opacity: 0,
+                y: -60,
+                duration: 1.4,
+                delay: 0.2,
+                ease: 'power3.out',
+                stagger: 0.2,
+            }).from(".span-ts", {
+                opacity: 0,
+                x: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
             },0)
     })
 
@@ -214,7 +240,7 @@ const aboutmePage = () => {
                     />
                 </div>
             </section>
-            <div ref={nextSection} className='mainSection h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
+            <div ref={nextSection} className='whoamiSection h-fit pt-20 px-5 md:px-24 flex flex-col items-center justify-space-between bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full pb-10'>
                     <h1 className='whoamiTitle mb-3 font-semibold text-4xl text-brand-900'>Who am I?</h1>
                     <div className="line-animated w-43 h-1 bg-brand-900 rounded-full"></div>
@@ -273,9 +299,9 @@ const aboutmePage = () => {
                     
                 </div>
             </div>
-            <div className='h-fit px-5 md:px-24 py-20 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+            <div className='skillsTechSection h-fit px-5 md:px-24 py-20 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
-                    <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Skills and Tech Stack</h1>
+                    <h1 className='title-st mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Skills and Tech Stack</h1>
                     <div className="w-84 max-[380px]:w-70 h-1 bg-brand-900 rounded-full"/>
                 </div>
                 <div className='w-full mx-auto flex justify-center mt-15 max-[447px]:mx-3'>
@@ -299,7 +325,7 @@ const aboutmePage = () => {
                     <div className='max-w-full mx-auto flex flex-wrap justify-center gap-x-3 gap-y-6 mt-8'>
                         {
                             skillsData[selectedSkills].langFramerwork.map((lang, idx) => (
-                                <span key={idx} className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
+                                <span key={idx} className='span-ts bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
                                     {lang}
                                 </span>
                             ))
@@ -311,7 +337,7 @@ const aboutmePage = () => {
                     <div className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'>
                         {
                             skillsData[selectedSkills].tools.map((lang, idx) => (
-                                <span key={idx} className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
+                                <span key={idx} className='span-ts bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
                                     {lang}
                                 </span>
                             ))
