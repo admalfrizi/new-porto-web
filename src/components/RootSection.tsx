@@ -139,13 +139,48 @@ export default function RootSection()
             },0)
         
         letsConnectTl
-            .from(".title-ls",{
+            .from(".title-lc",{
                 opacity: 0,
                 y: -100,
                 duration: 1,
                 ease: 'power3.inOut',
                 stagger: 0.2,
             })
+            .from(".desc-lc",{
+                opacity: 0,
+                x: -100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+             .from(".email-lc",{
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+             .from(".subtitle-lc",{
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+            .from(".icons-lc",{
+                opacity: 0,
+                y: 100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
+            .from(".image-lc",{
+                opacity: 0,
+                x: 100,
+                duration: 1,
+                ease: 'power3.inOut',
+                stagger: 0.2,
+            },0)
 
     }, { scope: mainContainer });
     
@@ -334,32 +369,32 @@ export default function RootSection()
             >
                 <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
-                        <h1 className="title-ls text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
+                        <h1 className="title-lc text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
                             Let’s connect with me.
                         </h1>
-                        <div className="max-w-full lg:max-w-2xl mt-10">
+                        <div className="desc-lc max-w-full lg:max-w-2xl mt-10">
                             <p className="leading-relaxed font-main font-light text-md lg:text-xl">
                                 Let me know if you want to connect with me for business and network purposes, 
                                 or you want to contact to me for work purposes in my email down here :
                             </p>
                         </div>
-                        <div className="max-w-md xl:max-w-xl mt-4">
+                        <div className="email-lc max-w-md xl:max-w-xl mt-4">
                             <p className="leading-relaxed font-main font-semibold text-lg lg:text-lg">
                                 adam.alfarizi.2002@gmail.com
                             </p>
                         </div>
-                        <div className="max-w-md xl:max-w-xl my-4">
+                        <div className="subtitle-lc max-w-md xl:max-w-xl my-4">
                             <p className="leading-relaxed font-main font-light text-md lg:text-xl">
                                 Link For My Contacts :
                             </p>
                         </div>
-                        <div className="flex flex-row">
+                        <div className="icons-lc flex flex-row">
                             <LinkIcon/>
                         </div>
                         
                     </div> 
                     <Image
-                        className="rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
+                        className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
                         src="/images/let's_connect.jpg"
                         alt={""}  
                         objectFit="contain"
