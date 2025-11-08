@@ -30,43 +30,7 @@ const aboutmePage = () => {
                 scroller: mainContainer.current,
                 start: "top 50%",
                 end: "bottom top",
-                toggleActions: "restart none restart none",
-                onEnter: () => {
-                    SplitText.create(".subtitle-am", { 
-                        type: "words,lines",
-                        linesClass: "line",
-                        autoSplit: true,
-                        mask: "lines",
-                        onSplit: (self) => {
-                            gsap.from(self.lines, {
-                                duration: 2,
-                                yPercent: -100,
-                                opacity: 0,
-                                stagger: 0.1,
-                                ease: "expo.out",
-                                onComplete: () => self.revert()
-                            });
-                        }
-                    });
-                },
-                onEnterBack: () => {
-                    SplitText.create(".subtitle-am", { 
-                        type: "words,lines",
-                        linesClass: "line",
-                        autoSplit: true,
-                        mask: "lines",
-                        onSplit: (self) => {
-                            gsap.from(self.lines, {
-                                duration: 2,
-                                yPercent: -100,
-                                opacity: 0,
-                                stagger: 0.1,
-                                ease: "expo.out",
-                                onComplete: () => self.revert()
-                            });
-                        }
-                    });
-                }
+                toggleActions: "restart none restart none"
             }
         })
 
@@ -77,6 +41,36 @@ const aboutmePage = () => {
                 start: 'top 80%', 
                 end: 'bottom',
                 toggleActions: "restart none restart none",
+                onEnter: () => { new SplitText(".whoami-desc", { 
+                    type: "words,lines",
+                    autoSplit: true,
+                    linesClass: "line",
+                    mask: "words",
+                    onSplit: (self) => {
+                        gsap.from(self.lines, {
+                            duration: 0.6,
+                            yPercent: 100,
+                            opacity: 0,
+                            stagger: 0.1,
+                            ease: "expo.out",
+                        });
+                    }
+                })},
+                onEnterBack: () => { new SplitText(".whoami-desc", { 
+                    type: "words,lines",
+                    linesClass: "line",
+                    autoSplit: true,
+                    mask: "words",
+                    onSplit: (self) => {
+                        gsap.from(self.lines, {
+                            duration: 0.6,
+                            yPercent: 100,
+                            opacity: 0,
+                            stagger: 0.1,
+                            ease: "expo.out",
+                        });
+                    }
+                }) }
             }
         })
 
@@ -90,26 +84,28 @@ const aboutmePage = () => {
             }
         })
 
-        const descWhoami = new SplitText(".whoami-desc", { 
-            type: "words,lines",
-            linesClass: "line",
-        });
-
         topSection
             .from(".title-am",{
                 opacity: 0,
                 y: -60,
                 duration: 1,
+                ease: 'power3.in',
+                stagger: 0.2,
+            },0)
+            .from(".subtitle-am", {
+                opacity: 0,
+                x: -100,
+                duration: 1,
                 ease: 'power3.inOut',
                 stagger: 0.2,
-            })
+            },0.5)
             .from(".scrolldown-btn-am",{
                 opacity: 0,
                 x: -100,
                 duration: 1,
                 ease: 'power3.inOut',
                 stagger: 0.2,
-            },0)
+            },0.7)
             .from(".image-am",{
                 opacity: 0,
                 x: 100,
@@ -145,13 +141,13 @@ const aboutmePage = () => {
                 ease: 'power3.inOut',
                 stagger: 0.2,
             },0)
-            .from(descWhoami.lines, {
-                duration: 0.4,
-                opacity: 0,
-                y: -50,
-                ease: 'power3.out',
-                stagger: 0.2
-            },0)
+            // .from(descWhoami.lines, {
+            //     duration: 0.4,
+            //     opacity: 0,
+            //     y: 60,
+            //     ease: 'power3.out',
+            //     stagger: 0.2
+            // },0)
             .from(".whoami-first-image", {
                 opacity: 0,
                 x: -60,
@@ -277,7 +273,7 @@ const aboutmePage = () => {
                         <div className='mb-8'>
                             <h4 className='whoami-about-me font-semibold text-4xl text-brand-900'>Adam Alfarizi Ismail</h4>
                         </div>
-                        <p className="whoami-desc text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-4 space-y-4">
+                        <p className="whoami-desc text-base font-light md:text-lg lg:text-xl lg:max-w-3xl text-brand-900 leading-6 space-y-4">
                             <span> Hey, I'm Adam Alfarizi Ismail, an <span className="font-semibold">Software Developer</span> or <span className="font-semibold">Engineer</span> with
                             1.5 years experience built from internship work which provided a
                             strong fundamentals and analytical thinking to practice a problem
