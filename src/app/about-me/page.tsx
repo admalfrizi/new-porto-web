@@ -64,9 +64,9 @@ const aboutmePage = () => {
             scrollTrigger: {
                 trigger: ".whoamiSection", 
                 scroller: mainContainer.current,
-                start: 'top 80%', 
-                end: 'bottom top',
-                toggleActions: "restart none restart none",
+                start: "top 100%",
+                end: "bottom 0%",
+                toggleActions: "restart none restart reset",
                 onEnter: () => { new SplitText(".whoami-desc", { 
                     type: "words,lines",
                     autoSplit: true,
@@ -104,8 +104,8 @@ const aboutmePage = () => {
             scrollTrigger: {
                 trigger: ".skillsTechSection", 
                 scroller: mainContainer.current,
-                start: 'top 80%', 
-                end: 'bottom 20%',
+                start: 'top 90%', 
+                end: 'bottom 6%',
                 toggleActions: "restart none restart none",
             }
         })
