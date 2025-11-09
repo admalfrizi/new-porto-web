@@ -1,8 +1,9 @@
+import { Metadata } from 'next';
 import { ReactNode } from 'react';
 
-export const metadata = {
-  title: "AAI Web | About Me",
-};
+export const metadata: Metadata = {
+  title: 'About Me',
+}
 
 const AboutMeLayout = ({children}: {children: ReactNode}) => {
     return (
