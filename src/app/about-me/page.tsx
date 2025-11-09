@@ -39,7 +39,7 @@ const aboutmePage = () => {
                 trigger: ".whoamiSection", 
                 scroller: mainContainer.current,
                 start: 'top 80%', 
-                end: 'bottom',
+                end: 'bottom top',
                 toggleActions: "restart none restart none",
                 onEnter: () => { new SplitText(".whoami-desc", { 
                     type: "words,lines",
@@ -48,7 +48,7 @@ const aboutmePage = () => {
                     mask: "words",
                     onSplit: (self) => {
                         gsap.from(self.lines, {
-                            duration: 0.6,
+                            duration: 2,
                             yPercent: 100,
                             opacity: 0,
                             stagger: 0.1,
@@ -63,7 +63,7 @@ const aboutmePage = () => {
                     mask: "words",
                     onSplit: (self) => {
                         gsap.from(self.lines, {
-                            duration: 0.6,
+                            duration: 2,
                             yPercent: 100,
                             opacity: 0,
                             stagger: 0.1,
