@@ -75,10 +75,9 @@ export default function ProjectsPage()
                         </button>      
                     </div>
                     <Image
-                        className="rounded-[20px] mb-5 w-120 md:w-150"
+                        className="object-contain rounded-[20px] mb-5 w-120 md:w-150"
                         src="/icons/my_project_ic.svg"
-                        alt={""}  
-                        objectFit='contain'
+                        alt={""}
                         width={500}
                         height={900}                
                     />
