@@ -4,10 +4,36 @@ import SkillsType from '@/components/SkillsType';
 import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
 import { useGSAP } from '@gsap/react';
+import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
+
+const containerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.2, // Make the fade-out quick
+    },
+  },
+};
+
+const pillAnimation = {
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: 20 },
+    transition: { duration: 0.2 }
+};
 
 const aboutmePage = () => {
     const [selectedSkills, setSelectedSkills] = useState(0);
@@ -177,13 +203,14 @@ const aboutmePage = () => {
                 delay: 0.2,
                 ease: 'power3.out',
                 stagger: 0.2,
-            }).from(".span-ts", {
-                opacity: 0,
-                x: -100,
-                duration: 1,
-                ease: 'power3.inOut',
-                stagger: 0.2,
-            },0)
+            })
+            // .from(".span-ts", {
+            //     opacity: 0,
+            //     x: -100,
+            //     duration: 1,
+            //     ease: 'power3.inOut',
+            //     stagger: 0.2,
+            // },0)
     })
 
     return (
@@ -318,15 +345,29 @@ const aboutmePage = () => {
                 </div>
                 <div className='w-full mx-auto pt-20'>
                     <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Language and Frameworks</h6>
-                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-x-3 gap-y-6 mt-8'>
-                        {
-                            skillsData[selectedSkills].langFramerwork.map((lang, idx) => (
-                                <span key={idx} className='span-ts bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
-                                    {lang}
-                                </span>
-                            ))
-                        }
-                    </div>
+                    <AnimatePresence mode='wait'>
+                        <motion.div 
+                            key={selectedSkills} 
+                            className='max-w-full mx-auto flex flex-wrap justify-center gap-x-3 gap-y-6 mt-8'
+                            variants={containerVariants}
+                            initial="initial"
+                            exit="exit"
+                            whileInView="animate"
+                        >
+                            {
+                                skillsData[selectedSkills].langFramerwork.map((lang, idx) => (
+                                    <motion.span 
+                                        key={lang} 
+                                        variants={pillAnimation}
+                                        className='bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'
+                                    >
+                                        {lang}
+                                    </motion.span>
+                                ))
+                            }
+                        </motion.div>
+                    </AnimatePresence>
+                    
                 </div>
                 <div className='w-full mx-auto pt-10'>
                     <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Tools Apps</h6>
