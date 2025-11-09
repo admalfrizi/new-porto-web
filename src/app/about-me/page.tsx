@@ -23,7 +23,7 @@ const containerVariants = {
   exit: {
     opacity: 0,
     transition: {
-      duration: 0.2, // Make the fade-out quick
+      duration: 0.2,
     },
   },
 };
@@ -204,13 +204,6 @@ const aboutmePage = () => {
                 ease: 'power3.out',
                 stagger: 0.2,
             })
-            // .from(".span-ts", {
-            //     opacity: 0,
-            //     x: -100,
-            //     duration: 1,
-            //     ease: 'power3.inOut',
-            //     stagger: 0.2,
-            // },0)
     })
 
     return (
@@ -371,15 +364,29 @@ const aboutmePage = () => {
                 </div>
                 <div className='w-full mx-auto pt-10'>
                     <h6 className='mb-3 font-medium text-center text-3xl max-[380px]:text-3xl text-brand-900'>Tools Apps</h6>
-                    <div className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'>
-                        {
-                            skillsData[selectedSkills].tools.map((lang, idx) => (
-                                <span key={idx} className='span-ts bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'>
-                                    {lang}
-                                </span>
-                            ))
-                        }
-                    </div>
+                    <AnimatePresence mode='wait'>
+                        <motion.div 
+                            key={selectedSkills} 
+                            variants={containerVariants}
+                            initial="initial"
+                            exit="exit"
+                            whileInView="animate"
+                            className='max-w-full mx-auto flex flex-wrap justify-center gap-3 mt-8'
+                        >
+                            {
+                                skillsData[selectedSkills].tools.map((lang, idx) => (
+                                    <motion.span 
+                                        key={idx}  
+                                        variants={pillAnimation}
+                                        className='span-ts bg-brand-100 px-3 py-3 rounded-lg border-1 border-span text-white'
+                                    >
+                                        {lang}
+                                    </motion.span >
+                                ))
+                            }
+                        </motion.div >
+                    </AnimatePresence>
+                    
                 </div>
             </div>
             <div className='h-130 px-5 md:px-24 py-8 flex flex-col items-center bg-cover bg-brand-50 bg-center'>

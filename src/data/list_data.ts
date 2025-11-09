@@ -140,7 +140,16 @@ export const skillsData: SkillsData[] =
             "HTML",
             "CSS"
         ],
-        tools: ["VSCode", "PgAdmin4", "Visual Studio 2022", "Git", "Docker", "Postman"]
+        tools: [
+            "VSCode", 
+            "PgAdmin4", 
+            "Redis",
+            "Jetbrains", 
+            "Visual Studio 2022", 
+            "Git", 
+            "Docker", 
+            "Postman",
+        ]
     }
 ];
 
