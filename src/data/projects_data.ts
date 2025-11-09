@@ -43,7 +43,7 @@ export const mobileApps : MyProjects[] = [
         projectName: "Chat Apps Encryption",
         imgLink: "/images/porto/list_data/mobile_apps/porto_6.jpg",
         years: "2022",
-        techStack: ["Java", "Kotlin", "Firebase"],
+        techStack: ["Java", "Kotlin", "Firebase", "AES"],
         linkGithub: "https://github.com/admalfrizi/ChatAppsEncryption",
         desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
     }

@@ -174,20 +174,25 @@ export default function ProjectsPage()
                     <h1 className='title-main mb-3 font-semibold text-4xl text-brand-900'>My Projects</h1>
                     <div className="line-title-main w-47 h-1 bg-brand-900 rounded-full"></div>
                 </div>
-                <div className='max-w-full flex justify-start gap-3'>
-                    {
-                        projectCategory.map((catData, idx) => (
-                            <span 
-                                onClick={() => setActiveCategory(idx)}
-                                key={idx} 
-                                className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
-                                px-3 py-3 rounded-lg border-1 
-                                border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
-                            >
-                                {catData}
-                            </span>
-                        ))
-                    }
+                <div className='flex flex-wrap justify-between'>
+                    <div className='max-w-full flex justify-start gap-3'>
+                        {
+                            projectCategory.map((catData, idx) => (
+                                <span 
+                                    onClick={() => setActiveCategory(idx)}
+                                    key={idx} 
+                                    className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
+                                    px-3 py-3 rounded-lg border-1 
+                                    border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
+                                >
+                                    {catData}
+                                </span>
+                            ))
+                        }
+                    </div>
+                    <div className='max-w-lg content-center'>
+                        <h2 className='mb-3 font-main text-2xl text-brand-900'>{ activeCategory === 0 ? mobileApps.length : webApps.length } Project</h2>
+                    </div>
                 </div>
                 <div className='flex flex-col space-y-8 w-full mt-10'>
                     {
