@@ -14,8 +14,7 @@ export default function PortofolioCard({data} : PortoCardParams)
                 src={data.imgBackground}
                 alt="Blurred background"
                 fill
-                objectFit="cover"
-                className="filter scale-115 blur-sm opacity-75"
+                className="filter object-cover scale-115 blur-sm opacity-75"
             />
             <CardContent className="p-8 max-[445px]:p-5 bg-gray-900/40 backdrop-blur-sm border-white/10 max-[400px]:h-100 h-full content-center">
                 <div

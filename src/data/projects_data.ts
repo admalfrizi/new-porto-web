@@ -21,7 +21,15 @@ export const mobileApps : MyProjects[] = [
         years: "2023",
         techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
         linkGithub: "https://github.com/admalfrizi/gocar_apps_like_flutter",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `The apps is developed in purpose to mastering
+                my flutter skills that i learned from udemy course
+                before, this project consist elements of
+                component like uber and gojek apps with some
+                mocking and modication in order to clone the
+                apps design based on udemy course. in other
+                hand the features using google maps to retrieve
+                all location data and functioning for pick up and
+                destination places.`
     },
     {
         projectName: "Mock Gocar Driver Online Apps",

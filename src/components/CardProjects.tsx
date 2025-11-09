@@ -57,15 +57,15 @@ export default function CardProjects({data} : CardProjectsProps)
                             <LinkGithub linkGithub={data.linkGithub}/>
                             
                         </div>
-                        <div className='max-w-xl mt-5 text-brand-900'>
-                            <p className='max-[1024px]:line-clamp-5 max-[400px]:text-[14px] max-sm:text-[16px] max-[768px]:text-[18px] max-[1024px]:text-md lg:text-lg'>
+                        <div className='max-w-full mt-5 text-brand-900'>
+                            <p className='max-[1024px]:line-clamp-5 max-[400px]:text-[14px] max-sm:text-[16px] max-[768px]:text-[18px] max-[1024px]:text-md lg:max-w-xl lg:line-clamp-4 lg:text-lg'>
                                 {data.desc}
                             </p>
                         </div>
                         <div className={`max-w-xl flex flex-wrap space-x-3 gap-y-3 w-full pt-5`}>
                             {
                                 data.techStack.map((tech, idx) => (
-                                    <span key={idx} className='bg-span-experience content-center py-2 w-fit px-7 text-md rounded-lg text-white'>
+                                    <span key={idx} className='bg-span-experience content-center py-2 w-fit px-7 max-[400px]:text-[12px] text-md rounded-lg text-white'>
                                         {tech}
                                     </span>
                                 ))

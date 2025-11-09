@@ -391,7 +391,7 @@ export default function mainPage() {
                             techStack.map((data, idx) => (
                                 <div key={idx} className="icon-ts flex flex-col items-center justify-center gap-2">
                                     <div className="relative w-12 h-12 max-[440px]:w-10 max-[440px]:h-10 md:w-16 md:h-16 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
-                                        <Image src={data.icons} alt="fwfqw" fill objectFit="contain"/>
+                                        <Image src={data.icons} className="object-contain" alt="fwfqw" fill />
                                     </div>
                                     <span className="text-sm text-center text-white md:text-base">{data.name}</span>
                                 </div>
@@ -431,10 +431,9 @@ export default function mainPage() {
                         
                     </div> 
                     <Image
-                        className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
+                        className="image-lc object-contain rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
                         src="/images/let's_connect.jpg"
-                        alt={""}  
-                        objectFit="contain"
+                        alt={""}
                         width={400}  
                         height={600}                
                     />
