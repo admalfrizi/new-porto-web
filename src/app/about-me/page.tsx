@@ -64,8 +64,8 @@ const aboutmePage = () => {
 
         mm.add(
             {
-                isDesktop: `(min-width: 480px)`,
-                isMobile: `(max-width: 480px)`,
+                isDesktop: `(min-width: 768px)`,
+                isMobile: `(max-width: 768px)`,
             },
             (context) => {
                 
@@ -266,7 +266,13 @@ const aboutmePage = () => {
                     ease: 'power3.out',
                     transformOrigin: 'left center',
                 },0
-            ) .from(".dot",{
+            ).from(".dot",{
+                scale: 0,
+                duration: 1,
+                transformOrigin: "center center",
+                ease: "power2.inOut"
+            },0)
+            .from(".experienceCard",{
                 scale: 0,
                 duration: 1,
                 transformOrigin: "center center",
@@ -458,20 +464,20 @@ const aboutmePage = () => {
                     
                 </div>
             </div>
-            <div className='experienceSection h-130 max-[480px]:h-fit px-5 md:px-24 py-8 max-[480px]:py-0 max-[480px]:pt-8 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
+            <div className='experienceSection h-130 max-[768px]:h-fit px-5 md:px-24 py-8 max-[768px]:py-0 max-[768px]:pt-8 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
                 <div className='flex flex-col w-full'>
                     <h1 className='title-xp mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Work Experience</h1>
                     <div className="w-69 max-[380px]:w-58 h-1 bg-brand-900 rounded-full"/>
                 </div>
-                <div className='w-full overflow-x-auto max-[480px]:overflow-y-auto scrollbar-hide py-5 h-full'>
+                <div className='max-[768px]:w-fit min-[768px]:w-full min-[768px]:overflow-x-auto max-[768px]:overflow-y-auto scrollbar-hide py-5 h-full'>
                     <div className="relative inline-flex flex-nowrap min-w-full py-4">
-                        <div className="line-timeline absolute top-4/4 max-[480px]:top-4 max-[480px]:left-2.5 left-0 w-full h-2 max-[480px]:w-2 max-[480px]:h-6/8 bg-brand-900 rounded-full z-0 overflow-hidden"></div>
-                        <div className="relative flex max-[480px]:flex-col justify-between w-fit max-[480px]:w-screen max-[480px]:h-fit z-10">
+                        <div className="line-timeline absolute top-4/4 max-[768px]:top-4 max-[768px]:left-2.5 left-0 w-full h-2 max-[768px]:w-2 max-[768px]:h-6/8 bg-brand-900 rounded-full z-0 overflow-hidden"></div>
+                        <div className="relative flex max-[768px]:flex-col justify-between w-fit max-[768px]:w-screen max-[768px]:h-fit z-10">
                             {
                                 experiences.map((exp, index) => (
-                                    <div key={index} className="relative top-8.5 max-[480px]:top-0 w-120 max-[480px]:h-80 flex flex-col items-left">
+                                    <div key={index} className="relative top-8.5 max-[768px]:top-0 w-120 max-[768px]:h-80 flex flex-col items-left">
                                         <div className="dot w-7 h-7 bg-inside-dot dark:bg-blue-500 rounded-full border-5 border-brand-900"></div>
-                                        <div className={`absolute top-10 max-[480px]:top-0 max-[480px]:left-12 ${lastIdx === index ? 'max-[480px]:h-fit min-[480px]:w-8/8' : 'max-[480px]:h-fit min-[480px]:w-7/8'} cursor-pointer text-left text-brand-900 p-5 bg-card-experience rounded-lg shadow-lg`}>
+                                        <div className={`experienceCard absolute top-10 max-[768px]:top-0 max-[768px]:left-12 ${lastIdx === index ? 'max-[768px]:h-fit min-[768px]:w-8/8' : 'max-[768px]:h-fit min-[768px]:w-7/8'} cursor-pointer text-left text-brand-900 p-5 bg-card-experience rounded-lg shadow-lg`}>
                                             <div className='flex flex-row justify-between content-center'>
                                                 <span className="text-lg font-bold ">{exp.company}</span>
                                                 <p className='text-[14px] content-center'>{exp.period}</p>
@@ -481,16 +487,15 @@ const aboutmePage = () => {
                                                 <p className='text-[14px]'>|</p>
                                                 <p className='text-[14px]'>{exp.location}</p>
                                             </div>
-                                            <div className='max-w-md  line-clamp-4'>
-                                                <p className='max-[480px]:text-[14px] text-md font-light'>
+                                            <div className='max-w-full line-clamp-4'>
+                                                <p className='text-wrap max-[768px]:text-[14px] text-md font-light'>
                                                     {exp.description}
                                                 </p>
-                                                
                                             </div>
-                                            <div className='flex flex-row max-[480px]:flex-wrap max-[480px]:gap-y-3 space-x-3 overflow-x-scroll scrollbar-hide w-full pt-5'>
+                                            <div className='flex flex-row max-[768px]:flex-wrap max-[768px]:gap-y-3 space-x-3 overflow-x-scroll scrollbar-hide w-full pt-5'>
                                                 {
                                                     exp.technologies.map((tech, techIndex) => (
-                                                        <span key={techIndex} className='bg-span-experience content-center py-1.5 w-fit px-3 max-[480px]:text-[10px] text-[12px] rounded-lg text-white'>
+                                                        <span key={techIndex} className='bg-span-experience content-center py-1.5 w-fit px-3 max-[768px]:text-[10px] text-[12px] rounded-lg text-white'>
                                                             {tech}
                                                         </span>
                                                     ))
