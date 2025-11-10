@@ -6,6 +6,7 @@ import { projects, techStack } from "@/data/list_data";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
@@ -15,13 +16,28 @@ export default function mainPage() {
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
     const mainContainer = useRef(null);
-    const scrollToContainer = useRef<HTMLDivElement>(null);
+    const toAboutMe = useRef<HTMLDivElement>(null);
+    const toProjects = useRef<HTMLDivElement>(null);
+    const toConnect = useRef<HTMLDivElement>(null);
 
-    const handleScrollDown = () => {
-        scrollToContainer.current?.scrollIntoView({
-            behavior: 'smooth' // This creates the animation
+    const scrollToAboutMe = () => {
+        toAboutMe.current?.scrollIntoView({
+            behavior: 'smooth'
         });
     };
+
+    const scrollToProjects = () => {
+        toProjects.current?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+
+    const scrollToConnect = () => {
+        toConnect.current?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+
 
     React.useEffect(() => {
         if (!api) {
@@ -224,6 +240,14 @@ export default function mainPage() {
                 ease: 'power3.inOut',
                 stagger: 0.2,
             },0)
+        
+        gsap.to(".scrollDown", {
+            y: 10,
+            duration: 0.8,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+        })
 
     }, { scope: mainContainer });
     
@@ -282,7 +306,7 @@ export default function mainPage() {
                             </button>
                             <button
                                 type="button"
-                                onClick={handleScrollDown}
+                                onClick={scrollToAboutMe}
                                 className="
                                     btn-hero
                                     flex
@@ -308,22 +332,21 @@ export default function mainPage() {
                                 <a> Explore Me </a>
                             </button>
                         </div>
-                        
                     </div>
                 </div>
             </section>
             <section
                 id="aboutme"
-                ref={scrollToContainer}
+                ref={toAboutMe}
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse md:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 sm:mr-20 xl:mr-0">
-                        <h1 className="about-animation max-lg:text-5xl max-lg:leading-16 lg:text-6xl font-bold font-main line-clamp-2">
+                        <h1 className="about-animation max-sm:text-3xl max-sm:leading-10 max-md:text-4xl max-lg:text-5xl max-lg:leading-16 lg:text-6xl font-bold font-main line-clamp-2">
                             Want to more about me ?
                         </h1>
                         <div className="about-animation max-w-xl my-5 lg:my-8">
-                            <p className="leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] font-main">
+                            <p className="leading-relaxed max-sm:text-[16px] md:text-[20px] max-[380px]:text-[14px] font-main">
                             Interested in my background? You can find my full introduction, project portfolio, and more about me in here.
                             </p>
                         </div>
@@ -354,17 +377,23 @@ export default function mainPage() {
                         </Link>      
                     </div>
                     <Image
-                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[890px]:w-70 max-[1024px]:w-80 lg:w-auto"
+                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[890px]:w-55 max-[1024px]:w-80 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
                         height={600}                
                     />
                 </div>
-                 
+                <div className="absolute bottom-0 flex flex-col w-full py-4 z-20">
+                    <div onClick={scrollToProjects} className="scrollDown cursor-pointer justify-items-center text-white">
+                        <p className="text-sm">Project in Here</p>
+                        <ChevronDown />
+                    </div>
+                </div>
             </section>
             <section
                 id="projects"
+                ref={toProjects}
                 className="relative h-screen pt-15 snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
                 <div className="px-20 md:my-10 md:px-24 mx-auto flex flex-col w-full">
@@ -436,10 +465,17 @@ export default function mainPage() {
                             ))
                         }
                     </div>
-                </div>    
+                </div> 
+                <div className="absolute bottom-0 flex flex-col w-full py-4 z-20">
+                    <div onClick={scrollToConnect} className="scrollDown cursor-pointer justify-items-center text-white">
+                        <p className="text-sm">Let's Connect in Here</p>
+                        <ChevronDown />
+                    </div>
+                </div>   
             </section>
             <section
                 id="letsConnect"
+                ref={toConnect}
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
             >
                 <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
@@ -450,7 +486,7 @@ export default function mainPage() {
                         <div className="desc-lc max-w-full lg:max-w-2xl mt-10">
                             <p className="leading-relaxed font-main font-light text-md lg:text-xl">
                                 Let me know if you want to connect with me for business and network purposes, 
-                                or you want to contact to me for work purposes in my email down here :
+                                or you want to contact to me for work purposes with my email down here :
                             </p>
                         </div>
                         <div className="email-lc max-w-md xl:max-w-xl mt-4">
