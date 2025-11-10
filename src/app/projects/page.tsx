@@ -154,7 +154,7 @@ export default function ProjectsPage()
                         <div className="max-w-2xl max-[1380px]:max-w-lg my-5 lg:my-8">
                             <p className="
                                 subtitle-hero
-                                leading-relaxed lg:text-2xl 
+                                leading-relaxed max-xl:text-lg min-xl:text-2xl 
                                 max-[380px]:text-[14px] max-[360px]:text-[12px] 
                                 font-light"
                             >
