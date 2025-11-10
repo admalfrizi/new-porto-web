@@ -286,9 +286,9 @@ const aboutmePage = () => {
             <section
                 className="topSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between w-full px-5 md:px-24 ">
+                <div className="flex flex-col-reverse max-[360px]:mt-0 max-[920px]:pt-10 min-[920px]:flex-row justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
-                        <h1 className="title-am text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] md:text-6xl font-bold font-main">
+                        <h1 className="title-am max-[1281px]:max-w-sm text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] min-[920px]:text-6xl font-bold font-main">
                             Want to more about me ?
                         </h1>
                         <div className="max-w-xl my-5 lg:my-8">
@@ -323,7 +323,7 @@ const aboutmePage = () => {
                         </button>      
                     </div>
                     <Image
-                        className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[768px]:w-65 lg:w-auto"
+                        className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
@@ -471,11 +471,11 @@ const aboutmePage = () => {
                 </div>
                 <div className='max-[768px]:w-fit min-[768px]:w-full min-[768px]:overflow-x-auto max-[768px]:overflow-y-auto scrollbar-hide py-5 h-full'>
                     <div className="relative inline-flex flex-nowrap min-w-full py-4">
-                        <div className="line-timeline absolute top-4/4 max-[768px]:top-4 max-[768px]:left-2.5 left-0 w-full h-2 max-[768px]:w-2 max-[768px]:h-6/8 bg-brand-900 rounded-full z-0 overflow-hidden"></div>
+                        <div className="line-timeline absolute top-4/4 max-[768px]:top-4 max-[768px]:left-7.5 left-0 w-full h-2 max-[768px]:w-2 max-[768px]:h-6/8 bg-brand-900 rounded-full z-0 overflow-hidden"></div>
                         <div className="relative flex max-[768px]:flex-col justify-between w-fit max-[768px]:w-screen max-[768px]:h-fit z-10">
                             {
                                 experiences.map((exp, index) => (
-                                    <div key={index} className="relative top-8.5 max-[768px]:top-0 w-120 max-[768px]:h-80 flex flex-col items-left">
+                                    <div key={index} className="relative top-8.5 max-[768px]:left-5 max-[768px]:top-0 w-120 max-[768px]:h-80 flex flex-col items-left">
                                         <div className="dot w-7 h-7 bg-inside-dot dark:bg-blue-500 rounded-full border-5 border-brand-900"></div>
                                         <div className={`experienceCard absolute top-10 max-[768px]:top-0 max-[768px]:left-12 ${lastIdx === index ? 'max-[768px]:h-fit min-[768px]:w-8/8' : 'max-[768px]:h-fit min-[768px]:w-7/8'} cursor-pointer text-left text-brand-900 p-5 bg-card-experience rounded-lg shadow-lg`}>
                                             <div className='flex flex-row justify-between content-center'>
