@@ -269,7 +269,7 @@ export default function mainPage() {
                                     text-white
                                     md:py-4 md:text-lg md:px-10
                                     bg-brand-50
-                                    hover:bg-gray-800
+                                    hover:bg-gray-700
                                     transition-colors 
                                     duration-300 
                                     ease-in-out
