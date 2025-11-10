@@ -52,22 +52,43 @@ const aboutmePage = () => {
 
         const mm = gsap.matchMedia();
 
+        const experienceWorks = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".experienceSection", 
+                scroller: mainContainer.current,
+                start: 'top 90%', 
+                end: 'bottom 6%',
+                toggleActions: "restart none restart none",
+            }
+        })
+
         mm.add(
             {
-                // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-                isDesktop: `(min-width: 1024px)`,
-                isTablet: `(max-width: 1024px)`,
-                isMobile: `(max-width: 500px)`,
-                reduceMotion: "(prefers-reduced-motion: reduce)",
+                isDesktop: `(min-width: 480px)`,
+                isMobile: `(max-width: 480px)`,
             },
             (context) => {
-                // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-                let ctxCheck = context.conditions;
+                
+                const checkIf = context.conditions;
 
-                gsap.to(".box", {
-                    rotation: ctxCheck.isDesktop ? 360 : 180, // spin further if desktop
-                    duration: reduceMotion ? 0 : 2, // skip to the end if prefers-reduced-motion
-                });
+                const lineinXp = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: ".experienceSection", 
+                        scroller: mainContainer.current,
+                        start: 'top 90%', 
+                        end: 'bottom 6%',
+                        toggleActions: "restart none restart none",
+                    }
+                })
+
+                lineinXp.from(".line-timeline",{
+                    scaleX: checkIf?.isMobile ? 1 : 0,
+                    scaleY: checkIf?.isMobile ? 0 : 1,
+                    transformOrigin: checkIf?.isMobile ? "top" : "left",
+                    duration: 1,
+                    delay: 0.4,
+                    ease: "power2.inOut"
+                })
             }
         );
         
@@ -131,15 +152,7 @@ const aboutmePage = () => {
             }
         })
 
-        const experienceWorks = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".experienceSection", 
-                scroller: mainContainer.current,
-                start: 'top 90%', 
-                end: 'bottom 6%',
-                toggleActions: "restart none restart none",
-            }
-        })
+        
 
         topSection
             .from(".title-am",{
@@ -237,14 +250,14 @@ const aboutmePage = () => {
             })
         
         experienceWorks.from(".title-xp", 
-                {
-                    opacity: 0,
-                    y: -60,
-                    duration: 1.4,
-                    delay: 0.2,
-                    ease: 'power3.out',
-                    stagger: 0.2,
-                },0
+            {
+                opacity: 0,
+                y: -60,
+                duration: 1.4,
+                delay: 0.2,
+                ease: 'power3.out',
+                stagger: 0.2,
+            },0
             )
             .from(".line-animated",
                 {
@@ -258,14 +271,8 @@ const aboutmePage = () => {
                 duration: 1,
                 transformOrigin: "center center",
                 ease: "power2.inOut"
-            },0).from(".line-timeline",{
-                scaleX: 0,
-                duration: 1.5,
-                ease: 'power3.out',
-                delay: 1,
-                transformOrigin: 'left center',
             },0)
-           
+        
     })
 
     return (
@@ -458,7 +465,7 @@ const aboutmePage = () => {
                 </div>
                 <div className='w-full overflow-x-auto max-[480px]:overflow-y-auto scrollbar-hide py-5 h-full'>
                     <div className="relative inline-flex flex-nowrap min-w-full py-4">
-                        <div className="line-timeline absolute top-4/4 max-[480px]:top-4 max-[480px]:left-2.5 left-0 w-full h-2 max-[480px]:w-2 max-[480px]:h-6/8 bg-brand-900 rounded-full z-0"></div>
+                        <div className="line-timeline absolute top-4/4 max-[480px]:top-4 max-[480px]:left-2.5 left-0 w-full h-2 max-[480px]:w-2 max-[480px]:h-6/8 bg-brand-900 rounded-full z-0 overflow-hidden"></div>
                         <div className="relative flex max-[480px]:flex-col justify-between w-fit max-[480px]:w-screen max-[480px]:h-fit z-10">
                             {
                                 experiences.map((exp, index) => (
