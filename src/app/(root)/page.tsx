@@ -15,6 +15,13 @@ export default function mainPage() {
     const [current, setCurrent] = React.useState(0)
     const [count, setCount] = React.useState(0)
     const mainContainer = useRef(null);
+    const scrollToContainer = useRef<HTMLDivElement>(null);
+
+    const handleScrollDown = () => {
+        scrollToContainer.current?.scrollIntoView({
+            behavior: 'smooth' // This creates the animation
+        });
+    };
 
     React.useEffect(() => {
         if (!api) {
@@ -232,11 +239,11 @@ export default function mainPage() {
                         <h1 className="title-hero text-3xl max-[380px]:text-2xl sm:text-6xl font-bold mb-2 font-main">
                             Welcome To My Home
                         </h1>
-                        <div className="max-w-xl mb-5">
+                        <div className="max-w-2xl mb-5">
                             <p className="subtitle-hero font-main text-lg sm:text-2xl my-6 max-[380px]:mb-3">
                                 My Name is <span className="font-semibold">Adam Alfarizi Ismail</span>
                             </p>
-                            <p className="desc-hero leading-relaxed font-main max-[380px]:text-sm text-lg">
+                            <p className="desc-hero leading-relaxed font-main max-[380px]:text-sm lg:text-lg xl:text-xl">
                                 Hey, thanks for reaching my website and let me introduce myself. <span className="font-main"> I’m a tech learner</span>, exploring many things
                                 in the tech industry, especially in 
                                 <span className="font-main font-semibold"> Software Development</span>. My skills
@@ -244,39 +251,70 @@ export default function mainPage() {
                                 engineering code to enhance <span className="font-main font-semibold"> analytical and logical thinking</span>.
                                 I’m doing problem-solving based on specific scenarios on software used
                                 to be. I also learn other things to stay <span className="font-main font-semibold"> curious and connected</span> with others.
-                                Let’s connect for better networking and great relationships.
+                                I’m always open to discussing technology, new projects, or just connecting with fellow professionals. Want to know more about my background?.
                             </p>
                         </div>
-                        <button
-                            className="
-                                btn-hero
-                                flex
-                                items-center
-                                px-8
-                                py-3
-                                border border-transparent
-                                text-sm
-                                font-bold
-                                rounded-full
-                                text-white
-                                md:py-4 md:text-lg md:px-10
-                                bg-brand-50
-                                hover:bg-gray-800
-                                transition-colors 
-                                duration-300 
-                                ease-in-out
-                                cursor-pointer
-                                w-[178px]
-                                md:w-[225px]
-                            "
-                        >
-                            <a> Download my CV </a>
-                        </button>
+                        <div className="flex flex-wrap gap-x-5 max-[416px]:gap-y-3 w-full">
+                            <button
+                                className="
+                                    btn-hero
+                                    flex
+                                    items-center
+                                    px-8
+                                    py-3
+                                    border border-transparent
+                                    text-sm
+                                    font-bold
+                                    rounded-full
+                                    text-white
+                                    md:py-4 md:text-lg md:px-10
+                                    bg-brand-50
+                                    hover:bg-gray-800
+                                    transition-colors 
+                                    duration-300 
+                                    ease-in-out
+                                    cursor-pointer
+                                    w-[178px]
+                                    md:w-[225px]
+                                "
+                            >
+                                <a> Download my CV </a>
+                            </button>
+                            <button
+                                type="button"
+                                onClick={handleScrollDown}
+                                className="
+                                    btn-hero
+                                    flex
+                                    items-center
+                                    px-8
+                                    py-3
+                                    border border-transparent
+                                    text-sm
+                                    font-bold
+                                    rounded-full
+                                    text-white
+                                    md:py-4 md:text-lg md:px-10
+                                    bg-gray-600
+                                    hover:bg-gray-500
+                                    transition-colors 
+                                    duration-300 
+                                    ease-in-out
+                                    cursor-pointer
+                                    w-[178px]
+                                    md:w-fit
+                                "
+                            >
+                                <a> Explore Me </a>
+                            </button>
+                        </div>
+                        
                     </div>
                 </div>
             </section>
             <section
                 id="aboutme"
+                ref={scrollToContainer}
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse md:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
