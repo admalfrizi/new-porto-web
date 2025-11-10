@@ -9,11 +9,38 @@ import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
+import { div } from 'framer-motion/client';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const projectCategory = [
     "Mobile Apps",
     "Website"
 ]
+
+const containerVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
+
+const cardAnimation = {
+    initial: { opacity: 0, y: -20 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 20 },
+    transition: { duration: 0.2 }
+};
 
 export default function ProjectsPage() 
 {
@@ -194,19 +221,45 @@ export default function ProjectsPage()
                         <h2 className='mb-3 font-main text-2xl text-brand-900'>{ activeCategory === 0 ? mobileApps.length : webApps.length } Project</h2>
                     </div>
                 </div>
-                <div className='flex flex-col space-y-8 w-full mt-10 max-[474px]:mt-4'>
-                    {
-                        activeCategory === 0 
-                            ?  
-                            mobileApps.map((data, index) => (
-                                <CardProjects key={index} data={data} />
-                            ))
-                            :
-                            webApps.map((data, index) => (
-                                <CardProjects key={index} data={data} />
-                            ))
-                    }
-                </div>
+                <AnimatePresence>
+                    <motion.div 
+                        key={activeCategory}
+                        variants={containerVariants}
+                        initial="initial"
+                        exit="exit"
+                        whileInView="animate"
+                        className='flex flex-col space-y-8 w-full mt-10 max-[474px]:mt-4'
+                    >
+                        {
+                            activeCategory === 0 
+                                ?  
+                                mobileApps.map((data, index) => (
+                                    <motion.div
+                                        key={index}
+                                        variants={cardAnimation}
+                                        initial="initial"
+                                        exit="exit"
+                                        whileInView="animate"
+                                    >
+                                        <CardProjects data={data} />
+                                    </motion.div>
+                                ))
+                                :
+                                webApps.map((data, index) => (
+                                    <motion.div 
+                                        key={index}
+                                        variants={cardAnimation}
+                                        initial="initial"
+                                        exit="exit"
+                                        whileInView="animate"
+                                    >
+                                        <CardProjects key={index} data={data} />
+                                    </motion.div>
+                                ))
+                        }
+                    </motion.div>
+                </AnimatePresence>
+                
             </div>
         </div>
     );
