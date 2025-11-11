@@ -5,6 +5,7 @@ import { Card, CardContent } from "./ui/card";
 
 interface CardProjectsProps {
     data: MyProjects
+    clickMore: (data: MyProjects) => void
 }
 
 const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
@@ -31,7 +32,7 @@ const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
     
 }
 
-export default function CardProjects({data} : CardProjectsProps)
+export default function CardProjects({data, clickMore} : CardProjectsProps)
 {
     return (
         <Card className='bg-brand-100 rounded-xl border-0 p-0'>
@@ -57,9 +58,9 @@ export default function CardProjects({data} : CardProjectsProps)
                             <LinkGithub linkGithub={data.linkGithub}/>
                             
                         </div>
-                        <div className='max-w-full mt-5 text-brand-900'>
+                        <div onClick={() => clickMore(data)} className='max-w-full cursor-pointer mt-5 text-brand-900'>
                             <p className='max-[1024px]:line-clamp-5 max-[400px]:text-[14px] max-sm:text-[16px] max-[768px]:text-[18px] max-[1024px]:text-md lg:max-w-xl lg:line-clamp-4 lg:text-lg'>
-                                {data.desc}
+                                {data.desc} 
                             </p>
                         </div>
                         <div className={`max-w-xl flex flex-wrap space-x-3 gap-y-3 w-full pt-5`}>
@@ -70,7 +71,6 @@ export default function CardProjects({data} : CardProjectsProps)
                                     </span>
                                 ))
                             }
-                            
                         </div>
                     </div>
                 </div>

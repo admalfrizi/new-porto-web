@@ -13,7 +13,7 @@ export const mobileApps : MyProjects[] = [
         years: "2023",
         techStack: ["Flutter", "Firebase", "Django", "API"],
         linkGithub: "",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system"
     },
     {
         projectName: "Mock Gocar User Online Apps",
@@ -37,7 +37,8 @@ export const mobileApps : MyProjects[] = [
         years: "2023",
         techStack: ["Flutter", "Firebase", "Google Maps", "GCP"],
         linkGithub: "https://github.com/admalfrizi/gocar_driver_apps_like_flutter",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `Mobile Apps that Developed for companion of Mock Gocar User Online Apps in that i created, 
+            the purpose of this apps is to accomodate the driver to pickup passenger from maps information that integrated to GPS`
     },
     {
         projectName: "Foody List Android Apps",
@@ -45,7 +46,7 @@ export const mobileApps : MyProjects[] = [
         years: "2023",
         techStack: ["Kotlin", "MVVM", "XML", "Dependency Injection", "Clean Code Architecture"],
         linkGithub: "https://github.com/admalfrizi/FoodyApps",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `This apps is a purpose to learning and mastering my basic android development apps with kotlin and MVVM Architecture, practicing from udemy course to developed a foody list apps with function to list food recipes information and store their favorites food recipes in db offline.`
     },
     {
         projectName: "Chat Apps Encryption",

@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { useRef, useState } from 'react';
 import { div } from 'framer-motion/client';
 import { AnimatePresence, motion } from 'framer-motion';
+import PortoDetailModal from '@/components/PortoDetailModal';
 
 const projectCategory = [
     "Mobile Apps",
@@ -47,11 +48,21 @@ export default function ProjectsPage()
     const nextSection = useRef<HTMLDivElement>(null);
     const mainContainer = useRef(null);
     const [activeCategory, setActiveCategory] = useState(0);
+    const [selectedUser, setSelectedUser] = useState<MyProjects | null>(null);
 
     const handleScrollDown = () => {
         nextSection.current?.scrollIntoView({
             behavior: 'smooth'
         });
+    };
+
+    const openModal = (user: MyProjects) => {
+        setSelectedUser(user);
+    };
+
+
+    const closeModal = () => {
+        setSelectedUser(null);
     };
 
     useGSAP(() => {
@@ -241,7 +252,7 @@ export default function ProjectsPage()
                                         exit="exit"
                                         whileInView="animate"
                                     >
-                                        <CardProjects data={data} />
+                                        <CardProjects data={data} clickMore={() => openModal(data)}/>
                                     </motion.div>
                                 ))
                                 :
@@ -253,14 +264,18 @@ export default function ProjectsPage()
                                         exit="exit"
                                         whileInView="animate"
                                     >
-                                        <CardProjects key={index} data={data} />
+                                        <CardProjects data={data} clickMore={() => openModal(data)}/>
                                     </motion.div>
                                 ))
                         }
                     </motion.div>
                 </AnimatePresence>
-                
             </div>
+            {
+                selectedUser && (
+                    <PortoDetailModal data={selectedUser} onClose={closeModal} />
+                )
+            }
         </div>
     );
 }

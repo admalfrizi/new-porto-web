@@ -14,7 +14,7 @@ export const projects : HighlightProject[] = [
         imgBackground: "/images/porto/web_2.jpg",
         imgForeground: "",
         isMobile: false,
-        techStack: ["Codeigniter4", "PHP", "MySQL"],
+        techStack: ["Codeigniter4", "PHP", "MySQL", "JQuery", "BootstrapCSS"],
         linkGithub: ""
     },
     {
