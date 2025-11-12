@@ -6,6 +6,30 @@ interface PortoDetailModalProps {
     onClose: () => void;
 }
 
+const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
+    if (linkGithub) 
+    {
+        return (
+            <>
+                <span>|</span>
+                <a className='flex flex-row space-x-3 items-center' href={linkGithub}>
+                        <Image src={'/icons/github_ic.svg'} alt={''} className='w-5 h-5 max-sm:w-6 max-sm:h-6 max-[768px]:w-8 max-[768px]:h-8' width={40} height={40}/>
+                    <p className='font-main max-sm:text-sm max-[768px]:text-md max-[1024px]:text-lg lg:text-sm'>Link Github</p>
+                </a>
+            </>
+        )
+    } 
+    else 
+    {
+        return (
+            <>
+            </>
+        )
+
+    }
+    
+}
+
 export default function PortoDetailModal({data, onClose}: PortoDetailModalProps) {
     const [show, setShow] = useState(false);
     
@@ -60,8 +84,7 @@ export default function PortoDetailModal({data, onClose}: PortoDetailModalProps)
                         </h2>
                         <div className="flex flex-wrap gap-x-5 justify-start pt-1 pb-4">
                             <p>{data.years}</p>
-                            |
-                            <p>Link Github</p>
+                            <LinkGithub linkGithub={data.linkGithub}/>
                         </div>
                         <p className="mt-1 text-base font-light">{data.desc}</p>
                         {/* <p className="mt-4 text-left text-gray-700">{user.bio}</p> */}

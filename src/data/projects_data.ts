@@ -65,7 +65,7 @@ export const webApps : MyProjects[] = [
         years: "2023",
         techStack: ["Wordpress", "Divi", "PHP"],
         linkGithub: "",
-        desc: "Simpenpass is a mobile multiplatform apps for password management system that i created for final project in college thesis and also to redefining my TDD (Test Driven Developement) scope when developing app"
+        desc: `This is the official portal for the Human Resources Bureau (BSDM) at Universitas Dian Nuswantoro (UDINUS), serving all lecturers and staff. It provides comprehensive information on recruitment, compensation, benefits, performance, and university policies. Access all administrative services and professional development resources in one central hub.`
     },
     {
         projectName: "NeoSimpeg UDINUS",
@@ -73,7 +73,7 @@ export const webApps : MyProjects[] = [
         years: "2024",
         techStack: ["Codeigniter4", "PHP", "MySQL", "jQuery", "Bootstrap"],
         linkGithub: "",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `Engineered and optimized a Lecturer Data Management System for Dian Nuswantoro University. This administrative dashboard centralized lecturer profiles, qualifications, and publication records. Key contributions involved refactoring complex SQL queries and implementing an external API caching strategy (for services like SINTA/Google Scholar), which significantly reduced dashboard load times and improved data retrieval efficiency for administrators.`
     },
     {
         projectName: "SimpenPass Backend API",
@@ -81,7 +81,9 @@ export const webApps : MyProjects[] = [
         years: "2024 - 2025",
         techStack: ["Laravel", "PHP", "MySQL"],
         linkGithub: "https://github.com/admalfrizi/simpenpass-api",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `Backend API that i developed for SimpenPass Mobile Apps, the system store all function that
+            related in frontend mobile apps such as autentication user, password data management for both
+            user and group. in addition, this API also provide an Web Screen UI to create user account.`
     },
     {
         projectName: "Old Portofolio Website",
@@ -89,7 +91,8 @@ export const webApps : MyProjects[] = [
         years: "2022",
         techStack: ["VueJS", "CSS", "TailwindCSS"],
         linkGithub: "https://github.com/admalfrizi/my-portofolio-web",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `My personal web that i created to store my portofolio of result from my web and mobile apps
+                that i developed in my previous work position.`
     },
     {
         projectName: "Dashboard CRUD Laravel",
@@ -97,6 +100,8 @@ export const webApps : MyProjects[] = [
         years: "2023",
         techStack: ["Laravel", "Livewire", "PHP", "MySQL"],
         linkGithub: "https://github.com/admalfrizi/DashboardAdminForAppkuApps",
-        desc: "Wastetrack+ is a mobile apps for waste management system for managing waste garbage in semarang city, the apps is developed for KKI programs from campus which i followed by. this apps is designed as dashboard system...."
+        desc: `a CRUD Apps that i developed for upskill my laravel experience with Create, Read, Update and
+            Delete function, it consist some of a data such as Webinar, Kelas, Kategori Kelas and Berita. also
+            work well for API to mobile apps.`
     }
 ]
