@@ -13,8 +13,8 @@ const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
             <>
                 <span>|</span>
                 <a className='flex flex-row space-x-3 items-center' href={linkGithub}>
-                        <Image src={'/icons/github_ic.svg'} alt={''} className='w-5 h-5 max-sm:w-6 max-sm:h-6 max-[768px]:w-8 max-[768px]:h-8' width={40} height={40}/>
-                    <p className='font-main max-sm:text-sm max-[768px]:text-md max-[1024px]:text-lg lg:text-sm'>Link Github</p>
+                        <Image src={'/icons/github_ic.svg'} alt={''} className=' max-[1024px]:w-4 max-[1024px]:h-4 lg:w-5 lg:h-5' width={40} height={40}/>
+                    <p className='font-main text-sm'>Link Github</p>
                 </a>
             </>
         )
@@ -52,7 +52,7 @@ export default function PortoDetailModal({data, onClose}: PortoDetailModalProps)
 
     return (
         <div className={`fixed inset-0 z-50 flex items-center bg-black/30 justify-center p-4 transition-opacity duration-300 backdrop-blur-sm ${show ? 'bg-opacity-50' : 'bg-opacity-0'}`}>
-            <div className={`relative w-full max-w-md transform-gpu overflow-hidden rounded-xl 
+            <div className={`relative w-full max-lg:max-w-xl lg:max-w-2xl transform-gpu overflow-hidden rounded-xl 
                 bg-brand-100 shadow-2xl transition-all duration-300  ${show ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
                 onClick={(e) => e.stopPropagation()}
             >
@@ -64,30 +64,35 @@ export default function PortoDetailModal({data, onClose}: PortoDetailModalProps)
                     &times;
                 </button>
                 <div>
-                    {/* <Image
-                        src={data.imgLink}
-                        alt={`Screenshot of ${data.projectName}`}
-                        fill
-                        className="h-20 w-56 object-cover"
-                    /> */}
                     <Image
                         src={data.imgLink}
                         alt={`Screenshot of ${data.projectName}`}
-                        className="h-56 w-full object-cover"
+                        className="max-[395px]:h-48 max-[480px]:h-56 max-[1024px]:h-72 lg:h-96 w-full object-cover"
                         width={650}
                         height={500}
                         //onError={(e) => e.target.src = 'https://placehold.co/600x400/ef4444/white?text=Image+Error'}
                     />
                     <div className="p-6 text-brand-900 h-fit">
-                        <h2 className="text-2xl font-bold">
+                        <h2 className="max-[395px]:text-[20px] text-2xl font-bold">
                             {data.projectName}
                         </h2>
                         <div className="flex flex-wrap gap-x-5 justify-start pt-1 pb-4">
-                            <p>{data.years}</p>
+                            <p className="max-[395px]:text-sm text-md">{data.years}</p>
                             <LinkGithub linkGithub={data.linkGithub}/>
                         </div>
-                        <p className="mt-1 text-base font-light">{data.desc}</p>
+                        <p className="mt-1 max-[395px]:text-sm text-base font-light max-[480px]:max-w-md max-w-xl max-h-24 overflow-y-auto scrollbar-hide">
+                            {data.desc}
+                        </p>
                         {/* <p className="mt-4 text-left text-gray-700">{user.bio}</p> */}
+                    </div>
+                    <div className="px-6 pb-6 flex flex-wrap gap-4">
+                        {
+                            data.techStack.map((vl, idx) => (
+                                <span key={idx} className='bg-span-experience content-center py-2 w-fit px-7 max-[400px]:text-xs max-[1024px]:text-sm lg:text-md rounded-lg text-white'>
+                                    {vl}
+                                </span>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
