@@ -319,6 +319,7 @@ export default function mainPage() {
                                     btn-hero
                                     flex
                                     items-center
+                                    w-fit
                                     px-8
                                     py-3
                                     border border-transparent
@@ -333,7 +334,6 @@ export default function mainPage() {
                                     duration-300 
                                     ease-in-out
                                     cursor-pointer
-                                    w-[178px]
                                     md:w-fit
                                 "
                             >
@@ -441,7 +441,7 @@ export default function mainPage() {
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                    <div className="project-animation w-full flex flex-wrap gap-x-5 justify-start mt-5">
+                    <div className="project-animation w-full flex flex-wrap gap-5 justify-start mt-5">
                          <Link
                             href="/projects"
                             className="
@@ -452,11 +452,10 @@ export default function mainPage() {
                                 py-3
                                 border border-transparent
                                 max-[400px]:text-[12px]
-                                text-sm
                                 font-bold
                                 rounded-full
                                 text-white
-                                md:py-4 md:text-lg md:px-10
+                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
                                 bg-brand-100
                                 hover:bg-gray-800
                                 transition-colors 
@@ -489,7 +488,7 @@ export default function mainPage() {
                                 cursor-pointer
                             "
                         >
-                            To Tech Stacks
+                            Tech Stacks
                         </Button>   
                     </div>
                 </div>    
@@ -557,7 +556,7 @@ export default function mainPage() {
                         
                     </div> 
                     <Image
-                        className="image-lc object-contain rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
+                        className="image-lc object-cover rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
                         src="/images/let's_connect.jpg"
                         alt={""}
                         width={400}  
