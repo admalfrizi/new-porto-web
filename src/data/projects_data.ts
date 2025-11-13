@@ -71,7 +71,7 @@ export const webApps : MyProjects[] = [
         projectName: "NeoSimpeg UDINUS",
         imgLink: "/images/porto/list_data/web_apps/simpeg_udinus.jpg",
         years: "2024",
-        techStack: ["Codeigniter4", "PHP", "MySQL", "jQuery", "Bootstrap"],
+        techStack: ["Codeigniter4", "PHP", "MySQL", "jQuery", "AJAX", "Datatables", "Bootstrap"],
         linkGithub: "",
         desc: `Engineered and optimized a Lecturer Data Management System for Dian Nuswantoro University. This administrative dashboard centralized lecturer profiles, qualifications, and publication records. Key contributions involved refactoring complex SQL queries and implementing an external API caching strategy (for services like SINTA/Google Scholar), which significantly reduced dashboard load times and improved data retrieval efficiency for administrators.`
     },

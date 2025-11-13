@@ -50,7 +50,7 @@ export default function CardProjects({data, clickMore} : CardProjectsProps)
                         />
                     </div>
                     <div className='flex flex-col p-8 max-[400px]:p-5'>
-                        <div className='max-w-full'>
+                        <div className='max-w-full h-fit'>
                             <h1 className='text-brand-900 font-semibold max-[400px]:text-lg max-[768px]:text-2xl max-[1024px]:text-3xl text-5xl line-clamp-2'>{data.projectName}</h1>
                         </div>
                         <div className='flex flex-row space-x-5 items-center max-lg:text-lg max-[400px]:mt-2 mt-4 text-brand-900'>

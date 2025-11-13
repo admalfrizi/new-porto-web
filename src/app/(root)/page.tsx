@@ -1,6 +1,7 @@
 "use client"
 import LinkIcon from "@/components/LinkIcon";
 import PortofolioCard from "@/components/PortofolioCard";
+import { Button } from "@/components/ui/button";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { projects, techStack } from "@/data/list_data";
 import { useGSAP } from "@gsap/react";
@@ -19,6 +20,7 @@ export default function mainPage() {
     const toAboutMe = useRef<HTMLDivElement>(null);
     const toProjects = useRef<HTMLDivElement>(null);
     const toConnect = useRef<HTMLDivElement>(null);
+    const toTechStack = useRef<HTMLDivElement>(null);
 
     const scrollToAboutMe = () => {
         toAboutMe.current?.scrollIntoView({
@@ -34,6 +36,12 @@ export default function mainPage() {
 
     const scrollToConnect = () => {
         toConnect.current?.scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+
+    const scrollToTechStack = () => {
+        toTechStack.current?.scrollIntoView({
             behavior: 'smooth'
         });
     };
@@ -346,49 +354,69 @@ export default function mainPage() {
                             Want to more about me ?
                         </h1>
                         <div className="about-animation max-w-xl my-5 lg:my-8">
-                            <p className="leading-relaxed max-sm:text-[16px] md:text-[20px] max-[380px]:text-[14px] font-main">
-                            Interested in my background? You can find my full introduction, project portfolio, and more about me in here.
+                            <p className="leading-relaxed max-sm:text-[16px] max-[1024px]:text-[18px] lg:text-[20px] max-[380px]:text-[14px] font-main">
+                                Interested in my background? You can find my full introduction, project portfolio, and more about me on down here.
                             </p>
                         </div>
-                        <Link
-                            href="/about-me"
-                            className="
-                            about-animation
-                            flex
-                            items-center
-                            w-40
-                            px-8
-                            py-3
-                            border border-transparent
-                            text-sm
-                            font-bold
-                            rounded-full
-                            text-white
-                            md:py-4 md:text-lg md:px-10
-                            bg-brand-50
-                            hover:bg-gray-800
-                            transition-colors 
-                            duration-300 
-                            ease-in-out
-                            cursor-pointer
-                            "
-                        >
-                            See More
-                        </Link>      
+                        <div className="flex flex-wrap gap-4 justify-start">
+                            <Link
+                                href="/about-me"
+                                className="
+                                about-animation
+                                flex
+                                items-center
+                                w-fit
+                                px-8
+                                py-3
+                                border border-transparent
+                                font-bold
+                                rounded-full
+                                text-white
+                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
+                                bg-brand-50
+                                hover:bg-gray-800
+                                transition-colors 
+                                duration-300 
+                                ease-in-out
+                                cursor-pointer
+                                "
+                            >
+                                See More
+                            </Link>
+                            <Button
+                                onClick={scrollToProjects}
+                                className="
+                                about-animation
+                                flex
+                                items-center
+                                w-fit
+                                px-8
+                                py-3
+                                h-fit
+                                border border-transparent
+                                font-bold
+                                rounded-full
+                                text-white
+                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
+                                bg-brand-50/50
+                                hover:bg-gray-800
+                                transition-colors 
+                                duration-300 
+                                ease-in-out
+                                cursor-pointer
+                                "
+                            >
+                                My Projects
+                            </Button>
+                        </div>    
                     </div>
                     <Image
-                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[890px]:w-55 max-[1024px]:w-80 lg:w-auto"
+                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[950px]:w-65 max-[1024px]:w-80 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  
                         height={600}                
                     />
-                </div>
-                <div className="absolute bottom-0 flex flex-col w-full py-4 z-20">
-                    <div onClick={scrollToProjects} className="scrollDown cursor-pointer justify-items-center text-white">
-                        <p className="text-sm">Project in Here</p>
-                        <ChevronDown />
-                    </div>
                 </div>
             </section>
             <section
@@ -413,11 +441,10 @@ export default function mainPage() {
                         <CarouselPrevious />
                         <CarouselNext />
                     </Carousel>
-                    <div className="w-full mt-5">
+                    <div className="project-animation w-full flex flex-wrap gap-x-5 justify-start mt-5">
                          <Link
                             href="/projects"
                             className="
-                                project-animation
                                 flex
                                 items-center
                                 w-fit
@@ -439,12 +466,37 @@ export default function mainPage() {
                             "
                         >
                             Find More My Projects...
-                        </Link>      
+                        </Link>   
+                        <Button
+                            onClick={scrollToTechStack}
+                            className="
+                                flex
+                                items-center
+                                w-fit
+                                px-8
+                                py-3
+                                h-fit
+                                border border-transparent
+                                font-bold
+                                rounded-full
+                                text-white
+                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
+                                bg-brand-100/50
+                                hover:bg-gray-800
+                                transition-colors 
+                                duration-300 
+                                ease-in-out
+                                cursor-pointer
+                            "
+                        >
+                            To Tech Stacks
+                        </Button>   
                     </div>
                 </div>    
             </section>
             <section
                 id="techstack"
+                ref={toTechStack}
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
