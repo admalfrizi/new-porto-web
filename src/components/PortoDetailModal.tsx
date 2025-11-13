@@ -61,7 +61,10 @@ export default function PortoDetailModal({data, onClose}: PortoDetailModalProps)
                     className="absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-700 text-white shadow-lg transition-transform hover:bg-gray-800 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-500"
                     aria-label="Close modal"
                 >
-                    &times;
+                    <p className="text-2xl">
+                        &times;
+                    </p>
+                    
                 </button>
                 <div>
                     <Image
