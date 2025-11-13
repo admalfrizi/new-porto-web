@@ -68,7 +68,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="#" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
+                    <Link href="/certificates" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
                         Certificates
                     </Link>
                 </li>
