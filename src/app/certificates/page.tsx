@@ -117,7 +117,7 @@ export default function Certificates() {
                     <h1 className='title-main mb-3 font-semibold text-4xl text-brand-900'>My Certificates</h1>
                     <div className="line-title-main w-62 h-1 bg-brand-900 rounded-full"></div>
                 </div>
-                <div className="grid grid-cols-4 gap-4 w-full">
+                <div className="grid grid-cols-4 max-[1024px]:grid-cols-2 max-[1280px]:grid-cols-3 gap-4 w-full">
                     {
                         certificate.map((dta,idx) => (
                             <div key={idx} className="group relative overflow-hidden cursor-pointer rounded-lg shadow-lg ">
