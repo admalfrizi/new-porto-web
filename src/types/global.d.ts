@@ -8,6 +8,13 @@ interface HighlightProject {
     linkGithub: string;
 }
 
+interface Certificates {
+    imgLinks: string;
+    nameCertificates: string;
+    years: number;
+    publisher: string
+}
+
 interface TechStacks {
     name: string;
     icons: string;

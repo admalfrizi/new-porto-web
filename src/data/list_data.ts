@@ -94,6 +94,87 @@ export const techStack: TechStacks[] = [
         name: "Flutter",
         icons: "/icons/flutter_ic.svg"
     },
+];
+
+export const certificate: Certificates[] = [
+    {
+        imgLinks: "/certificates/sertifikat_bnsp.jpg",
+        nameCertificates: "Certification Scheme of Junior Mobile Programmer",
+        years: 2024,
+        publisher: "Badan Nasional Sertifikasi Program"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_toefl.jpg",
+        nameCertificates: "TOEFL Certification",
+        years: 2024,
+        publisher: "CFLT Udinus"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_dncc_panitia.jpg",
+        nameCertificates: "Mobile Apps Division from DNCC Members Club",
+        years: 2022,
+        publisher: "Dian Nuswantoro Computer Club"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_dncc_peserta_mobile.jpg",
+        nameCertificates: "Mobile Apps Division in BTNG Event DNCC",
+        years: 2021,
+        publisher: "Dian Nuswantoro Computer Club"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_pkl.jpg",
+        nameCertificates: "Internship Certificate from SMK Bina Informatika Bintaro",
+        years: 2019,
+        publisher: "SMK Bina Informatika Bintaro"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_progsil_web_programming.jpg",
+        nameCertificates: "Cross Program Certificate for Web Programming",
+        years: 2018,
+        publisher: "SMK Bina Informatika Bintaro"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_progsil_vb_net.jpg",
+        nameCertificates: "Cross Program Certificate for VB .NET Programming",
+        years: 2018,
+        publisher: "SMK Bina Informatika Bintaro"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_progsil_desain_grafis.jpg",
+        nameCertificates: "Cross Program Certificate for Graphics Design",
+        years: 2018,
+        publisher: "SMK Bina Informatika Bintaro"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_udemy_flutter_firebase.jpg",
+        nameCertificates: "Udemy Certificate for Building Mobile Apps Taxi Booking Online",
+        years: 2023,
+        publisher: "Udemy"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_mastering_android_kotlin.jpg",
+        nameCertificates: "Udemy Certificate for Mastering Android Kotlin",
+        years: 2023,
+        publisher: "Udemy"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_multi_modular_android.jpg",
+        nameCertificates: "Udemy Certificate for Multi Modular Android with Jetpack Compose",
+        years: 2023,
+        publisher: "Udemy"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_android_kotlin.jpg",
+        nameCertificates: "Udemy Certificate for Kotlin Android Begineer",
+        years: 2021,
+        publisher: "Udemy"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_bwa_flutter_laravel.jpg",
+        nameCertificates: "BuildWithAngga Certificate for Mobile Apps Development with Laravel Backend",
+        years: 2021,
+        publisher: "BuildWithAngga"
+    }
 ]
 
 export const skillsData: SkillsData[] = 
