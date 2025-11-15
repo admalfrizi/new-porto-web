@@ -114,6 +114,13 @@ export default function ProjectsPage()
                 ease: 'power3.out',
                 stagger: 0.5,
             })
+             .from(".icon_ic", {
+                opacity: 0,
+                y: -60,
+                duration: 1.5,
+                ease: 'power3.out',
+                stagger: 0.5,
+            },0.2)
             .from(".btn-scroll-projects", {
                 opacity: 0,
                 y: -60,
@@ -121,6 +128,7 @@ export default function ProjectsPage()
                 ease: 'power3.out',
                 stagger: 0.5,
             },0.8)
+           
         
         mainSection
             .from(".title-main", 
@@ -196,7 +204,7 @@ export default function ProjectsPage()
                         </button>      
                     </div>
                     <Image
-                        className="object-contain rounded-[20px] mb-5 w-120 md:w-150"
+                        className="icon_ic object-contain rounded-[20px] mb-5 w-120 md:w-150"
                         src="/icons/my_project_ic.svg"
                         alt={""}
                         width={500}
