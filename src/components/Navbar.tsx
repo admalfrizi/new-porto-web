@@ -5,6 +5,8 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { Mail, X } from "lucide-react";
 import LinkIcon from "./LinkIcon";
+import { Button } from "./ui/button";
+import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
 
 interface NavItemViewProps {
     isNavOpen: boolean;
@@ -53,32 +55,32 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                 `}
             >
                 <li>
-                    <Link href="/" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
+                    <Link href="/" onClick={setIsNavOpen} className="text-4xl md:text-5xl max-[580px]:text-2xl font-bold text-white hover:text-brand-900 transition-colors">
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link href="/about-me" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
+                    <Link href="/about-me" onClick={setIsNavOpen} className="text-4xl md:text-5xl max-[580px]:text-2xl font-bold text-white hover:text-brand-900 transition-colors">
                         About Me
                     </Link>
                 </li>
                 <li>
-                    <Link href="/projects" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
+                    <Link href="/projects" onClick={setIsNavOpen} className="text-4xl md:text-5xl max-[580px]:text-2xl font-bold text-white hover:text-brand-900 transition-colors">
                         Projects
                     </Link>
                 </li>
                 <li>
-                    <Link href="/certificates" onClick={setIsNavOpen} className="text-4xl md:text-5xl font-bold text-white hover:text-brand-900 transition-colors">
+                    <Link href="/certificates" onClick={setIsNavOpen} className="text-4xl md:text-5xl max-[580px]:text-2xl font-bold text-white hover:text-brand-900 transition-colors">
                         Certificates
                     </Link>
                 </li>
             </ul>
-            <div className="absolute w-screen px-5 md:px-24 py-10 bottom-0 left-0 flex flex-row justify-between">
-                <div className="flex items-center justify-center">
+            <div className="absolute w-screen px-5 md:px-24 py-10 bottom-0 left-0 flex flex-row max-[517px]:flex-col justify-between">
+                <div className="flex items-center justify-center max-[517px]:pb-5">
                     <button
                         className="
                         flex
-                        items-center
+                        text-center
                         px-8
                         py-3
                         border border-transparent
@@ -93,7 +95,9 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         duration-300 
                         ease-in-out
                         cursor-pointer
-                        w-[178px]
+                        w-fit
+                        max-[517px]:w-full
+                        max-[517px]:justify-center
                         md:w-[255px]
                         "
                     >
@@ -104,9 +108,54 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                     </button>
                 </div>
                 <div className="flex max-[1024px]:flex-col max-[1024px]:items-start items-center">
-                    <p className="font-light text-brand-900 max-[1024px]:mb-4 md:me-10">Go to My Account in Here :</p>
-                    <div className="flex flex-row">
-                        <LinkIcon/>
+                    <p className="font-light text-brand-900 max-[580px]:w-full max-[580px]:text-center max-[500px]:text-sm max-[1024px]:mb-4 md:me-10">Go to My Account in Here :</p>
+                    <div className="flex flex-row max-[580px]:justify-center max-[580px]:w-full">
+                        <Button size="icon-lg" asChild>
+                            <a href={LINKEDIN_URL} target="_blank" className="w-[71px] h-[71px] max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-1">
+                                <Image 
+                                    src="/icons/linkedin-ic.svg"
+                                    alt="Blurred background"
+                                    width={60}
+                                    height={60}
+                                    className="object-cover"
+                                />
+                            </a>
+                        </Button>
+                        <Button size="icon-lg" asChild>
+                            <a href={GITHUB_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-1">
+                                <Image 
+                                    src="/icons/github_ic.svg"
+                                    alt="Blurred background"
+                                    width={60}
+                                    height={60}
+                                    className="object-cover"
+                                />
+                            </a>
+                        </Button>
+                        <Button size="icon-lg" asChild>
+                            <a href={INSTAGRAM_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-2">
+                                <Image 
+                                    src="/icons/ig_ic.svg"
+                                    alt="Blurred background"
+                                    width={60}
+                                    height={60}
+                                    className="object-cover"
+                                />
+                            </a>
+                            
+                        </Button>
+                        <Button size="icon-lg" asChild>
+                            <a href={YOUTUBE_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-2">
+                                <Image 
+                                    src="/icons/yt_ic.svg"
+                                    alt="Blurred background"
+                                    width={60}
+                                    height={60}
+                                    className="object-cover"
+                                />
+                            </a>
+                            
+                        </Button>
                     </div>
                 </div>
             </div>

@@ -496,7 +496,7 @@ export default function mainPage() {
             <section
                 id="techstack"
                 ref={toTechStack}
-                className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
+                className="relative h-screen snap-start flex items-center justify-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
                     <div className="content-center pb-10 lg:pb-30">
@@ -517,12 +517,6 @@ export default function mainPage() {
                         }
                     </div>
                 </div> 
-                <div className="absolute bottom-0 flex flex-col w-full py-4 z-20">
-                    <div onClick={scrollToConnect} className="scrollDown cursor-pointer justify-items-center text-white">
-                        <p className="text-sm">Let's Connect in Here</p>
-                        <ChevronDown />
-                    </div>
-                </div>   
             </section>
             <section
                 id="letsConnect"
