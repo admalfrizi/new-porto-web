@@ -299,15 +299,14 @@ export default function mainPage() {
                                     font-bold
                                     rounded-full
                                     text-white
-                                    md:py-4 md:text-lg md:px-10
+                                    md:py-4 lg:text-lg md:px-10
                                     bg-brand-50
                                     hover:bg-gray-700
                                     transition-colors 
                                     duration-300 
                                     ease-in-out
                                     cursor-pointer
-                                    w-[178px]
-                                    md:w-[225px]
+                                    w-fit
                                 "
                             >
                                 <a> Download my CV </a>
@@ -327,14 +326,13 @@ export default function mainPage() {
                                     font-bold
                                     rounded-full
                                     text-white
-                                    md:py-4 md:text-lg md:px-10
+                                    md:py-4 lg:text-lg md:px-10
                                     bg-gray-600
                                     hover:bg-gray-500
                                     transition-colors 
                                     duration-300 
                                     ease-in-out
                                     cursor-pointer
-                                    md:w-fit
                                 "
                             >
                                 <a> Explore Me </a>
@@ -348,8 +346,8 @@ export default function mainPage() {
                 ref={toAboutMe}
                 className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="flex flex-col-reverse md:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
-                    <div className="z-10 text-start text-brand-900 content-center mr-15 sm:mr-20 xl:mr-0">
+                <div className="flex flex-col-reverse min-[836px]:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
+                    <div className="z-10 text-start text-brand-900 content-center max-[400px]:mr-0 min-[836px]:mr-15">
                         <h1 className="about-animation max-sm:text-3xl max-sm:leading-10 max-md:text-4xl max-lg:text-5xl max-lg:leading-16 lg:text-6xl font-bold font-main line-clamp-2">
                             Want to more about me ?
                         </h1>
@@ -358,7 +356,7 @@ export default function mainPage() {
                                 Interested in my background? You can find my full introduction, project portfolio, and more about me on down here.
                             </p>
                         </div>
-                        <div className="flex flex-wrap gap-4 justify-start">
+                        <div className="flex gap-4 justify-start">
                             <Link
                                 href="/about-me"
                                 className="
@@ -372,7 +370,7 @@ export default function mainPage() {
                                 font-bold
                                 rounded-full
                                 text-white
-                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
+                                md:py-4 max-[395px]:text-xs max-[950px]:text-md min-[950px]:text-lg md:px-10
                                 bg-brand-50
                                 hover:bg-gray-800
                                 transition-colors 
@@ -397,7 +395,7 @@ export default function mainPage() {
                                 font-bold
                                 rounded-full
                                 text-white
-                                md:py-4 max-[950px]:text-md min-[950px]:text-lg md:px-10
+                                md:py-4 max-[395px]:text-xs max-[950px]:text-md min-[950px]:text-lg md:px-10
                                 bg-brand-50/50
                                 hover:bg-gray-800
                                 transition-colors 
@@ -411,7 +409,7 @@ export default function mainPage() {
                         </div>    
                     </div>
                     <Image
-                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[950px]:w-65 max-[1024px]:w-80 lg:w-auto"
+                        className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[836px]:w-50 max-[950px]:w-65 max-[1024px]:w-80 lg:w-auto"
                         src="/images/profile_1.jpg"
                         alt={""}  
                         width={400}  

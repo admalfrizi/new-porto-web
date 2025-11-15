@@ -123,7 +123,7 @@ export const certificate: Certificates[] = [
     },
     {
         imgLinks: "/certificates/sertifikat_pkl.jpg",
-        nameCertificates: "Internship Certificate from SMK Bina Informatika Bintaro",
+        nameCertificates: "Internship Certificate",
         years: 2019,
         publisher: "SMK Bina Informatika Bintaro"
     },

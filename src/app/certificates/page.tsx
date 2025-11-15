@@ -165,7 +165,7 @@ export default function Certificates() {
                 className="heroSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 lg:flex-row justify-between w-full px-5 md:px-24 ">
-                    <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
+                    <div className="z-10 text-start text-brand-900 content-center max-[400px]:mr-0 lg:mr-15">
                         <h1 className="
                             title-hero
                             text-6xl 
@@ -177,10 +177,10 @@ export default function Certificates() {
                         >
                             List of Certificates
                         </h1>
-                        <div className="max-w-2xl max-[1380px]:max-w-lg my-5 lg:my-8">
+                        <div className="max-w-2xl max-[1380px]:max-w-lg max-[1024px]:w-full my-5 lg:my-8">
                             <p className="
                                 subtitle-hero
-                                leading-relaxed max-xl:text-lg min-xl:text-2xl 
+                                leading-relaxed max-[500px]:text-md max-[1280px]:text-lg xl:text-2xl 
                                 max-[380px]:text-[14px] max-[360px]:text-[12px] 
                                 font-light"
                             >
@@ -197,11 +197,10 @@ export default function Certificates() {
                                 px-8
                                 py-3
                                 border border-transparent
-                                text-sm
                                 font-bold
                                 rounded-full
                                 text-white
-                                md:py-4 md:text-lg md:px-10
+                                md:py-4 max-[768px]:text-sm max-[1024px]:text-md lg:text-lg md:px-10
                                 bg-brand-50
                                 hover:bg-gray-800
                                 transition-colors 
@@ -214,7 +213,7 @@ export default function Certificates() {
                         </button>      
                     </div>
                     <Image
-                        className="object-contain rounded-[20px] mb-5 max-[768px]:w-90 max-[1024px]:w-100 lg:w-150"
+                        className="object-contain rounded-[20px] mb-5 max-[500px]:w-65 max-[768px]:w-90 max-[1024px]:w-100 lg:w-150"
                         src="/icons/certificate_ic.svg"
                         alt={""}
                         width={500}
