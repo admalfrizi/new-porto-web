@@ -3,8 +3,10 @@
 import { certificate } from "@/data/list_data";
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react";
-import { div } from 'framer-motion/client';
+import gsap from 'gsap';
 import { AnimatePresence, motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger, SplitText } from "gsap/all";
 
 interface ModalPopupProps {
     img: string
@@ -56,6 +58,8 @@ const ModalDetailCertificates = ({img, onClose}: ModalPopupProps) => {
         }, 300);
     };
 
+    
+
     return (
         <div className={`fixed inset-0 z-50 flex items-center bg-black/30 justify-center p-4 transition-opacity duration-300 backdrop-blur-sm`}>
             <div className={`relative w-full transform-gpu overflow-hidden transition-all duration-300 `}
@@ -66,7 +70,9 @@ const ModalDetailCertificates = ({img, onClose}: ModalPopupProps) => {
                     className="absolute top-2 right-2 z-10 flex h-8 w-8 items-center justify-center rounded-full bg-gray-700 text-white shadow-lg transition-transform hover:bg-gray-800 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gray-500"
                     aria-label="Close modal"
                 >
-                    &times;
+                    <p className="text-2xl">
+                        &times;
+                    </p>
                 </button>
                 <div className="relative w-full h-screen">
                     <Image
@@ -103,16 +109,65 @@ export default function Certificates() {
     const closeModal = () => {
         setSelectedData(null);
     };
+
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger, SplitText)
+
+        const subtitleHero = () => {
+            new SplitText(".subtitle-hero", { 
+                type: "words,lines",
+                autoSplit: true,
+                linesClass: "line",
+                mask: "words",
+                onSplit: (self) => {
+                    gsap.from(self.lines, {
+                        duration: 1.5,
+                        delay : 0.3,
+                        yPercent: -100,
+                        opacity: 0,
+                        stagger: 0.1,
+                        ease: "expo.out",
+                    });
+                }
+            })
+        }
+
+        const heroSection = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".heroSection", 
+                scroller: mainContainer.current,
+                start: "top 5%",
+                end: "bottom 30%",
+                toggleActions: "restart none restart none",
+                onEnter: subtitleHero,
+                onEnterBack: subtitleHero
+            }
+        })
+
+        heroSection.from(".title-hero",{
+            opacity: 0,
+            y: -60,
+            duration: 1.5,
+            ease: 'power3.out',
+            stagger: 0.5,
+        }).from(".btn-scroll-hero", {
+            opacity: 0,
+            y: -60,
+            duration: 1.5,
+            ease: 'power3.out',
+            stagger: 0.5,
+        },0.8)
+    })
     
     return (
-         <div className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
+         <div ref={mainContainer} className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
             <section
-                className="topSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
+                className="heroSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
                 <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 lg:flex-row justify-between w-full px-5 md:px-24 ">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
                         <h1 className="
-                            title-projects
+                            title-hero
                             text-6xl 
                             leading-18
                             max-[360px]:line-clamp-2 max-[380px]:text-[28px] 
@@ -136,7 +191,7 @@ export default function Certificates() {
                             type='button'
                             onClick={() => handleScrollDown() }
                             className="
-                                btn-scroll-projects
+                                btn-scroll-hero
                                 flex
                                 items-center
                                 px-8

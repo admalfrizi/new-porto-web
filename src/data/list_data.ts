@@ -230,6 +230,7 @@ export const skillsData: SkillsData[] =
             "Git", 
             "Docker", 
             "Postman",
+            "Amazon Web Services"
         ]
     }
 ];

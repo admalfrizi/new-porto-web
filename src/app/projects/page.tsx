@@ -1,15 +1,12 @@
 "use client";
 
 import CardProjects from '@/components/CardProjects';
-import { Card, CardContent } from '@/components/ui/card';
 import { mobileApps, webApps } from '@/data/projects_data';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRef, useState } from 'react';
-import { div } from 'framer-motion/client';
 import { AnimatePresence, motion } from 'framer-motion';
 import PortoDetailModal from '@/components/PortoDetailModal';
 
