@@ -501,7 +501,7 @@ export default function mainPage() {
                 <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
                     <div className="content-center pb-10 lg:pb-30">
                         <h1 className="title-ts text-3xl text-center text-white md:text-5xl font-semibold font-main">
-                             Tech Stack
+                            Tech Stack
                         </h1>
                     </div>
                     <div className="max-w-full mx-auto grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-y-10 gap-x-6">
