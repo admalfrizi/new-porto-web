@@ -287,7 +287,8 @@ export default function mainPage() {
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-x-5 max-[416px]:gap-y-3 w-full">
-                            <button
+                            <Link
+                                href={"./files/cv_adamalfarizi_2025.pdf"}
                                 className="
                                     btn-hero
                                     flex
@@ -308,9 +309,12 @@ export default function mainPage() {
                                     cursor-pointer
                                     w-fit
                                 "
+                                download
+                                target="_blank"                 // Optional: opens the link in a new tab first
+                                rel="noopener noreferrer"
                             >
-                                <a> Download my CV </a>
-                            </button>
+                                Download my CV 
+                            </Link>
                             <button
                                 type="button"
                                 onClick={scrollToAboutMe}
