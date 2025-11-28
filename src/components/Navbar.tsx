@@ -7,6 +7,7 @@ import { Mail, X } from "lucide-react";
 import LinkIcon from "./LinkIcon";
 import { Button } from "./ui/button";
 import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
+import { prefixPath } from "@/lib/utils";
 
 interface NavItemViewProps {
     isNavOpen: boolean;
@@ -199,7 +200,7 @@ const Navbar = () => {
                     aria-disabled={isMenuOpen}
                 >
                     <Image
-                        src={"/icons/menu_ic.svg"}
+                        src={prefixPath("/icons/menu_ic.svg") }
                         alt=""
                         fill
                     />
