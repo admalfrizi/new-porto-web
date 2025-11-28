@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { prefixPath } from "@/lib/utils";
 
 const outifit = Outfit({
   variable: "--font-outfit",
@@ -37,10 +38,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeVariables = {
+    // This calculates: url('/repo-name/images/hero.jpg')
+    '--bg-hero': `url('${prefixPath('/images/home_bg.jpg')}')`,
+  } as React.CSSProperties;
+
   return (
     <html lang="en">
       <body
         className={`${outifit.variable} antialiased`}
+        style={themeVariables}
       >
         <Navbar />
         {children}
@@ -48,3 +55,4 @@ export default function RootLayout({
     </html>
   );
 }
+

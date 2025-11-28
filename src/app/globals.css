@@ -6,7 +6,7 @@
 
 @layer utilities {
   .bg-home {
-    background-image: url('/images/home_bg.jpg');
+    background-image: var(--bg-hero);
   }
 
   button:not(:disabled),
