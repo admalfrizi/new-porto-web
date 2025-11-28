@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: false,
   output: 'export',
-  basePath: "/porto",
   images: {
     unoptimized: true,
   },
