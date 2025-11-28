@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   cacheComponents: false,
   output: 'export',
   basePath: isProd ? `/${repoName}` : "",
+  assetPrefix: isProd ? `/${repoName}/` : "",
+  // env: {
+  //   NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : "",
+  // },
   images: {
     unoptimized: true,
   },
