@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   //   NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : "",
   // },
   images: {
-    unoptimized: true,
+    unoptimized: isProd ? true : false,
   },
 };
 
