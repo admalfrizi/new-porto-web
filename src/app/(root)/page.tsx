@@ -408,7 +408,7 @@ export default function mainPage() {
                             </div>    
                         </div>
                         <Image
-                            className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[836px]:w-50 max-[950px]:w-65 max-[1024px]:w-80 lg:w-auto"
+                            className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[836px]:w-50 max-[950px]:w-65 max-[1024px]:w-80 lg:w-100"
                             src={prefixPath("/images/profile_1.jpg")}
                             alt={""}  
                             width={400}  
@@ -557,9 +557,7 @@ export default function mainPage() {
                             className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-100"
                             src={prefixPath("/images/let's_connect.jpg")}
                             alt={""}
-                            style={{
-                                objectFit: 'contain',
-                            }}
+                            objectFit="contain"
                             width={400}  
                             height={600}                
                         />
