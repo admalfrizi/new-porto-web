@@ -324,7 +324,7 @@ const aboutmePage = () => {
                         </button>      
                     </div>
                     <Image
-                        className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-auto"
+                        className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-100"
                         src={prefixPath("/images/profile_1.jpg")}
                         alt={""}  
                         width={400}  
