@@ -77,7 +77,7 @@ const ModalDetailCertificates = ({img, onClose}: ModalPopupProps) => {
                 </button>
                 <div className="relative w-full h-screen">
                     <Image
-                        src={img}
+                        src={prefixPath(img)}
                         alt={`Screenshot of `}
                         className="object-contain"
                         fill
