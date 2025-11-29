@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import PortoDetailModal from '@/components/PortoDetailModal';
+import { prefixPath } from '@/lib/utils';
 
 const projectCategory = [
     "Mobile Apps",
@@ -205,7 +206,7 @@ export default function ProjectsPage()
                     </div>
                     <Image
                         className="icon_ic object-contain rounded-[20px] mb-5 w-120 md:w-150"
-                        src="/icons/my_project_ic.svg"
+                        src={prefixPath("/icons/my_project_ic.svg")}
                         alt={""}
                         width={500}
                         height={900}                

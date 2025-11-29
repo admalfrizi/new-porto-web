@@ -402,7 +402,7 @@ const aboutmePage = () => {
                             skillsData.map((data, index) => (
                                 <SkillsType 
                                     key={index} 
-                                    icons={data.icons} 
+                                    icons={prefixPath(data.icons)} 
                                     skillName={data.type} 
                                     skillDesc={data.description} 
                                     isSelected={selectedSkills === index}

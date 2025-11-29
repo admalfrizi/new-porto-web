@@ -7,6 +7,7 @@ import gsap from 'gsap';
 import { AnimatePresence, motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
+import { prefixPath } from "@/lib/utils";
 
 interface ModalPopupProps {
     img: string
@@ -222,7 +223,7 @@ export default function Certificates() {
                     </div>
                     <Image
                         className="icon-ic object-contain rounded-[20px] mb-5 max-[500px]:w-65 max-[768px]:w-90 max-[1024px]:w-100 lg:w-150"
-                        src="/icons/certificate_ic.svg"
+                        src={prefixPath("/icons/certificate_ic.svg")}
                         alt={""}
                         width={500}
                         height={900}                
