@@ -59,8 +59,6 @@ const ModalDetailCertificates = ({img, onClose}: ModalPopupProps) => {
         }, 300);
     };
 
-    
-
     return (
         <div className={`fixed inset-0 z-50 flex items-center bg-black/30 justify-center p-4 transition-opacity duration-300 backdrop-blur-sm`}>
             <div className={`relative w-full transform-gpu overflow-hidden transition-all duration-300 `}
