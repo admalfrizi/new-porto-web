@@ -114,7 +114,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         <Button size="icon-lg" asChild>
                             <a href={LINKEDIN_URL} target="_blank" className="w-[71px] h-[71px] max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-1">
                                 <Image 
-                                    src="/icons/linkedin-ic.svg"
+                                    src={prefixPath("/icons/linkedin-ic.svg")}
                                     alt="Blurred background"
                                     width={60}
                                     height={60}
@@ -125,7 +125,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         <Button size="icon-lg" asChild>
                             <a href={GITHUB_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-1">
                                 <Image 
-                                    src="/icons/github_ic.svg"
+                                    src={prefixPath("/icons/github_ic.svg")}
                                     alt="Blurred background"
                                     width={60}
                                     height={60}
@@ -136,7 +136,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         <Button size="icon-lg" asChild>
                             <a href={INSTAGRAM_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-2">
                                 <Image 
-                                    src="/icons/ig_ic.svg"
+                                    src={prefixPath("/icons/ig_ic.svg")}
                                     alt="Blurred background"
                                     width={60}
                                     height={60}
@@ -148,7 +148,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         <Button size="icon-lg" asChild>
                             <a href={YOUTUBE_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-2">
                                 <Image 
-                                    src="/icons/yt_ic.svg"
+                                    src={prefixPath("/icons/yt_ic.svg")}
                                     alt="Blurred background"
                                     width={60}
                                     height={60}
