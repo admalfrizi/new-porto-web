@@ -3,6 +3,7 @@
 import SkillsType from '@/components/SkillsType';
 import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
+import { prefixPath } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
@@ -324,7 +325,7 @@ const aboutmePage = () => {
                     </div>
                     <Image
                         className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-auto"
-                        src="/images/profile_1.jpg"
+                        src={prefixPath("/images/profile_1.jpg")}
                         alt={""}  
                         width={400}  
                         height={600}                
@@ -340,7 +341,7 @@ const aboutmePage = () => {
                     <div className="relative w-full h-96 md:w-136 md:h-80 lg:w-136 lg:h-126 md:me-10">
                         <div className="whoami-first-image absolute top-0 left-0 w-3/4 h-3/5 max-[375px]:w-4/5 max-[375px]:h-2/5">
                             <Image 
-                                src="/images/first.png" 
+                                src={prefixPath("/images/first.png")} 
                                 alt="Adam Alfirizi Ismail 1"
                                 className="object-cover rounded-lg w-full h-full shadow-lg"
                                 fill
@@ -348,7 +349,7 @@ const aboutmePage = () => {
                         </div>
                         <div className="whoami-second-image absolute top-4 md:top-8 right-0 w-2/5 h-3/5 max-[375px]:h-2/4 max-[375px]:top-8">
                             <Image 
-                                src="/images/second.JPG"  
+                                src={prefixPath("/images/second.JPG")}  
                                 alt="Adam Alfirizi Ismail 2"
                                 className="object-cover rounded-lg w-full h-full shadow-lg"
                                 fill
@@ -356,7 +357,7 @@ const aboutmePage = () => {
                         </div>
                         <div className="whoami-third-image absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5 max-[375px]:h-2/4 max-[375px]:bottom-18">
                             <Image 
-                                src="/images/third.JPG"  
+                                src={prefixPath("/images/third.JPG")}  
                                 alt="Adam Alfirizi Ismail 3"
                                 className="object-cover rounded-xl w-full h-full shadow-lg"
                                 fill
@@ -521,7 +522,7 @@ const aboutmePage = () => {
                                 <div className="flex flex-row rounded-lg w-full">
                                     <div className="flex w-1/3 md:mb-0">
                                         <Image
-                                            src="/images/first_image.jpg"
+                                            src={prefixPath("/images/first_image.jpg")}
                                             alt="Main image description"
                                             width={350}
                                             height={300}
@@ -530,7 +531,7 @@ const aboutmePage = () => {
                                     </div>
                                     <div className="flex w-1/3">
                                         <Image
-                                            src="/images/second_image.jpg"
+                                            src={prefixPath("/images/second_image.jpg")}
                                             alt="Secondary image description"
                                             width={300}
                                             height={300}
@@ -539,7 +540,7 @@ const aboutmePage = () => {
                                     </div>
                                     <div className="flex w-1/3">
                                         <Image
-                                            src="/images/third_image.jpg"
+                                            src={prefixPath("/images/third_image.jpg")}
                                             alt="Secondary image description"
                                             width={300}
                                             height={300}
