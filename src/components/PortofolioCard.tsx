@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
+import { prefixPath } from '@/lib/utils';
 
 interface PortoCardParams {
     data: HighlightProject
@@ -11,7 +12,7 @@ export default function PortofolioCard({data} : PortoCardParams)
     return (
         <Card className="content-center relative h-full overflow-hidden p-0 rounded-3xl border-0">
             <Image
-                src={data.imgBackground}
+                src={prefixPath(data.imgBackground)}
                 alt="Blurred background"
                 fill
                 className="filter object-cover scale-115 blur-sm opacity-75"
@@ -29,7 +30,6 @@ export default function PortofolioCard({data} : PortoCardParams)
                         overflow-hidden
                     `}
                 >
-                    {/* Left Side: Text Content */}
                     <div className="max-w-full lg:w-2/5 pb-5 text-brand-900">
                         {/* Row 1 */}
                         <h3 className="text-lg lg:text-2xl font-bold max-[445px]:pb-4 pb-8">{data.name}</h3>
@@ -44,11 +44,9 @@ export default function PortofolioCard({data} : PortoCardParams)
                             }
                         </div>
                     </div>
-
-                    {/* Right Side: Image */}
                     <div className="sm:w-xs md:w-sm lg:w-xl xl:w-1/2 ">
                         <img
-                            src={data.imgBackground}
+                            src={prefixPath(data.imgBackground)}
                             alt={data.name}
                         />
                     </div>
