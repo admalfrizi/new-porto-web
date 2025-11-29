@@ -554,7 +554,7 @@ export default function mainPage() {
                             
                         </div> 
                         <Image
-                            className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-auto"
+                            className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-100"
                             src={prefixPath("/images/let's_connect.jpg")}
                             alt={""}
                             objectFit="contain"
