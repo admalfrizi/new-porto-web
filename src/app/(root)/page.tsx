@@ -4,6 +4,7 @@ import PortofolioCard from "@/components/PortofolioCard";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { projects, techStack } from "@/data/list_data";
+import myLoader from "@/lib/image-loader";
 import { prefixPath } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -408,6 +409,7 @@ export default function mainPage() {
                             </div>    
                         </div>
                         <Image
+                            loader={myLoader}
                             className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[836px]:w-50 max-[950px]:w-65 max-[1024px]:w-80 lg:w-100"
                             src={"/images/profile_1.jpg"}
                             alt={""}  
@@ -506,7 +508,7 @@ export default function mainPage() {
                                 techStack.map((data, idx) => (
                                     <div key={idx} className="icon-ts flex flex-col items-center justify-center gap-2">
                                         <div className="relative w-12 h-12 max-[440px]:w-10 max-[440px]:h-10 md:w-16 md:h-16 rounded-lg flex items-center justify-center text-2xl font-bold text-gray-400">
-                                            <Image src={prefixPath(data.icons)} className="object-contain" alt="fwfqw" fill />
+                                            <Image loader={myLoader} src={prefixPath(data.icons)} className="object-contain" alt="fwfqw" fill />
                                         </div>
                                         <span className="text-sm text-center text-white md:text-base">{data.name}</span>
                                     </div>
@@ -554,6 +556,7 @@ export default function mainPage() {
                             
                         </div> 
                         <Image
+                            loader={myLoader}
                             className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-100"
                             src={prefixPath("/images/let's_connect.jpg")}
                             alt={""}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
 import { prefixPath } from '@/lib/utils';
+import myLoader from "@/lib/image-loader";
 
 interface PortoCardParams {
     data: HighlightProject
@@ -12,6 +13,7 @@ export default function PortofolioCard({data} : PortoCardParams)
     return (
         <Card className="content-center relative h-full overflow-hidden p-0 rounded-3xl border-0">
             <Image
+                loader={myLoader}
                 src={prefixPath(data.imgBackground)}
                 alt="Blurred background"
                 fill
