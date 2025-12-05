@@ -411,7 +411,7 @@ export default function mainPage() {
                         <Image
                             loader={myLoader}
                             className="about-animation rounded-[20px] mb-5 xl:mb-0 max-[400px]:w-45 max-[836px]:w-50 max-[950px]:w-65 max-[1024px]:w-80 lg:w-100"
-                            src={"/images/profile_1.jpg"}
+                            src={prefixPath("/images/profile_1.jpg")}
                             alt={""}  
                             width={400}  
                             height={600}                
