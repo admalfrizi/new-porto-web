@@ -10,6 +10,7 @@ import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
+import myLoader from './../../lib/image-loader';
 
 const containerVariants = {
   initial: {
@@ -324,6 +325,7 @@ const aboutmePage = () => {
                         </button>      
                     </div>
                     <Image
+                        loader={myLoader}
                         className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-100"
                         src={prefixPath("/images/profile_1.jpg")}
                         alt={""}  
@@ -341,6 +343,7 @@ const aboutmePage = () => {
                     <div className="relative w-full h-96 md:w-136 md:h-80 lg:w-136 lg:h-126 md:me-10">
                         <div className="whoami-first-image absolute top-0 left-0 w-3/4 h-3/5 max-[375px]:w-4/5 max-[375px]:h-2/5">
                             <Image 
+                                loader={myLoader}
                                 src={prefixPath("/images/first.png")} 
                                 alt="Adam Alfirizi Ismail 1"
                                 className="object-cover rounded-lg w-full h-full shadow-lg"
@@ -349,6 +352,7 @@ const aboutmePage = () => {
                         </div>
                         <div className="whoami-second-image absolute top-4 md:top-8 right-0 w-2/5 h-3/5 max-[375px]:h-2/4 max-[375px]:top-8">
                             <Image 
+                                loader={myLoader}
                                 src={prefixPath("/images/second.JPG")}  
                                 alt="Adam Alfirizi Ismail 2"
                                 className="object-cover rounded-lg w-full h-full shadow-lg"
@@ -357,6 +361,7 @@ const aboutmePage = () => {
                         </div>
                         <div className="whoami-third-image absolute bottom-0 left-0 ms-3 sm:ms-6 w-1/3 h-3/5 max-[375px]:h-2/4 max-[375px]:bottom-18">
                             <Image 
+                                loader={myLoader}
                                 src={prefixPath("/images/third.JPG")}  
                                 alt="Adam Alfirizi Ismail 3"
                                 className="object-cover rounded-xl w-full h-full shadow-lg"
@@ -522,6 +527,7 @@ const aboutmePage = () => {
                                 <div className="flex flex-row rounded-lg w-full">
                                     <div className="flex w-1/3 md:mb-0">
                                         <Image
+                                            loader={myLoader}
                                             src={prefixPath("/images/first_image.jpg")}
                                             alt="Main image description"
                                             width={350}
@@ -531,6 +537,7 @@ const aboutmePage = () => {
                                     </div>
                                     <div className="flex w-1/3">
                                         <Image
+                                            loader={myLoader}
                                             src={prefixPath("/images/second_image.jpg")}
                                             alt="Secondary image description"
                                             width={300}
@@ -540,6 +547,7 @@ const aboutmePage = () => {
                                     </div>
                                     <div className="flex w-1/3">
                                         <Image
+                                            loader={myLoader}
                                             src={prefixPath("/images/third_image.jpg")}
                                             alt="Secondary image description"
                                             width={300}
