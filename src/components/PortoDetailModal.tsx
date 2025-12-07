@@ -14,7 +14,7 @@ const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
             <>
                 <span>|</span>
                 <a className='flex flex-row space-x-3 items-center' href={linkGithub}>
-                        <Image src={'/icons/github_ic.svg'} alt={''} className=' max-[1024px]:w-4 max-[1024px]:h-4 lg:w-5 lg:h-5' width={40} height={40}/>
+                        <Image loader={myLoader} src={'/icons/github_ic.svg'} alt={''} className=' max-[1024px]:w-4 max-[1024px]:h-4 lg:w-5 lg:h-5' width={40} height={40}/>
                     <p className='font-main text-sm'>Link Github</p>
                 </a>
             </>

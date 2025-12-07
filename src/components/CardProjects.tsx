@@ -42,6 +42,7 @@ export default function CardProjects({data, clickMore} : CardProjectsProps)
                 <div className='flex flex-col lg:flex-row'>
                     <div className="relative w-3/6 max-[1024px]:w-full aspect-video"> 
                         <Image
+                            loader={myLoader}
                             src={prefixPath(data.imgLink)}
                             alt="A descriptive alt text"
                             fill
