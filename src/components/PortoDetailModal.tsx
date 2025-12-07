@@ -1,3 +1,4 @@
+import myLoader from "@/lib/image-loader";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -68,6 +69,7 @@ export default function PortoDetailModal({data, onClose}: PortoDetailModalProps)
                 </button>
                 <div>
                     <Image
+                        loader={myLoader}
                         src={data.imgLink}
                         alt={`Screenshot of ${data.projectName}`}
                         className="max-[395px]:h-48 max-[480px]:h-56 max-[1024px]:h-72 lg:h-96 w-full object-cover"

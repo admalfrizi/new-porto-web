@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { prefixPath } from '@/lib/utils';
+import myLoader from "@/lib/image-loader";
 
 interface CardProjectsProps {
     data: MyProjects
@@ -16,7 +17,7 @@ const LinkGithub = ({linkGithub} : { linkGithub ?: string }) => {
             <>
                 <span>|</span>
                 <a className='flex flex-row space-x-3 items-center' href={linkGithub}>
-                        <Image src={prefixPath('/icons/github_ic.svg')} alt={''} className='w-10 h-10 max-sm:w-6 max-sm:h-6 max-[768px]:w-8 max-[768px]:h-8' width={40} height={40}/>
+                        <Image loader={myLoader} src={prefixPath('/icons/github_ic.svg')} alt={''} className='w-10 h-10 max-sm:w-6 max-sm:h-6 max-[768px]:w-8 max-[768px]:h-8' width={40} height={40}/>
                     <p className='font-main max-sm:text-sm max-[768px]:text-md max-[1024px]:text-lg lg:text-xl'>Link Github</p>
                 </a>
             </>

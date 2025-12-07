@@ -10,6 +10,7 @@ import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import PortoDetailModal from '@/components/PortoDetailModal';
 import { prefixPath } from '@/lib/utils';
+import myLoader from '@/lib/image-loader';
 
 const projectCategory = [
     "Mobile Apps",
@@ -205,6 +206,7 @@ export default function ProjectsPage()
                         </button>      
                     </div>
                     <Image
+                        loader={myLoader}
                         className="icon_ic object-contain rounded-[20px] mb-5 w-120 md:w-150"
                         src={prefixPath("/icons/my_project_ic.svg")}
                         alt={""}

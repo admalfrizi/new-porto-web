@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { prefixPath } from "@/lib/utils";
+import myLoader from "@/lib/image-loader";
 
 interface ModalPopupProps {
     img: string
@@ -75,6 +76,7 @@ const ModalDetailCertificates = ({img, onClose}: ModalPopupProps) => {
                 </button>
                 <div className="relative w-full h-screen">
                     <Image
+                        loader={myLoader}
                         src={prefixPath(img)}
                         alt={`Screenshot of `}
                         className="object-contain"
@@ -220,6 +222,7 @@ export default function Certificates() {
                         </button>      
                     </div>
                     <Image
+                        loader={myLoader}
                         className="icon-ic object-contain rounded-[20px] mb-5 max-[500px]:w-65 max-[768px]:w-90 max-[1024px]:w-100 lg:w-150"
                         src={prefixPath("/icons/certificate_ic.svg")}
                         alt={""}
