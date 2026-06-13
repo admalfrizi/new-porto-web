@@ -172,21 +172,17 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Effect to control background scrolling
     useEffect(() => {
         if (isMenuOpen) {
-            // Prevent scrolling when menu is open
             document.body.classList.add('overflow-hidden');
         } else {
-            // Re-enable scrolling when menu is closed
             document.body.classList.remove('overflow-hidden');
         }
 
-        // Cleanup function to remove the class if the component unmounts
         return () => {
             document.body.classList.remove('overflow-hidden');
         };
-    }, [isMenuOpen]); // Only re-run this effect when isMenuOpen changes
+    }, [isMenuOpen]);
 
     const openMenu = () => setIsMenuOpen(true);
     const closeMenu = () => setIsMenuOpen(false);
