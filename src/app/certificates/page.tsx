@@ -9,6 +9,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { prefixPath } from "@/lib/utils";
 import myLoader from "@/lib/image-loader";
+import CertificatesHero from "@/components/section/certificates/HeroSection";
+import SectionTitle from "@/components/elements/SectionTitle";
+import { Section } from "@/components/ui/section";
 
 interface ModalPopupProps {
     img: string
@@ -170,116 +173,61 @@ export default function Certificates() {
     
     return (
          <div ref={mainContainer} className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
-            <section
+            <div
                 className="heroSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 lg:flex-row justify-between w-full px-5 md:px-24 ">
-                    <div className="z-10 text-start text-brand-900 content-center max-[400px]:mr-0 lg:mr-15">
-                        <h1 className="
-                            title-hero
-                            text-6xl 
-                            leading-18
-                            max-[360px]:line-clamp-2 max-[380px]:text-[28px] 
-                            max-[496px]:text-3xl max-[496px]:leading-13
-                            max-[1380px]:max-w-lg max-[768px]:text-4xl 
-                            max-[1280px]:text-5xl font-bold font-main"
+                <CertificatesHero handleScrollDown={handleScrollDown} />
+            </div>
+            <div ref={toMainSection} className='mainSection h-fit pt-20 pb-10 bg-brand-50 bg-cover bg-center'>
+                <Section className="flex flex-col justify-space-between">
+                    <SectionTitle title={"My Certificates"} width={"line-title-main w-62"} classTitle={"title-main"}  />
+                    <div className="pb-10"/>
+                    <AnimatePresence mode='wait'>
+                        <motion.div
+                            variants={containerVariants}
+                            initial="initial"
+                            exit="exit"
+                            whileInView="animate"
+                            className="grid grid-cols-4 max-[1024px]:grid-cols-2 max-[1280px]:grid-cols-3 gap-4 w-full"
                         >
-                            List of Certificates
-                        </h1>
-                        <div className="max-w-2xl max-[1380px]:max-w-lg max-[1024px]:w-full my-5 lg:my-8">
-                            <p className="
-                                subtitle-hero
-                                leading-relaxed max-[500px]:text-md max-[1280px]:text-lg xl:text-2xl 
-                                max-[380px]:text-[14px] max-[360px]:text-[12px] 
-                                font-light"
-                            >
-                                To demonstrate my proficiency, I've earned certifications in key areas of development. Feel free to explore my qualifications.
-                            </p>
-                        </div>
-                        <button
-                            type='button'
-                            onClick={() => handleScrollDown() }
-                            className="
-                                btn-scroll-hero
-                                flex
-                                items-center
-                                px-8
-                                py-3
-                                border border-transparent
-                                font-bold
-                                rounded-full
-                                text-white
-                                md:py-4 max-[768px]:text-sm max-[1024px]:text-md lg:text-lg md:px-10
-                                bg-brand-50
-                                hover:bg-gray-800
-                                transition-colors 
-                                duration-300 
-                                ease-in-out
-                                cursor-pointer
-                            "
-                        >
-                            <p className='text-center'>Scroll Down</p>
-                        </button>      
-                    </div>
-                    <Image
-                        loader={myLoader}
-                        className="icon-ic object-contain rounded-[20px] mb-5 max-[500px]:w-65 max-[768px]:w-90 max-[1024px]:w-100 lg:w-150"
-                        src={prefixPath("/icons/certificate_ic.svg")}
-                        alt={""}
-                        width={500}
-                        height={900}                
-                    />
-                </div>
-            </section>
-            <div ref={toMainSection} className='mainSection h-fit pt-20 pb-10 px-5 md:px-24 flex flex-col justify-space-between bg-brand-50 bg-cover bg-center'>
-                <div className='flex flex-col w-full pb-10'>
-                    <h1 className='title-main mb-3 font-semibold text-4xl text-brand-900'>My Certificates</h1>
-                    <div className="line-title-main w-62 h-1 bg-brand-900 rounded-full"></div>
-                </div>
-                <AnimatePresence  mode='wait'>
-                    <motion.div
-                        variants={containerVariants}
-                        initial="initial"
-                        exit="exit"
-                        whileInView="animate"
-                        className="grid grid-cols-4 max-[1024px]:grid-cols-2 max-[1280px]:grid-cols-3 gap-4 w-full"
-                    >
-                        {
-                            certificate.map((dta,idx) => (
-                                <motion.div 
-                                    key={idx} 
-                                    variants={cardAnimation}
-                                    initial="initial"
-                                    exit="exit"
-                                    whileInView="animate"
-                                    onClick={() => openModal(dta)} 
-                                    className="group relative overflow-hidden cursor-pointer rounded-lg shadow-lg "
-                                >
-                                    <Image
-                                        loader={myLoader}
-                                        src={prefixPath(dta.imgLinks)}
-                                        alt="title"
-                                        width={500}
-                                        height={400}
-                                        className="h-72 w-full object-cover group-hover:blur-sm"
-                                    />
-                                    <div 
-                                        className="absolute bottom-0 left-0 w-full h-full p-4 
-                                            bg-black/30 backdrop-blur-sm bg-opacity-70 text-white
-                                                opacity-0 translate-y-full content-center
-                                                group-hover:opacity-100 group-hover:translate-y-0
-                                                transition-opacity duration-300 ease-in-out"
+                            {
+                                certificate.map((dta,idx) => (
+                                    <motion.div 
+                                        key={idx} 
+                                        variants={cardAnimation}
+                                        initial="initial"
+                                        exit="exit"
+                                        whileInView="animate"
+                                        onClick={() => openModal(dta)} 
+                                        className="group relative overflow-hidden cursor-pointer rounded-lg shadow-lg "
                                     >
-                                        <h3 className="text-xl font-semibold     text-center">{dta.nameCertificates}</h3>
-                                        <p className="text-sm text-center font-light pt-4">{dta.years}</p>
-                                        <p className="text-sm text-center font-medium pt-4">- {dta.publisher} -</p>
-                                    </div>
-                                </motion.div>
-                            ))
-                        }
-                    </motion.div>
-                </AnimatePresence>
-                
+                                        <Image
+                                            loader={myLoader}
+                                            src={prefixPath(dta.imgLinks)}
+                                            alt="title"
+                                            width={500}
+                                            height={400}
+                                            className="h-72 w-full object-cover group-hover:blur-sm"
+                                        />
+                                        <div 
+                                            className="absolute bottom-0 left-0 w-full h-full p-4 
+                                                bg-black/30 backdrop-blur-sm bg-opacity-70 text-white
+                                                    opacity-0 translate-y-full content-center
+                                                    group-hover:opacity-100 group-hover:translate-y-0
+                                                    transition-opacity duration-300 ease-in-out"
+                                        >
+                                            <h3 className="text-xl font-semibold     text-center">{dta.nameCertificates}</h3>
+                                            <p className="text-sm text-center font-light pt-4">{dta.years}</p>
+                                            <p className="text-sm text-center font-medium pt-4">- {dta.publisher} -</p>
+                                        </div>
+                                    </motion.div>
+                                ))
+                            }
+                        </motion.div>
+                    </AnimatePresence>
+                </Section>
+               
+        
             </div>
             {
                 selectedData && (

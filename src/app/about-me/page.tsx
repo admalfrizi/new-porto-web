@@ -1,23 +1,21 @@
 "use client";
 
-import SkillsType from '@/components/elements/SkillsType';
 import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
 import { prefixPath } from '@/lib/utils';
 import { useGSAP } from '@gsap/react';
-import { AnimatePresence, motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import myLoader from './../../lib/image-loader';
 import { Section } from '@/components/ui/section';
-import ExperienceCard from '@/components/elements/ExperienceCard';
 import WorkExperience from '@/components/section/about-me/WorkExperience';
 import SectionTitle from '@/components/elements/SectionTitle';
 import SkillsTechStack from '@/components/section/about-me/SkillsandTechStack';
 import WhoAmI from '@/components/section/about-me/WhoAmI';
-import HeroSection from '@/components/section/about-me/HeroSection';
+import AboutMeHero from '@/components/section/about-me/HeroSection';
+import Education from '@/components/section/about-me/Education';
 
 const aboutmePage = () => {
     const [selectedSkills, setSelectedSkills] = useState(0);
@@ -27,7 +25,7 @@ const aboutmePage = () => {
 
     const handleScrollDown = () => {
         nextSection.current?.scrollIntoView({
-            behavior: 'smooth' // This creates the animation
+            behavior: 'smooth'
         });
     };
 
@@ -270,7 +268,7 @@ const aboutmePage = () => {
             <div
                 className="topSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <HeroSection handleScrollDown={handleScrollDown}/>
+                <AboutMeHero handleScrollDown={handleScrollDown}/>
             </div>
             <div ref={nextSection} className='whoamiSection h-fit pt-20 bg-cover bg-brand-50 bg-center'>
                 <Section className='flex flex-col items-center justify-space-between pb-10'>
@@ -300,67 +298,11 @@ const aboutmePage = () => {
                     <WorkExperience data={experiences} lastIdx={lastIdx}/>
                 </Section>
             </div>
-            <div className='h-fit px-5 md:px-24 py-10 flex flex-col items-center bg-cover bg-brand-50 bg-center'>
-                <div className='flex flex-col w-full'>
-                    <h1 className='mb-3 font-semibold text-4xl max-[380px]:text-3xl text-brand-900'>Education</h1>
-                    <div className="w-41 max-[380px]:w-34 h-1 bg-brand-900 rounded-full"/>
-                </div>
-                <div className='flex justify-center w-full'>
-                    <Card className="mt-10 p-0 bg-brand-100 backdrop-blur-sm border-white/10 content-center">
-                        <CardContent className='px-0'>
-                            <div className="flex flex-col lg:flex-row w-full rounded-lg min-h-100 text-white overflow-hidden">
-                                <div className="flex flex-row rounded-lg w-full">
-                                    <div className="flex w-1/3 md:mb-0">
-                                        <Image
-                                            loader={myLoader}
-                                            src={prefixPath("/images/first_image.jpg")}
-                                            alt="Main image description"
-                                            width={350}
-                                            height={300}
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div className="flex w-1/3">
-                                        <Image
-                                            loader={myLoader}
-                                            src={prefixPath("/images/second_image.jpg")}
-                                            alt="Secondary image description"
-                                            width={300}
-                                            height={300}
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                    <div className="flex w-1/3">
-                                        <Image
-                                            loader={myLoader}
-                                            src={prefixPath("/images/third_image.jpg")}
-                                            alt="Secondary image description"
-                                            width={300}
-                                            height={300}
-                                            className="object-cover"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="flex flex-col content-center w-full max-[360px]:p-3 max-[512px]:p-3 max-[512px]:ms-0 max-md:py-3 ms-6 md:pe-6 md:py-6">
-                                    <div className="font-light pb-3 text-brand-900">
-                                        <p className='text-lg max-[360px]:text-[13px]'>Aug 2020 - Apr 2025</p>
-                                    </div>
-                                    <div className="font-bold pb-3 text-brand-900">
-                                        <h1 className='text-2xl max-[360px]:text-lg lg:text-4xl'>
-                                            Universitas Dian Nuswantoro
-                                        </h1>
-                                    </div>
-                                    <div className='max-w-xl text-brand-900'>
-                                        <p className='text-lg max-[360px]:text-[13px]'>S1 Teknik Informatika - Computer Science</p>
-                                    </div>
-                                    <div className='flex flex-row space-x-4 py-3 w-full text-left text-brand-900'>
-                                        <p className='text-lg max-[360px]:text-[13px]'>Semarang, Jawa Tengah</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
+            <div className='h-fit px-5 md:px-24 py-10 bg-cover bg-brand-50 bg-center'>
+                <Section className='flex flex-col items-center'>
+                    <SectionTitle title={'Education'} width={'w-41'} classTitle={''} />
+                    <Education />
+                </Section>
             </div>
         </div>
     )

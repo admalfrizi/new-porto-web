@@ -7,25 +7,38 @@ interface HeroSectionProps {
     handleScrollDown: () => void;
 }
 
-export default function AboutMeHero({
+export default function ProjectHero({
     handleScrollDown
 }: HeroSectionProps) {
     return (
-        <Section className="flex flex-col-reverse max-[360px]:mt-0 max-[920px]:pt-10 min-[920px]:flex-row justify-between">
+        <Section className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between">
             <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
-                <h1 className="title-am max-[1281px]:max-w-sm text-3xl max-[360px]:line-clamp-2 max-[380px]:text-[28px] min-[920px]:text-6xl font-bold font-main">
-                    Want to more about me ?
+                <h1 className="
+                    title-projects
+                    text-6xl 
+                    leading-18
+                    max-[360px]:line-clamp-2 max-[380px]:text-[28px] 
+                    max-[496px]:text-3xl max-[496px]:leading-13
+                    max-[1380px]:max-w-lg max-[768px]:text-4xl 
+                    max-[1280px]:text-5xl font-bold font-main"
+                >
+                    Welcome to My Project !
                 </h1>
-                <div className="max-w-xl my-5 lg:my-8">
-                    <p className="subtitle-am leading-relaxed text-[16px] md:text-[20px] max-[380px]:text-[14px] max-[360px]:text-[12px] max-[360px]:line-clamp-2 font-main">
-                        Curious about my work and experience? My full introduction and project portfolio are just a scroll away
+                <div className="max-w-2xl max-[1380px]:max-w-lg my-5 lg:my-8">
+                    <p className="
+                        subtitle-hero
+                        leading-relaxed max-xl:text-lg xl:text-2xl 
+                        max-[380px]:text-[14px] max-[360px]:text-[12px] 
+                        font-light"
+                    >
+                        Curious about my technical skills? My projects are the best proof. Take a look at my work to see how I approach complex problems, use modern technologies, and turn ideas into reality.
                     </p>
                 </div>
                 <button
                     type='button'
                     onClick={() => handleScrollDown() }
                     className="
-                        scrolldown-btn-am
+                        btn-scroll-projects
                         flex
                         items-center
                         px-8
@@ -49,11 +62,11 @@ export default function AboutMeHero({
             </div>
             <Image
                 loader={myLoader}
-                className="image-am rounded-[20px] mb-5 xl:mb-0 w-75 max-[360px]:w-45 max-[512px]:w-60 max-[920px]:w-65 lg:w-100"
-                src={prefixPath("/images/profile_1.jpg")}
-                alt={""}  
-                width={400}  
-                height={600}                
+                className="icon_ic object-contain rounded-[20px] mb-5 w-120 md:w-150"
+                src={prefixPath("/icons/my_project_ic.svg")}
+                alt={""}
+                width={500}
+                height={900}                
             />
         </Section>
     )
