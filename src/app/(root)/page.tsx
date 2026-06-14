@@ -3,6 +3,7 @@ import LinkIcon from "@/components/elements/LinkIcon";
 import PortofolioCard from "@/components/elements/PortofolioCard";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Section } from "@/components/ui/section";
 import { projects, techStack } from "@/data/list_data";
 import myLoader from "@/lib/image-loader";
 import { prefixPath } from "@/lib/utils";
@@ -257,13 +258,13 @@ export default function mainPage() {
     return (
         <>
             <div ref={mainContainer} className="snap-y snap-mandatory h-screen overflow-y-scroll scrollbar-hide">
-                <section
+                <div
                     id="main"
-                    className="section1 relative h-screen snap-start flex items-center justify-start bg-cover bg-home bg-center"
+                    className="section1 relative snap-start w-full bg-cover bg-home bg-center"
                 >
                     <div className="absolute inset-0 bg-black opacity-30"></div>
-                    <div className="flex flex-col justify-center z-10 text-start text-brand-900 w-full">
-                        <div className="px-5 md:px-24">
+                    <Section>
+                        <div className="flex flex-col justify-center h-screen z-10 text-start text-brand-900 w-full">
                             <h1 className="title-hero text-3xl max-[380px]:text-2xl sm:text-6xl font-bold mb-2 font-main">
                                 Welcome To My Home
                             </h1>
@@ -339,14 +340,14 @@ export default function mainPage() {
                                 </button>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <section
+                    </Section>
+                </div>
+                <div
                     id="aboutme"
                     ref={toAboutMe}
                     className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
                 >
-                    <div className="flex flex-col-reverse min-[836px]:flex-row py-20 xl:py-0 justify-between w-full px-5 md:px-24 ">
+                    <Section className="flex flex-col-reverse min-[836px]:flex-row py-20 xl:py-0 justify-between">
                         <div className="z-10 text-start text-brand-900 content-center max-[400px]:mr-0 min-[836px]:mr-15">
                             <h1 className="about-animation max-sm:text-3xl max-sm:leading-10 max-md:text-4xl max-lg:text-5xl max-lg:leading-16 lg:text-6xl font-bold font-main line-clamp-2">
                                 Want to more about me ?
@@ -416,14 +417,14 @@ export default function mainPage() {
                             width={400}  
                             height={600}                
                         />
-                    </div>
-                </section>
-                <section
+                    </Section>
+                </div>
+                <div
                     id="projects"
                     ref={toProjects}
                     className="relative h-screen pt-15 snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
                 >
-                    <div className="px-20 md:my-10 md:px-24 mx-auto flex flex-col w-full">
+                    <Section className="flex flex-col w-full">
                         <div className="content-center pb-8">
                             <h1 className="project-animation text-3xl text-center text-white md:text-5xl font-semibold font-main">
                                 My Projects
@@ -490,14 +491,14 @@ export default function mainPage() {
                                 Tech Stacks
                             </Button>   
                         </div>
-                    </div>    
-                </section>
-                <section
+                    </Section>
+                </div>
+                <div
                     id="techstack"
                     ref={toTechStack}
                     className="relative h-screen snap-start flex items-center justify-between bg-cover bg-brand-100 bg-center"
                 >
-                    <div className="px-5 md:px-24 w-full max-[1024px]:pt-20">
+                    <Section>
                         <div className="content-center pb-10 lg:pb-30">
                             <h1 className="title-ts text-3xl text-center text-white md:text-5xl font-semibold font-main">
                                 Tech Stack
@@ -522,14 +523,49 @@ export default function mainPage() {
                                 <span className="text-sm text-center text-white md:text-base">Let's Connect !</span>
                             </div>
                         </div>
-                    </div> 
-                </section>
-                <section
+                    </Section>
+                </div>
+                <div
                     id="letsConnect"
                     ref={toConnect}
                     className="relative h-screen snap-start flex items-center justify-space-between bg-cover bg-brand-50 bg-center"
                 >
-                    <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
+                    <Section className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between">
+                        <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
+                            <h1 className="title-lc text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
+                                Let’s connect with me.
+                            </h1>
+                            <div className="desc-lc max-w-full lg:max-w-2xl mt-10">
+                                <p className="leading-relaxed font-main font-light text-md lg:text-xl">
+                                    Let me know if you want to connect with me for business and network purposes, 
+                                    or you want to contact to me for work purposes with my email down here :
+                                </p>
+                            </div>
+                            <div className="email-lc max-w-md xl:max-w-xl mt-4">
+                                <p className="leading-relaxed font-main font-semibold text-lg lg:text-lg">
+                                    adam.alfarizi.2002@gmail.com
+                                </p>
+                            </div>
+                            <div className="subtitle-lc max-w-md xl:max-w-xl my-4">
+                                <p className="leading-relaxed font-main font-light text-md lg:text-xl">
+                                    Link For My Contacts :
+                                </p>
+                            </div>
+                            <div className="icons-lc flex flex-row">
+                                <LinkIcon/>
+                            </div>
+                        </div>
+                        <Image
+                            loader={myLoader}
+                            className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-100"
+                            src={prefixPath("/images/let's_connect.jpg")}
+                            alt={""}
+                            objectFit="contain"
+                            width={400}  
+                            height={600}                
+                        /> 
+                    </Section>
+                    {/* <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
                         <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
                             <h1 className="title-lc text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
                                 Let’s connect with me.
@@ -564,8 +600,8 @@ export default function mainPage() {
                             width={400}  
                             height={600}                
                         />
-                    </div>
-                </section>
+                    </div> */}
+                </div>
             </div>
             <div className="invisible absolute right-10 max-[400px]:right-3 bottom-10 z-20">
                 <Button size="icon-lg" asChild>

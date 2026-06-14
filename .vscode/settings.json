@@ -1,0 +1,13 @@
+{
+  "js/ts.tsserver.maxMemory": 4096,
+  "files.watcherExclude": {
+    "**/.git/ts.tsserver.maxMemoryobjects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true
+  }
+}

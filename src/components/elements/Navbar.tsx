@@ -189,24 +189,26 @@ const Navbar = () => {
     
     return (
         <>
-            <nav className={`navbar px-5 md:px-24 w-screen fixed backdrop-blur-md transition-colors ease duration-500 inset-0 flex flex-row justify-between items-center h-16 z-50 `}>
-                <Link href="/" >
-                    <h1 className={`font-main font-bold text-2xl ml-2 md:ml-0 transition-colors ease duration-500 text-white`}>
-                        AAI
-                    </h1>
-                </Link>
-                <div 
-                    className={`relative w-10 h-10 rounded-full ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'} hover:bg-white/20 transition-all cursor-pointer`}
-                    onClick={openMenu}
-                    aria-disabled={isMenuOpen}
-                >
-                    <Image
-                        loader={myLoader}
-                        src={prefixPath("/icons/menu_ic.svg") }
-                        alt=""
-                        fill
-                    />
-                </div>
+            <nav className={`w-full fixed backdrop-blur-md transition-colors ease duration-500 inset-0 h-16 z-50 `}>
+                <div className="container mx-auto px-5 py-2.5 lg:py-3 md:px-24 w-screen flex flex-row justify-between items-center ">
+                    <Link href="/" >
+                        <h1 className={`font-main font-bold text-2xl ml-2 md:ml-0 transition-colors ease duration-500 text-white`}>
+                            AAI
+                        </h1>
+                    </Link>
+                    <div 
+                        className={`relative w-10 h-10 rounded-full ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'} hover:bg-white/20 transition-all cursor-pointer`}
+                        onClick={openMenu}
+                        aria-disabled={isMenuOpen}
+                    >
+                        <Image
+                            loader={myLoader}
+                            src={prefixPath("/icons/menu_ic.svg") }
+                            alt=""
+                            fill
+                        />
+                    </div>
+                </div>  
             </nav>
             <NavItemView isNavOpen={isMenuOpen} setIsNavOpen={closeMenu} />
         </>
