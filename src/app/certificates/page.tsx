@@ -256,6 +256,7 @@ export default function Certificates() {
                                     className="group relative overflow-hidden cursor-pointer rounded-lg shadow-lg "
                                 >
                                     <Image
+                                        loader={myLoader}
                                         src={prefixPath(dta.imgLinks)}
                                         alt="title"
                                         width={500}

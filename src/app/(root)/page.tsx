@@ -565,42 +565,6 @@ export default function mainPage() {
                             height={600}                
                         /> 
                     </Section>
-                    {/* <div className="flex flex-col-reverse lg:flex-row pt-0 max-[1024px]:pt-20 justify-between w-full px-5 md:px-24 ">
-                        <div className="z-10 text-start text-brand-900 content-center me-0 lg:me-15">
-                            <h1 className="title-lc text-4xl lg:text-6xl font-semibold mb-0 lg:mb-2 font-main text-brand-900 max-w-md xl:max-w-xl">
-                                Let’s connect with me.
-                            </h1>
-                            <div className="desc-lc max-w-full lg:max-w-2xl mt-10">
-                                <p className="leading-relaxed font-main font-light text-md lg:text-xl">
-                                    Let me know if you want to connect with me for business and network purposes, 
-                                    or you want to contact to me for work purposes with my email down here :
-                                </p>
-                            </div>
-                            <div className="email-lc max-w-md xl:max-w-xl mt-4">
-                                <p className="leading-relaxed font-main font-semibold text-lg lg:text-lg">
-                                    adam.alfarizi.2002@gmail.com
-                                </p>
-                            </div>
-                            <div className="subtitle-lc max-w-md xl:max-w-xl my-4">
-                                <p className="leading-relaxed font-main font-light text-md lg:text-xl">
-                                    Link For My Contacts :
-                                </p>
-                            </div>
-                            <div className="icons-lc flex flex-row">
-                                <LinkIcon/>
-                            </div>
-                            
-                        </div> 
-                        <Image
-                            loader={myLoader}
-                            className="image-lc rounded-[20px] mb-5 xl:mb-0 w-75 max-[512px]:w-65 lg:w-100"
-                            src={prefixPath("/images/let's_connect.jpg")}
-                            alt={""}
-                            objectFit="contain"
-                            width={400}  
-                            height={600}                
-                        />
-                    </div> */}
                 </div>
             </div>
             <div className="invisible absolute right-10 max-[400px]:right-3 bottom-10 z-20">

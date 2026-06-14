@@ -11,6 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import PortoDetailModal from '@/components/elements/PortoDetailModal';
 import { prefixPath } from '@/lib/utils';
 import myLoader from '@/lib/image-loader';
+import { Section } from '@/components/ui/section';
 
 const projectCategory = [
     "Mobile Apps",
@@ -153,10 +154,10 @@ export default function ProjectsPage()
         
     return (
         <div ref={mainContainer} className="h-screen overflow-y-scroll scrollbar-hide scroll-smooth">
-            <section
+            <div
                 className="heroSection relative h-screen snap-center flex items-center justify-space-between bg-cover bg-brand-100 bg-center"
             >
-                <div className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between w-full px-5 md:px-24 ">
+                <Section className="flex flex-col-reverse max-[360px]:mt-0 max-[768px]:pt-10 md:flex-row justify-between">
                     <div className="z-10 text-start text-brand-900 content-center mr-15 max-[380px]:mr-0 sm:mr-20 xl:mr-0">
                         <h1 className="
                             title-projects
@@ -172,7 +173,7 @@ export default function ProjectsPage()
                         <div className="max-w-2xl max-[1380px]:max-w-lg my-5 lg:my-8">
                             <p className="
                                 subtitle-hero
-                                leading-relaxed max-xl:text-lg min-xl:text-2xl 
+                                leading-relaxed max-xl:text-lg xl:text-2xl 
                                 max-[380px]:text-[14px] max-[360px]:text-[12px] 
                                 font-light"
                             >
@@ -213,71 +214,73 @@ export default function ProjectsPage()
                         width={500}
                         height={900}                
                     />
-                </div>
-            </section>
-            <div ref={nextSection} className='mainSection h-fit pt-20 pb-10 px-5 md:px-24 flex flex-col justify-space-between bg-cover bg-center'>
-                <div className='flex flex-col w-full pb-10'>
-                    <h1 className='title-main mb-3 font-semibold text-4xl text-brand-900'>My Projects</h1>
-                    <div className="line-title-main w-47 h-1 bg-brand-900 rounded-full"></div>
-                </div>
-                <div className='flex flex-wrap max-[474px]:flex-col justify-between'>
-                    <div className='max-w-full flex justify-start gap-3'>
-                        {
-                            projectCategory.map((catData, idx) => (
-                                <span 
-                                    onClick={() => setActiveCategory(idx)}
-                                    key={idx} 
-                                    className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
-                                    px-3 py-3 rounded-lg border-1 
-                                    border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
-                                >
-                                    {catData}
-                                </span>
-                            ))
-                        }
+                </Section>
+            </div>
+            <div ref={nextSection} className='mainSection h-fit pt-20 pb-10 bg-cover bg-center'>
+                <Section className='flex flex-col justify-space-between'>
+                    <div className='flex flex-col w-full pb-10'>
+                        <h1 className='title-main mb-3 font-semibold text-4xl text-brand-900'>My Projects</h1>
+                        <div className="line-title-main w-47 h-1 bg-brand-900 rounded-full"></div>
                     </div>
-                    <div className='max-w-lg content-center max-[474px]:mt-6'>
-                        <h2 className='mb-3 font-main text-2xl text-brand-900'>{ activeCategory === 0 ? mobileApps.length : webApps.length } Project</h2>
+                    <div className='flex flex-wrap max-[474px]:flex-col justify-between'>
+                        <div className='max-w-full flex justify-start gap-3'>
+                            {
+                                projectCategory.map((catData, idx) => (
+                                    <span 
+                                        onClick={() => setActiveCategory(idx)}
+                                        key={idx} 
+                                        className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
+                                        px-3 py-3 rounded-lg border-1 
+                                        border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
+                                    >
+                                        {catData}
+                                    </span>
+                                ))
+                            }
+                        </div>
+                        <div className='max-w-lg content-center max-[474px]:mt-6'>
+                            <h2 className='mb-3 font-main text-2xl text-brand-900'>{ activeCategory === 0 ? mobileApps.length : webApps.length } Project</h2>
+                        </div>
                     </div>
-                </div>
-                <AnimatePresence>
-                    <motion.div 
-                        key={activeCategory}
-                        variants={containerVariants}
-                        initial="initial"
-                        exit="exit"
-                        whileInView="animate"
-                        className='flex flex-col space-y-8 w-full mt-10 max-[474px]:mt-4'
-                    >
-                        {
-                            activeCategory === 0 
-                                ?  
-                                mobileApps.map((data, index) => (
-                                    <motion.div
-                                        key={index}
-                                        variants={cardAnimation}
-                                        initial="initial"
-                                        exit="exit"
-                                        whileInView="animate"
-                                    >
-                                        <CardProjects data={data} clickMore={() => openModal(data)}/>
-                                    </motion.div>
-                                ))
-                                :
-                                webApps.map((data, index) => (
-                                    <motion.div 
-                                        key={index}
-                                        variants={cardAnimation}
-                                        initial="initial"
-                                        exit="exit"
-                                        whileInView="animate"
-                                    >
-                                        <CardProjects data={data} clickMore={() => openModal(data)}/>
-                                    </motion.div>
-                                ))
-                        }
-                    </motion.div>
-                </AnimatePresence>
+                    <AnimatePresence>
+                        <motion.div 
+                            key={activeCategory}
+                            variants={containerVariants}
+                            initial="initial"
+                            exit="exit"
+                            whileInView="animate"
+                            className='flex flex-col space-y-8 w-full mt-10 max-[474px]:mt-4'
+                        >
+                            {
+                                activeCategory === 0 
+                                    ?  
+                                    mobileApps.map((data, index) => (
+                                        <motion.div
+                                            key={index}
+                                            variants={cardAnimation}
+                                            initial="initial"
+                                            exit="exit"
+                                            whileInView="animate"
+                                        >
+                                            <CardProjects data={data} clickMore={() => openModal(data)}/>
+                                        </motion.div>
+                                    ))
+                                    :
+                                    webApps.map((data, index) => (
+                                        <motion.div 
+                                            key={index}
+                                            variants={cardAnimation}
+                                            initial="initial"
+                                            exit="exit"
+                                            whileInView="animate"
+                                        >
+                                            <CardProjects data={data} clickMore={() => openModal(data)}/>
+                                        </motion.div>
+                                    ))
+                            }
+                        </motion.div>
+                    </AnimatePresence>
+                </Section>
             </div>
             {
                 selectedUser && (
