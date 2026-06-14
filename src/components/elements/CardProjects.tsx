@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../ui/card";
 import { prefixPath } from '@/lib/utils';
 import myLoader from "@/lib/image-loader";
 

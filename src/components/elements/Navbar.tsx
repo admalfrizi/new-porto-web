@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { Mail, X } from "lucide-react";
 import LinkIcon from "./LinkIcon";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
 import { prefixPath } from "@/lib/utils";
 import myLoader from "@/lib/image-loader";

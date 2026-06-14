@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
-import { AspectRatio } from "./ui/aspect-ratio";
+import { Card, CardContent } from "../ui/card";
+import { AspectRatio } from "../ui/aspect-ratio";
 import { prefixPath } from '@/lib/utils';
 import myLoader from "@/lib/image-loader";
 

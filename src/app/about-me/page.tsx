@@ -1,6 +1,6 @@
 "use client";
 
-import SkillsType from '@/components/SkillsType';
+import SkillsType from '@/components/elements/SkillsType';
 import { Card, CardContent } from '@/components/ui/card';
 import { experiences, skillsData } from '@/data/list_data';
 import { prefixPath } from '@/lib/utils';

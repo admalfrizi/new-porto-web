@@ -1,6 +1,6 @@
 "use client"
-import LinkIcon from "@/components/LinkIcon";
-import PortofolioCard from "@/components/PortofolioCard";
+import LinkIcon from "@/components/elements/LinkIcon";
+import PortofolioCard from "@/components/elements/PortofolioCard";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { projects, techStack } from "@/data/list_data";

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/elements/Navbar";
 import { prefixPath } from "@/lib/utils";
+import "./globals.css";
 
 const outifit = Outfit({
   variable: "--font-outfit",

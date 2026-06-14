@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
+import { Card, CardContent } from "../ui/card";
 import myLoader from "@/lib/image-loader";
 
 interface SkillsTypeProps 
