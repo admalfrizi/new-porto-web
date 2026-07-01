@@ -98,6 +98,18 @@ export const techStack: TechStacks[] = [
 
 export const certificate: Certificates[] = [
     {
+        imgLinks: "/certificates/sertifikat_dasar_devops.jpg",
+        nameCertificates: "Certification for Basic DevOps Skills",
+        years: 2026,
+        publisher: "Dicoding Indonesia"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_maganghub.jpg",
+        nameCertificates: "Maganghub Certification for Frontend Developer Internship Program",
+        years: 2026,
+        publisher: "Kementerian Ketenagakerjaan Republik Indonesia"
+    },
+    {
         imgLinks: "/certificates/sertifikat_bnsp.jpg",
         nameCertificates: "Certification Scheme of Junior Mobile Programmer",
         years: 2024,
@@ -236,6 +248,15 @@ export const skillsData: SkillsData[] =
 ];
 
 export const experiences: Experience[] = [
+    {
+        position: "Frontend Developer",
+        period: "Nov 2025 - May 2026",
+        location: "Jakarta Selatan, Indonesia",
+        company: "PT Telkom Indonesia",
+        title: "Internship Program",
+        description: "Proactively resolved critical bugs in a core ERP system by applying rapidly acquired expertise in ASP.NET and SQL. Within an Agile/Scrum framework, I managed the full issue lifecycle using GitLab and OpenProject for end-to-end tracking. This technical role was enhanced by strong liaison capabilities, performing root cause analysis to align solutions with business requirements and collaborating with developers and BAs to validate production-ready releases.",
+        technologies: ["ReactJS", "Javascript", "Typescript", "Tailwind CSS"]
+    },
     {
         position: "Software Engineer Intern",
         period: "Jun 2025 - Oct 2025",

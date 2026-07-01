@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react";
 import { Mail, X } from "lucide-react";
 import LinkIcon from "./LinkIcon";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, YOUTUBE_URL } from "@/lib/const";
 import { prefixPath } from "@/lib/utils";
 import myLoader from "@/lib/image-loader";
@@ -100,7 +100,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         w-fit
                         max-[517px]:w-full
                         max-[517px]:justify-center
-                        md:w-[255px]
+                        md:w-63.75
                         "
                     >
                         <a className="flex items-center" href="mailto:adam.alfarizi.2002@gmail.com"> 
@@ -150,7 +150,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                             
                         </Button>
                         <Button size="icon-lg" asChild>
-                            <a href={YOUTUBE_URL} target="_blank" className="w-[71px] h-[71px] p-3 ms-3 max-[1138px]:w-[61px] max-[1138px]:h-[61px] max-[580px]:w-[51px] max-[580px]:h-[51px] max-[580px]:p-2">
+                            <a href={YOUTUBE_URL} target="_blank" className="w-17.75 h-17.75 p-3 ms-3 max-[1138px]:w-15.25 max-[1138px]:h-15.25 max-[580px]:w-12.75 max-[580px]:h-12.75 max-[580px]:p-2">
                                 <Image 
                                     loader={myLoader}
                                     src={prefixPath("/icons/yt_ic.svg")}
@@ -172,45 +172,43 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Effect to control background scrolling
     useEffect(() => {
         if (isMenuOpen) {
-            // Prevent scrolling when menu is open
             document.body.classList.add('overflow-hidden');
         } else {
-            // Re-enable scrolling when menu is closed
             document.body.classList.remove('overflow-hidden');
         }
 
-        // Cleanup function to remove the class if the component unmounts
         return () => {
             document.body.classList.remove('overflow-hidden');
         };
-    }, [isMenuOpen]); // Only re-run this effect when isMenuOpen changes
+    }, [isMenuOpen]);
 
     const openMenu = () => setIsMenuOpen(true);
     const closeMenu = () => setIsMenuOpen(false);
     
     return (
         <>
-            <nav className={`navbar px-5 md:px-24 w-screen fixed backdrop-blur-md transition-colors ease duration-500 inset-0 flex flex-row justify-between items-center h-16 z-50 `}>
-                <Link href="/" >
-                    <h1 className={`font-main font-bold text-2xl ml-2 md:ml-0 transition-colors ease duration-500 text-white`}>
-                        AAI
-                    </h1>
-                </Link>
-                <div 
-                    className={`relative w-10 h-10 rounded-full ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'} hover:bg-white/20 transition-all cursor-pointer`}
-                    onClick={openMenu}
-                    aria-disabled={isMenuOpen}
-                >
-                    <Image
-                        loader={myLoader}
-                        src={prefixPath("/icons/menu_ic.svg") }
-                        alt=""
-                        fill
-                    />
-                </div>
+            <nav className={`w-full fixed backdrop-blur-md transition-colors ease duration-500 inset-0 h-16 z-50 `}>
+                <div className="container mx-auto px-5 py-2.5 lg:py-3 lg:px-24 w-screen flex flex-row justify-between items-center ">
+                    <Link href="/" >
+                        <h1 className={`font-main font-bold text-2xl ml-2 md:ml-0 transition-colors ease duration-500 text-white`}>
+                            AAI
+                        </h1>
+                    </Link>
+                    <div 
+                        className={`relative w-10 h-10 rounded-full ${isMenuOpen ? 'opacity-0 invisible' : 'opacity-100 visible'} hover:bg-white/20 transition-all cursor-pointer`}
+                        onClick={openMenu}
+                        aria-disabled={isMenuOpen}
+                    >
+                        <Image
+                            loader={myLoader}
+                            src={prefixPath("/icons/menu_ic.svg") }
+                            alt=""
+                            fill
+                        />
+                    </div>
+                </div>  
             </nav>
             <NavItemView isNavOpen={isMenuOpen} setIsNavOpen={closeMenu} />
         </>
