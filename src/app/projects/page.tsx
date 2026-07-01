@@ -174,7 +174,7 @@ export default function ProjectsPage()
                                         onClick={() => setActiveCategory(idx)}
                                         key={idx} 
                                         className={`${ activeCategory === idx ? 'bg-span-experience' : 'bg-brand-100 ' }
-                                        px-3 py-3 rounded-lg border-1 
+                                        px-3 py-3 rounded-lg border 
                                         border-span text-white cursor-pointer transition-colors duration-300 ease-in-out`}
                                     >
                                         {catData}

@@ -100,7 +100,7 @@ const NavItemView = ({isNavOpen, setIsNavOpen }: NavItemViewProps) => {
                         w-fit
                         max-[517px]:w-full
                         max-[517px]:justify-center
-                        md:w-[255px]
+                        md:w-63.75
                         "
                     >
                         <a className="flex items-center" href="mailto:adam.alfarizi.2002@gmail.com"> 

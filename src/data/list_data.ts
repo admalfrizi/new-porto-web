@@ -98,6 +98,18 @@ export const techStack: TechStacks[] = [
 
 export const certificate: Certificates[] = [
     {
+        imgLinks: "/certificates/sertifikat_dasar_devops.jpg",
+        nameCertificates: "Certification for Basic DevOps Skills",
+        years: 2026,
+        publisher: "Dicoding Indonesia"
+    },
+    {
+        imgLinks: "/certificates/sertifikat_maganghub.jpg",
+        nameCertificates: "Maganghub Certification for Frontend Developer Internship Program",
+        years: 2026,
+        publisher: "Kementerian Ketenagakerjaan Republik Indonesia"
+    },
+    {
         imgLinks: "/certificates/sertifikat_bnsp.jpg",
         nameCertificates: "Certification Scheme of Junior Mobile Programmer",
         years: 2024,
